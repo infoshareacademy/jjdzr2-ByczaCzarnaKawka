@@ -1,0 +1,31 @@
+package com.infoshare.activities;
+
+public enum SportDisciplines {
+    Football,
+    Badminton,
+    Field_Hockey,
+    Volleyball,
+    Basketball,
+    Tennis,
+    Cricket,
+    Table_Tennis,
+    Baseball,
+    Golf,
+    Rugby,
+    Running,
+    Athletics,
+    Boxing,
+    Ice_Hokey,
+    Cycling,
+    Swimming,
+    Snooker,
+    Mixed_Martial_Arts,
+    Handball,
+    Horse_Racing,
+    Gymnastics,
+    Sailing,
+    Curling,
+    Darts,
+    Motocross,
+    Squash
+}
