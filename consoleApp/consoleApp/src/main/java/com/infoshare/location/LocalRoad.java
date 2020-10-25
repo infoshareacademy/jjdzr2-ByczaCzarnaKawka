@@ -31,4 +31,9 @@ public class LocalRoad {
     public void setBuildingNo(String buildingNo) {
         this.buildingNo = buildingNo;
     }
+
+    @Override
+    public String toString() {
+        return roadName + " " + buildingNo;
+    }
 }
