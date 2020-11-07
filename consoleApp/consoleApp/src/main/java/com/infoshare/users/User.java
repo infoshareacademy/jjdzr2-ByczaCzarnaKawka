@@ -49,6 +49,7 @@ public class User {
     }
 
     public void addActivity(Activity activity){
+
         activityList.add(activity);
     }
 
@@ -77,6 +78,7 @@ public class User {
     }
 
     public void setSex(Sex sex) {
+
         this.sex = sex;
     }
 

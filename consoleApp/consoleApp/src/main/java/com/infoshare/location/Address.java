@@ -5,6 +5,7 @@ public class Address {
     private LocalRoad localRoad;
 
     public Address(Town townName) {
+
         this.townName = townName;
     }
 

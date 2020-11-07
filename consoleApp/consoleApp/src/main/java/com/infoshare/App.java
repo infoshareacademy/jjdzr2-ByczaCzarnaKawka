@@ -23,7 +23,7 @@ public class App
         randomUser.setAddress(new Address(Town.Gdańsk,new LocalRoad("random road", "8")));
         randomUser.setAge(28);
         randomUser.setPhoneNumber("+48  123 456 789");
-        randomUser.setSex(Sex.male);
+        randomUser.setSex(Sex.MALE);
 
         randomUser.createActivityList();
         randomUser.addActivity(new Activity(SportDisciplines.Football,ActivityLevel.Newbie));
