@@ -20,15 +20,15 @@ public class App
 
         User randomUser = new User("MichalM","random@gmail.com","qwerrt12345");
 
-        randomUser.setAddress(new Address(Town.Gdańsk,new LocalRoad("random road", "8")));
+        randomUser.setAddress(new Address(Town.GDAŃSK,new LocalRoad("random road", "8")));
         randomUser.setAge(28);
         randomUser.setPhoneNumber("+48  123 456 789");
         randomUser.setSex(Sex.MALE);
 
         randomUser.createActivityList();
-        randomUser.addActivity(new Activity(SportDisciplines.Football,ActivityLevel.Newbie));
-        randomUser.addActivity(new Activity(SportDisciplines.Boxing,ActivityLevel.Intermediate));
-        randomUser.addActivity(new Activity(SportDisciplines.Basketball,ActivityLevel.Newbie));
+        randomUser.addActivity(new Activity(SportDisciplines.FOOTBALL,ActivityLevel.NEWBIE));
+        randomUser.addActivity(new Activity(SportDisciplines.BOXING,ActivityLevel.INTERMEDIATE));
+        randomUser.addActivity(new Activity(SportDisciplines.BASKETBALL,ActivityLevel.NEWBIE));
 
         randomUser.printAllInfo();
 

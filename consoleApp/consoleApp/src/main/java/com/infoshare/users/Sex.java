@@ -1,5 +1,7 @@
 package com.infoshare.users;
 
+import com.infoshare.tools.Tools;
+
 public enum Sex {
     MALE,
     FEMALE,
@@ -8,22 +10,17 @@ public enum Sex {
 
     public static void printValiu(){
         for (Sex x:values()){
-            System.out.println(x);
+            System.out.println(x.ordinal()+" "+x);
         }
     }
 
     public static Sex valueOfLabel(String label){
-        boolean flag=false;
-        do {
-            for (Sex x : values()) {
-                if (x.name().equals(label.toUpperCase())) {
-                    flag=true;
-                    return x;
-                }
+        for(int i=0;i<Sex.values().length;i++){
+            if(values()[i].name().equals(label.toUpperCase())){
+                return values()[i];
             }
-            return valueOfLabel("Coś nie nie zgadza, podaj płeć: ");
-        }while (!flag);
-
-    }
+        }
+        return Tools.getSexFromUser("Coś jest nie tak, podaj pleć: ");
+     }
 
 }

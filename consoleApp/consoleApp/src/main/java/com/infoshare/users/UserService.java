@@ -1,8 +1,8 @@
 package com.infoshare.users;
+import com.infoshare.location.Address;
 import com.infoshare.tools.Tools;
 
 public class UserService {
-
     public static User addNewUser(){
         String nickname= Tools.getFromUser("Podaj imię/nick:");
         String login= Tools.getFromUser("Podaj adres e-mail:");
@@ -18,17 +18,20 @@ public class UserService {
         String phoneNumber=Tools.getFromUser("Podaj nr telefonu:");
         user.setPhoneNumber(Tools.veryfityPhoneNumber(phoneNumber));
 
+        user.setSex(Tools.getSexFromUser("Podaj płeć: "));
 
-        //TODO sex - enum - how can i work with it
+        user.createActivityList();
+        String next=new String();
+        do {
+            user.addActivity(Tools.getActivityFromUser());
+            next=Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
+        }while(next.equals("Y"));
 
 
-
-        //TODO Address - class - includes enum Town!!!
-
-        //TODO actyvityList - list - how can i work with it
-
-
-        //TODO add users to json file by Łukasz's feature
+        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y?N").toUpperCase();
+        if(choice.equals("Y")){
+            user.setAddress(new Address(Tools.getTownFromUser("Podaj miasto"),Tools.getRoadFromUser()));
+        }
 
         return user;
     }

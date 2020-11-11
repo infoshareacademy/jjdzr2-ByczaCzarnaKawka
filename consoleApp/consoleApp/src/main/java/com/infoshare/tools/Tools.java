@@ -1,5 +1,10 @@
 package com.infoshare.tools;
 
+import com.infoshare.activities.Activity;
+import com.infoshare.activities.ActivityLevel;
+import com.infoshare.activities.SportDisciplines;
+import com.infoshare.location.LocalRoad;
+import com.infoshare.location.Town;
 import com.infoshare.users.Sex;
 
 import java.util.Scanner;
@@ -62,13 +67,39 @@ public class Tools {
     }
 
     public static Sex getSexFromUser(String message){
-        String sex;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(message);
         Sex.printValiu();
-        sex= scanner.next();
+        String sex=getFromUser(message);
         return Sex.valueOfLabel(sex);
     }
 
+    public static Town getTownFromUser(String message){
+        Town.printValiu();
+        String town=getFromUser(message);
+        return Town.valueOfLabel(town);
+    }
+    public static LocalRoad getRoadFromUser(){
+        String road=getFromUser("Podaj nazwę ulicy: ");
+        String nomber=getFromUser("Podaj numer ulicy: ");
+        return new LocalRoad(road,nomber);
+    }
+
+    public static ActivityLevel getActivityLevelFromUser(String message){
+        ActivityLevel.printValiu();
+        String level=getFromUser(message);
+        return ActivityLevel.valueOfLabel(level);
+    }
+    public static SportDisciplines getSportDisciplinesFromUser(String message){
+        SportDisciplines.printValiu();
+        String discipline=getFromUser(message);
+        return SportDisciplines.valueOfLabel(discipline);
+    }
+    public static Activity getActivityFromUser(){
+        SportDisciplines discipline;
+        ActivityLevel level;
+        discipline=getSportDisciplinesFromUser("Wybierz dyscypline: ");
+        level=getActivityLevelFromUser("Wybierz poziom zaawansowania: ");
+        Activity activity =new Activity(discipline, level);
+        return activity;
+    }
 }
 

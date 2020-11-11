@@ -24,4 +24,11 @@ public class Activity {
         return activityLevel;
     }
 
+    public void setSportDisciplines(SportDisciplines sportDisciplines) {
+        this.sportDisciplines = sportDisciplines;
+    }
+
+    public void setActivityLevel(ActivityLevel activityLevel) {
+        this.activityLevel = activityLevel;
+    }
 }
