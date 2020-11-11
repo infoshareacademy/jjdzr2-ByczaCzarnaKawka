@@ -2,15 +2,15 @@ package com.infoshare.location;
 
 public class Address {
     private Town townName;
-    private LocalRoad localRoad;
+    private String roadName;
 
     public Address(Town townName) {
         this.townName = townName;
     }
 
-    public Address(Town townName, LocalRoad localRoad) {
+    public Address(Town townName, String roadName) {
         this.townName = townName;
-        this.localRoad = localRoad;
+        this.roadName = roadName;
     }
 
     public Town getTownName() {
@@ -21,11 +21,19 @@ public class Address {
         this.townName = townName;
     }
 
-    public LocalRoad getLocalRoad() {
-        return localRoad;
+    public String getRoadName() {
+        return roadName;
     }
 
-    public void setLocalRoad(LocalRoad localRoad) {
-        this.localRoad = localRoad;
+    public void setRoadName(String roadName) {
+        this.roadName = roadName;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{ \n" +
+                "townName= " + townName +
+                "," + "\n" + "localRoad= " + roadName +
+                '}';
     }
 }

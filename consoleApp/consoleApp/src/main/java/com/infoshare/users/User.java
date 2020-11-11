@@ -1,8 +1,6 @@
 package com.infoshare.users;
-
 import com.infoshare.activities.Activity;
 import com.infoshare.location.Address;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,34 +16,28 @@ public class User {
     private Address address;
     private List<Activity> activityList;
 
-    public User(String nickname, String login, String password) {
+    public User(String nickname, String mailAddress, String password) {
         this.nickname = nickname;
-        this.mailAddress = login;
+        this.mailAddress = mailAddress;
         this.password = password;
-
+        this.age = 0;
+        this.phoneNumber = "";
+        this.sex = null;
+        this.address = new Address(null," ");
+        this.activityList = new ArrayList<>();
     }
 
-    // checking method ... in progress
-    public void printAllInfo(){
-        System.out.println("nickname: " + nickname);
-        System.out.println("password: " + password);
-        System.out.println("age: " + age);
-        System.out.println("phone number: " + phoneNumber);
-        System.out.println("sex: " + sex);
-        System.out.println("address: ");
-        System.out.println(" town: " + address.getTownName());
-        System.out.println(" road: " + address.getLocalRoad().toString());
-        System.out.println("-----------------------------------------");
+    public void printBasicInfo(){
+        System.out.println("Nickname: " + getNickname());
+        System.out.println("E-mail: " + getMailAddress());
+        System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getRoadName());
 
-        System.out.println("My Activities: \n");
-        for (Activity element: activityList) {
-            element.printActivities();
-            System.out.println("-------------------------");
+        System.out.println("Activities:");
+            for (Activity element : activityList) {
+            System.out.println("Sport: " + element.getSportDisciplines());
+            System.out.println("Experience level: " + element.getActivityLevel());
+            System.out.println("----------------");
         }
-    }
-
-    public void createActivityList(){
-        activityList = new ArrayList<>();
     }
 
     public void addActivity(Activity activity){
@@ -54,6 +46,10 @@ public class User {
 
     public String getNickname() {
         return nickname;
+    }
+
+    public String getMailAddress() {
+        return mailAddress;
     }
 
     public int getAge() {
@@ -90,6 +86,20 @@ public class User {
 
     public List<Activity> getActivityList() {
         return activityList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{ \n" +
+                "nickname='" + nickname + '\'' +
+                "," + "\n" + "mailAddress='" + mailAddress + '\'' +
+                "," + "\n" + "password='" + password + '\'' +
+                "," + "\n" + "age=" + age +
+                "," + "\n" + "phoneNumber='" + phoneNumber + '\'' +
+                "," + "\n" + "sex=" + sex +
+                "," + "\n \n" + "address=" + address +
+                "," + "\n \n" + "activityList=" + activityList +
+                '}';
     }
 
     @Override

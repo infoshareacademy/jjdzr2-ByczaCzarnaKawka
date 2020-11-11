@@ -1,15 +1,15 @@
 package com.infoshare.location;
 
 public enum Town {
-    Białystok,
-    Bydgoszcz,
-    Częstochowa,
-    Gdańsk,
-    Gdynia,
-    Katowice,
-    Kraków,
-    Łódź,
-    Poznań,
-    Warszawa,
-    Wrocław
+    BIAŁYSTOK,
+    BYDGOSZCZ,
+    CZĘSTOCHOWA,
+    GDAŃSK,
+    GDYNIA,
+    KATOWICE,
+    KRAKÓW,
+    ŁÓDŹ,
+    POZNAŃ,
+    WARSZAWA,
+    WROCŁAW
 }

@@ -10,11 +10,6 @@ public class Activity {
         this.activityLevel = activityLevel;
     }
 
-    public void printActivities(){
-        System.out.println("Discipline: " + sportDisciplines.toString());
-        System.out.println("level: " + activityLevel.toString());
-    }
-
     public SportDisciplines getSportDisciplines() {
         return sportDisciplines;
     }
@@ -23,4 +18,11 @@ public class Activity {
         return activityLevel;
     }
 
+    @Override
+    public String toString() {
+        return "\nActivity{\n" +
+                "sportDisciplines=" + sportDisciplines +
+                "," + "\n" + "activityLevel=" + activityLevel +
+                '}';
+    }
 }
