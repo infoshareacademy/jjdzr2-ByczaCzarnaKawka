@@ -9,6 +9,7 @@ import com.infoshare.location.LocalRoad;
 import com.infoshare.location.Town;
 import com.infoshare.users.Sex;
 import com.infoshare.users.User;
+import com.infoshare.utils.FileUtils;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class App
 
         randomUser.setAddress(new Address(Town.Gdańsk,new LocalRoad("random road", "8")));
         randomUser.setAge(28);
-        randomUser.setPhoneNumber("+48  123 456 789");
+        //randomUser.setPhoneNumber("+48  123 456 789");
         randomUser.setSex(Sex.MALE);
 
         randomUser.createActivityList();
@@ -32,6 +33,7 @@ public class App
 
         randomUser.printAllInfo();
 
+        FileUtils.saveUsersToJsonFile(randomUser);
 
     }
 }
