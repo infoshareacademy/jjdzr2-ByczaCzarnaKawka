@@ -19,7 +19,7 @@ public class App
     {
 //        System.out.println( "Hello Bycza Czarna Kawka" );
 
-        User randomUser = new User("MichalM","random@gmail.com","qwerrt12345");
+        User randomUser = new User("MichalM.","random@gmail.com","qwerrt12345");
 
         randomUser.setAddress(new Address(Town.Gdańsk,new LocalRoad("random road", "8")));
         randomUser.setAge(28);
@@ -34,6 +34,6 @@ public class App
         randomUser.printAllInfo();
 
         FileUtils.saveUsersToJsonFile(randomUser);
-
+     //   FileUtils.readUsersJsonFile();
     }
 }
