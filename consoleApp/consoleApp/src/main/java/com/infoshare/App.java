@@ -41,7 +41,6 @@ public class App
         randomUser4.addActivity(new Activity(SportDisciplines.BOXING,ActivityLevel.INTERMEDIATE));
         randomUser4.addActivity(new Activity(SportDisciplines.BASKETBALL,ActivityLevel.NEWBIE));
 
-
         SportFacility facility1 = new SportFacility("COS Łódź",SportDisciplines.BOXING,"123 456 789",
                 new Address(Town.GDAŃSK,"ul. Sportowa 1"),
                 LocalTime.of(15,00), LocalTime.of(16,00), 50);

@@ -90,6 +90,7 @@ public class User {
         return activityList;
     }
 
+
     @Override
     public String toString() {
         return "User{ \n" +

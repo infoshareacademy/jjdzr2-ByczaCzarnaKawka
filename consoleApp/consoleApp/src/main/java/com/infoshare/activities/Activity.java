@@ -25,5 +25,5 @@ public class Activity {
                 "sportDisciplines=" + sportDisciplines +
                 "," + "\n" + "activityLevel=" + activityLevel +
                 '}';
-    }
+
 }
