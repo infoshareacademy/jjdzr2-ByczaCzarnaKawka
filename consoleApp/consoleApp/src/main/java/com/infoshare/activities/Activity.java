@@ -11,6 +11,7 @@ public class Activity {
     }
 
     public SportDisciplines getSportDisciplines() {
+
         return sportDisciplines;
     }
 

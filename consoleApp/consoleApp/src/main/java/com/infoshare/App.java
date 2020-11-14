@@ -7,6 +7,8 @@ import com.infoshare.location.Town;
 import com.infoshare.services.UserService;
 import com.infoshare.users.User;
 import com.infoshare.workoutPlaces.SportFacility;
+import com.infoshare.utils.FileUtils;
+
 
 import java.time.LocalTime;
 
@@ -52,6 +54,6 @@ public class App
 
         userService.printUserList();
 
-
+        FileUtils.saveUsersToJsonFile(randomUser);
     }
 }

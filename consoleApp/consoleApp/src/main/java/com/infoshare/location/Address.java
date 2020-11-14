@@ -5,6 +5,7 @@ public class Address {
     private String roadName;
 
     public Address(Town townName) {
+
         this.townName = townName;
     }
 
