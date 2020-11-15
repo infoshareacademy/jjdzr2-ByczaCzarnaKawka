@@ -1,6 +1,8 @@
 package com.infoshare.users;
+
 import com.infoshare.activities.Activity;
 import com.infoshare.location.Address;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,24 +25,24 @@ public class User {
         this.age = 0;
         this.phoneNumber = "";
         this.sex = null;
-        this.address = new Address(null," ");
+        this.address = new Address(null, " ");
         this.activityList = new ArrayList<>();
     }
 
-    public void printBasicInfo(){
+    public void printBasicInfo() {
         System.out.println("Nickname: " + getNickname());
         System.out.println("E-mail: " + getMailAddress());
         System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getRoadName());
 
         System.out.println("Activities:");
-            for (Activity element : activityList) {
+        for (Activity element : activityList) {
             System.out.println("Sport: " + element.getSportDisciplines());
             System.out.println("Experience level: " + element.getActivityLevel());
             System.out.println("----------------");
         }
     }
 
-    public void addActivity(Activity activity){
+    public void addActivity(Activity activity) {
 
         activityList.add(activity);
     }

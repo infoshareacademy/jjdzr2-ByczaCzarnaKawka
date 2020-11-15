@@ -8,18 +8,18 @@ public enum Sex {
     KOBIETA,
     MĘŻCZYZNA;
 
-    public static void printValiu(){
-        for (Sex x:values()){
-            System.out.println(x.ordinal()+" "+x);
+    public static void printValues() {
+        for (Sex x : values()) {
+            System.out.println(x.ordinal() + " " + x);
         }
     }
 
-    public static Sex valueOfLabel(String label){
-        for(int i=0;i<Sex.values().length;i++){
-            if(values()[i].name().equals(label.toUpperCase())){
+    public static Sex valueOfLabel(String label) {
+        for (int i = 0; i < Sex.values().length; i++) {
+            if (values()[i].name().equals(label.toUpperCase())) {
                 return values()[i];
             }
         }
         return Tools.getSexFromUser("Coś jest nie tak, podaj pleć: ");
-     }
+    }
 }

@@ -1,59 +1,58 @@
 package com.infoshare.workoutPlaces;
+
 import com.infoshare.activities.SportDisciplines;
 import com.infoshare.location.Address;
+
+import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.Objects;
 
 public class SportFacility {
 
-    private String facilityName;
-    private SportDisciplines sportDiscipline;
+    private static Integer classCounter = 0;
+    private Integer ordinalNumber;
+
+    private String name;
+    private SportDisciplines discipline;
 
     private String phoneNumber;
     private Address address;
 
-    private LocalTime startHour;
-    private LocalTime endHour;
+    private LocalTime openHour;
+    private LocalTime closeHour;
 
-    private double price;
+    private BigDecimal price;
 
-    private boolean isItBooked;
-
-    public SportFacility(String facilityName, SportDisciplines sportDiscipline, String phoneNumber, Address address, LocalTime startHour, LocalTime endHour, double price) {
-        this.facilityName = facilityName;
-        this.sportDiscipline = sportDiscipline;
+    public SportFacility(String facilityName, SportDisciplines sportDiscipline, String phoneNumber, Address address, LocalTime startHour, LocalTime endHour, BigDecimal price) {
+        this.name = facilityName;
+        this.discipline = sportDiscipline;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.startHour = startHour;
-        this.endHour = endHour;
+        this.openHour = startHour;
+        this.closeHour = endHour;
         this.price = price;
-        isItBooked = false;
+        this.ordinalNumber = 1 + classCounter;
+        classCounter++;
     }
 
-    public double returnCostPerPerson (int numberOfPlayers){
-        return price/numberOfPlayers;
+    public void printBasicInfo() {
+        System.out.println("Ordinal number: " + getOrdinalNumber());
+        System.out.println("Name: " + getName());
+        System.out.println("Discipline: " + getDiscipline());
+        System.out.println("Phone Number: " + getPhoneNumber());
+        System.out.println(getAddress());
+        System.out.println("Open hour: " + getOpenHour());
+        System.out.println("Close hour: " + getCloseHour());
+        System.out.println("Price per hour: " + getPrice().toString() + "zł");
+
     }
 
-    public void bookAFacility(){
-        if(isItBooked){
-            System.out.println("Unfortunately the place is already booked!");
-        }else{
-            isItBooked = true;
-            System.out.println("Congratulation! You've booked a workout place!");
-        }
+    public String getName() {
+        return name;
     }
 
-    public void cancelABooking(){
-        isItBooked = false;
-        System.out.println("The place is available!");
-    }
-
-    public String getFacilityName() {
-        return facilityName;
-    }
-
-    public SportDisciplines getSportDiscipline() {
-        return sportDiscipline;
+    public SportDisciplines getDiscipline() {
+        return discipline;
     }
 
     public String getPhoneNumber() {
@@ -64,33 +63,32 @@ public class SportFacility {
         return address;
     }
 
-    public LocalTime getStartHour() {
-        return startHour;
+    public LocalTime getOpenHour() {
+        return openHour;
     }
 
-    public LocalTime getEndHour() {
-        return endHour;
+    public LocalTime getCloseHour() {
+        return closeHour;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public boolean isItBooked() {
-        return isItBooked;
+    public Integer getOrdinalNumber() {
+        return ordinalNumber;
     }
 
     @Override
     public String toString() {
-        return "SportFacility{ \n" +
-                "facilityName='" + facilityName + '\'' +
-                "," + "\n" + "sportDiscipline=" + sportDiscipline +
+        return "SportFacility: no." + getOrdinalNumber() + "{ \n" +
+                "facilityName='" + name + '\'' +
+                "," + "\n" + "sportDiscipline=" + discipline +
                 "," + "\n" + "phoneNumber='" + phoneNumber + '\'' +
                 "," + "\n" + "address=" + address +
-                "," + "\n" + "startHour=" + startHour +
-                "," + "\n" + "endHour=" + endHour +
+                "," + "\n" + "startHour=" + openHour +
+                "," + "\n" + "endHour=" + closeHour +
                 "," + "\n" + "price=" + price +
-                "," + "\n" + "isItBooked=" + isItBooked +
                 '}';
     }
 
@@ -98,17 +96,20 @@ public class SportFacility {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SportFacility that = (SportFacility) o;
-        return Objects.equals(facilityName, that.facilityName) &&
-                sportDiscipline == that.sportDiscipline &&
-                Objects.equals(phoneNumber, that.phoneNumber) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(startHour, that.startHour) &&
-                Objects.equals(endHour, that.endHour);
+        SportFacility facility = (SportFacility) o;
+        return Objects.equals(name, facility.name) &&
+                discipline == facility.discipline &&
+                Objects.equals(phoneNumber, facility.phoneNumber) &&
+                Objects.equals(address, facility.address) &&
+                Objects.equals(openHour, facility.openHour) &&
+                Objects.equals(closeHour, facility.closeHour) &&
+                Objects.equals(price, facility.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(facilityName, sportDiscipline, phoneNumber, address, startHour, endHour);
+        return Objects.hash(name, discipline, phoneNumber, address, openHour, closeHour, price);
     }
 }
+
+

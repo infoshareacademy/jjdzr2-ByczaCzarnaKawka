@@ -1,6 +1,5 @@
 package com.infoshare.location;
 
-import com.infoshare.activities.ActivityLevel;
 import com.infoshare.tools.Tools;
 
 public enum Town {
@@ -16,15 +15,15 @@ public enum Town {
     WARSZAWA,
     WROCŁAW;
 
-    public static void printValiu(){
-        for (Town x:values()){
+    public static void printValiu() {
+        for (Town x : values()) {
             System.out.println(x);
         }
     }
 
-    public static Town valueOfLabel(String label){
-        for(int i=0;i<Town.values().length;i++){
-            if(values()[i].name().equals(label.toUpperCase())){
+    public static Town valueOfLabel(String label) {
+        for (int i = 0; i < Town.values().length; i++) {
+            if (values()[i].name().equals(label.toUpperCase())) {
                 return values()[i];
             }
         }

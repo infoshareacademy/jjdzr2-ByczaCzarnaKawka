@@ -1,4 +1,5 @@
 package com.infoshare.reservations;
+
 import com.infoshare.users.User;
 import com.infoshare.workoutPlaces.SportFacility;
 
@@ -15,7 +16,7 @@ public class Reservation {
         this.sportFacility = sportFacility;
     }
 
-    public void returnReservationInfo(){
+    public void returnReservationInfo() {
         System.out.println("User name: " + user.getNickname());
         System.out.println("Contact number: " + user.getPhoneNumber() + "\n");
         System.out.println(sportFacility.toString());

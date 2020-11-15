@@ -25,15 +25,15 @@ public enum SportDisciplines {
     CHESS;
 
 
-    public static void printValues(){
-        for (SportDisciplines x:values()){
+    public static void printValues() {
+        for (SportDisciplines x : values()) {
             System.out.println(x);
         }
     }
 
-    public static SportDisciplines valueOfLabel(String label){
-        for(int i=0;i<SportDisciplines.values().length;i++){
-            if(values()[i].name().equals(label.toUpperCase())){
+    public static SportDisciplines valueOfLabel(String label) {
+        for (int i = 0; i < SportDisciplines.values().length; i++) {
+            if (values()[i].name().equals(label.toUpperCase())) {
                 return values()[i];
             }
         }
