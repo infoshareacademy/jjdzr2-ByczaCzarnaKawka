@@ -3,7 +3,9 @@ package com.infoshare.services;
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
 import com.infoshare.tools.Tools;
+import com.infoshare.users.Sex;
 import com.infoshare.users.User;
+import com.infoshare.utils.FileUtils;
 
 import java.util.Map;
 
@@ -31,14 +33,18 @@ public class UserService {
         String password1 = Tools.getFromUser("Podaj hasło:");
         String password2 = Tools.getFromUser("Powtórz hasło:");
         String password = Tools.veryfityPassword(password1, password2);
+
         User user = new User(nickname, login, password);
 
-        user.setAge(Tools.getIntFromUser("Ile masz lat:"));
+        int age=Tools.getIntFromUser("Ile masz lat:");
+        user.setAge(age);
 
         String phoneNumber = Tools.getFromUser("Podaj nr telefonu:");
-        user.setPhoneNumber(Tools.veryfityPhoneNumber(phoneNumber));
+        phoneNumber=Tools.veryfityPhoneNumber(phoneNumber);
+        user.setPhoneNumber(phoneNumber);
 
-        user.setSex(Tools.getSexFromUser("Podaj płeć: "));
+        Sex sex=Tools.getSexFromUser("Podaj płeć: ");
+        user.setSex(sex);
 
         String next;
         do {
@@ -51,6 +57,7 @@ public class UserService {
             user.setAddress(new Address(Tools.getTownFromUser("Podaj miasto"), Tools.getRoadFromUser()));
         }
 
+        FileUtils.saveUsersToJsonFile(user);
         return user;
     }
 

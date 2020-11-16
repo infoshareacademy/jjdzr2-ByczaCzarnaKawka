@@ -1,28 +1,17 @@
 {
-  "nickname": "MichalM",
-  "mailAddress": "random@gmail.com",
-  "password": "qwerrt12345",
-  "age": 28,
-  "sex": "MALE",
+  "nickname": "nick",
+  "mailAddress": "e@mail.pl",
+  "password": "qwe",
+  "age": 21,
+  "phoneNumber": "1234567809",
+  "sex": "KOBIETA",
   "address": {
-    "townName": "Gdańsk",
-    "localRoad": {
-      "roadName": "random road",
-      "buildingNo": "8"
-    }
+    "roadName": " "
   },
   "activityList": [
     {
-      "sportDisciplines": "Football",
-      "activityLevel": "Newbie"
-    },
-    {
-      "sportDisciplines": "Boxing",
-      "activityLevel": "Intermediate"
-    },
-    {
-      "sportDisciplines": "Basketball",
-      "activityLevel": "Newbie"
+      "sportDisciplines": "CHESS",
+      "activityLevel": "EXPERT"
     }
   ]
 }

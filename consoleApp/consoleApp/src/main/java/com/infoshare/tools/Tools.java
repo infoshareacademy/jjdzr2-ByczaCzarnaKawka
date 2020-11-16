@@ -100,12 +100,14 @@ public class Tools {
     }
 
     public static Activity getActivityFromUser() {
+        
         SportDisciplines discipline;
         ActivityLevel level;
         discipline = getSportDisciplinesFromUser("Wybierz dyscypline: ");
         level = getActivityLevelFromUser("Wybierz poziom zaawansowania: ");
         Activity activity = new Activity(discipline, level);
         return activity;
+
     }
 }
 

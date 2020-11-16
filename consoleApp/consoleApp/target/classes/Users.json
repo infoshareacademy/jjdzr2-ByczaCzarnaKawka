@@ -1,21 +1,17 @@
 {
-  "nickname": "ma_ry",
-  "mailAddress": "ma@ry.pl",
+  "nickname": "Krysia",
+  "mailAddress": "kr@ys.ia",
   "password": "qwe",
-  "age": 33,
-  "phoneNumber": "123654789",
+  "age": 22,
+  "phoneNumber": "123123123",
   "sex": "KOBIETA",
   "address": {
-    "townName": "ŁÓDŹ",
-    "localRoad": {
-      "roadName": "Piotrkowska",
-      "buildingNo": "123"
-    }
+    "roadName": " "
   },
   "activityList": [
     {
-      "sportDisciplines": "DARTS",
-      "activityLevel": "EXPERT"
+      "sportDisciplines": "SWIMMING",
+      "activityLevel": "ROOKIE"
     }
   ]
 }
