@@ -1,17 +1,15 @@
 {
-  "nickname": "Krysia",
-  "mailAddress": "kr@ys.ia",
-  "password": "qwe",
-  "age": 22,
-  "phoneNumber": "123123123",
-  "sex": "KOBIETA",
-  "address": {
-    "roadName": " "
-  },
+  "nickname": "olgiert",
+  "mailAddress": "ol@gi.pl",
+  "password": "qwer",
+  "age": 33,
+  "phoneNumber": "987654321",
+  "sex": "MĘŻCZYZNA",
+  "address": {},
   "activityList": [
     {
-      "sportDisciplines": "SWIMMING",
-      "activityLevel": "ROOKIE"
+      "sportDisciplines": "SQUASH",
+      "activityLevel": "EXPERT"
     }
   ]
 }

@@ -2,6 +2,7 @@ package com.infoshare.services;
 
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
+import com.infoshare.location.Town;
 import com.infoshare.tools.Tools;
 import com.infoshare.users.Sex;
 import com.infoshare.users.User;
@@ -27,36 +28,24 @@ public class UserService {
     //TODO separate method logic into single responsibility methods
     private User getUserFromConsole() {
         String nickname = Tools.getFromUser("Podaj imię/nick:");
-        String login = Tools.getFromUser("Podaj adres e-mail:");
-        login = Tools.veryfityEmail(login);
-        // TODO passwords are written by open text - fix it
-        String password1 = Tools.getFromUser("Podaj hasło:");
-        String password2 = Tools.getFromUser("Powtórz hasło:");
-        String password = Tools.veryfityPassword(password1, password2);
-
+        String login = Tools.getLoginFromUser();
+        String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
-
-        int age=Tools.getIntFromUser("Ile masz lat:");
+        int age = Tools.getIntFromUser("Ile masz lat:");
         user.setAge(age);
-
-        String phoneNumber = Tools.getFromUser("Podaj nr telefonu:");
-        phoneNumber=Tools.veryfityPhoneNumber(phoneNumber);
+        String phoneNumber = Tools.getPhoneNumberFromUser();
         user.setPhoneNumber(phoneNumber);
-
-        Sex sex=Tools.getSexFromUser("Podaj płeć: ");
+        Sex sex = Tools.getSexFromUser("Podaj płeć: ");
         user.setSex(sex);
 
-        String next;
+        String choice;
         do {
             user.addActivity(Tools.getActivityFromUser());
-            next = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
-        } while ("Y".equals(next));
+            choice = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
+        } while ("Y".equals(choice));
 
-        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y?N").toUpperCase();
-        if ("Y".equals(choice)) {
-            user.setAddress(new Address(Tools.getTownFromUser("Podaj miasto"), Tools.getRoadFromUser()));
-        }
-
+        Address address=Tools.getAddressFromUser();
+        user.setAddress(address);
         FileUtils.saveUsersToJsonFile(user);
         return user;
     }

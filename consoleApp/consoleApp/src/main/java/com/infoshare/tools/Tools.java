@@ -3,6 +3,7 @@ package com.infoshare.tools;
 import com.infoshare.activities.Activity;
 import com.infoshare.activities.ActivityLevel;
 import com.infoshare.activities.SportDisciplines;
+import com.infoshare.location.Address;
 import com.infoshare.location.Town;
 import com.infoshare.users.Sex;
 
@@ -25,7 +26,13 @@ public class Tools {
         return temp = scanner.nextInt();
     }
 
-    public static String veryfityPassword(String password1, String password2) {
+    public static String getPasswordFromUser() {
+        String password1 = Tools.getFromUser("Podaj hasło:");
+        String password2 = Tools.getFromUser("Powtórz hasło:");
+        return verificatePasswprd(password1, password2);
+    }
+
+    public static String verificatePasswprd(String password1, String password2) {
         do {
             if (password1.equals(password2))
                 return password1;
@@ -36,6 +43,11 @@ public class Tools {
             }
         } while (!password1.equals(password2));
         return password1;
+    }
+
+    public static String getLoginFromUser() {
+        String login = Tools.getFromUser("Podaj adres e-mail:");
+        return veryfityEmail(login);
     }
 
     public static String veryfityEmail(String email) {
@@ -52,6 +64,11 @@ public class Tools {
             matcher = pattern.matcher(email);
         } while (!matcher.find());
         return email;
+    }
+
+    public static String getPhoneNumberFromUser() {
+        String phonNumber = getFromUser("Podaj nr telefonu:");
+        return veryfityPhoneNumber(phonNumber);
     }
 
     public static String veryfityPhoneNumber(String phoneNumber) {
@@ -87,6 +104,18 @@ public class Tools {
         return road + number;
     }
 
+    public static Address getAddressFromUser() {
+        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N").toUpperCase();
+        Address address = new Address(null, null);
+        if ("Y".equals(choice)) {
+            Town town = Tools.getTownFromUser("Podaj miasto");
+            String road = Tools.getRoadFromUser();
+            address = new Address(town, road);
+            return address;
+        }
+        return address;
+    }
+
     public static ActivityLevel getActivityLevelFromUser(String message) {
         ActivityLevel.printValues();
         String level = getFromUser(message);
@@ -100,7 +129,7 @@ public class Tools {
     }
 
     public static Activity getActivityFromUser() {
-        
+
         SportDisciplines discipline;
         ActivityLevel level;
         discipline = getSportDisciplinesFromUser("Wybierz dyscypline: ");
