@@ -1,0 +1,21 @@
+{
+  "nickname": "ma_ry",
+  "mailAddress": "ma@ry.pl",
+  "password": "qwe",
+  "age": 33,
+  "phoneNumber": "123654789",
+  "sex": "KOBIETA",
+  "address": {
+    "townName": "ŁÓDŹ",
+    "localRoad": {
+      "roadName": "Piotrkowska",
+      "buildingNo": "123"
+    }
+  },
+  "activityList": [
+    {
+      "sportDisciplines": "DARTS",
+      "activityLevel": "EXPERT"
+    }
+  ]
+}
