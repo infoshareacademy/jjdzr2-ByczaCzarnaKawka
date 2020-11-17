@@ -53,18 +53,34 @@ public class Tools {
         return veryfityEmail(login);
     }
 
-    public static String veryfityEmail(String email) {
+    public static boolean isMailUniq(String email) {
+        List<User> allUsers = FileUtils.readUsersJsonFile();
+        boolean isUniq = true;
+        for (int i = 0; i < allUsers.size(); i++){
+           boolean isUniqTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
 
-        //make regular expression (wyrazenie regularne) for validate e-mail
-        Pattern pattern = Pattern.compile(".+@.+\\..+");
-        List<User> users = FileUtils.readUsersJsonFile();
-        boolean isUniqueEmail;
-        while (!isUniqueEmail) {
-            boolean unique;
-            email = getFromUser("Taki e-mail już istnieje, podaj inny: ");
-            for (User user: users) {
-            }
+           if (!isUniqTemp) {
+               System.out.println("Email jest nie unikalny!");
+               isUniq = false;
+           }
         }
+
+        return isUniq;
+    }
+
+    public static String veryfityEmail(String email) {
+        //System.out.println(isMailUniq(email));
+        boolean isUniq = isMailUniq(email);
+        //String newEmail = email;
+
+        while (!isUniq) {
+            email = getFromUser("odaj nowego emaila bo ten jest zajety!");
+            isUniq = isMailUniq(email);
+        }
+
+        //System.out.println("mam unikalnego maila " + newEmail);
+
+        Pattern pattern = Pattern.compile(".+@.+\\..+");
 
         Matcher matcher;
         do {

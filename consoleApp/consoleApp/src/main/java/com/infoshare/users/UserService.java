@@ -10,7 +10,7 @@ public class UserService {
         // TODO passwords are written by open text - fix it
         String password1= Tools.getFromUser("Podaj hasło:");
         String password2= Tools.getFromUser("Powtórz hasło:");
-        String password= Tools.veryfityPassword(password1,password2);
+        String password= Tools.verificatePasswprd(password1,password2);
         User user = new User(nickname, login, password);
 
         user.setAge(Tools.getIntFromUser("Ile masz lat:"));
