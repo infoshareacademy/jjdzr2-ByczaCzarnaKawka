@@ -1,22 +1,14 @@
 {
-  "nickname": "mary",
-  "mailAddress": "ma@ry.pl",
+  "nickname": "qwe",
+  "mailAddress": "qwe@qw.pl",
   "password": "qwe",
-  "age": 33,
+  "age": 22,
   "phoneNumber": "123123123",
   "sex": "KOBIETA",
   "address": {},
   "activityList": [
     {
       "sportDisciplines": "DARTS",
-      "activityLevel": "EXPERT"
-    },
-    {
-      "sportDisciplines": "CHESS",
-      "activityLevel": "EXPERT"
-    },
-    {
-      "sportDisciplines": "SQUASH",
       "activityLevel": "EXPERT"
     }
   ]
