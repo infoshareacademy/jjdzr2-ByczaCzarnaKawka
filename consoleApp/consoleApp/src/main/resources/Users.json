@@ -1,12 +1,20 @@
 {
-  "nickname": "kramerko",
-  "mailAddress": "kr@wm.pl",
+  "nickname": "mary",
+  "mailAddress": "ma@ry.pl",
   "password": "qwe",
-  "age": 44,
-  "phoneNumber": "123412345",
-  "sex": "MĘŻCZYZNA",
+  "age": 33,
+  "phoneNumber": "123123123",
+  "sex": "KOBIETA",
   "address": {},
   "activityList": [
+    {
+      "sportDisciplines": "DARTS",
+      "activityLevel": "EXPERT"
+    },
+    {
+      "sportDisciplines": "CHESS",
+      "activityLevel": "EXPERT"
+    },
     {
       "sportDisciplines": "SQUASH",
       "activityLevel": "EXPERT"

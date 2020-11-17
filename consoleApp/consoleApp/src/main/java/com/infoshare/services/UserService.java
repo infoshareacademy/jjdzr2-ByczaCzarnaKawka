@@ -25,26 +25,19 @@ public class UserService {
         saveUser(user);
     }
 
-    //TODO separate method logic into single responsibility methods
     private User getUserFromConsole() {
-        String nickname = Tools.getFromUser("Podaj imię/nick:");
+        String nickname = Tools.getFromUser("Podaj imię/nick: ");
         String login = Tools.getLoginFromUser();
         String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
-        int age = Tools.getIntFromUser("Ile masz lat:");
+        int age = Tools.getIntFromUser("Ile masz lat: ");
         user.setAge(age);
         String phoneNumber = Tools.getPhoneNumberFromUser();
         user.setPhoneNumber(phoneNumber);
         Sex sex = Tools.getSexFromUser("Podaj płeć: ");
         user.setSex(sex);
-
-        String choice;
-        do {
-            user.addActivity(Tools.getActivityFromUser());
-            choice = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
-        } while ("Y".equals(choice));
-
-        Address address=Tools.getAddressFromUser();
+        user = Tools.getActivityFromUser(user);
+        Address address = Tools.getAddressFromUser();
         user.setAddress(address);
         FileUtils.saveUsersToJsonFile(user);
         return user;
