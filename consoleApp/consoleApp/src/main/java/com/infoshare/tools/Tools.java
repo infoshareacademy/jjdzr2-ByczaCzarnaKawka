@@ -3,7 +3,9 @@ package com.infoshare.tools;
 import com.infoshare.activities.Activity;
 import com.infoshare.activities.ActivityLevel;
 import com.infoshare.activities.SportDisciplines;
+
 import com.infoshare.location.Address;
+
 import com.infoshare.location.Town;
 import com.infoshare.users.Sex;
 import com.infoshare.users.User;
@@ -27,6 +29,7 @@ public class Tools {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         return temp = scanner.nextInt();
+
     }
 
     public static String getPasswordFromUser() {
@@ -36,6 +39,7 @@ public class Tools {
     }
 
     public static String verificatePasswprd(String password1, String password2) {
+
         do {
             if (password1.equals(password2))
                 return password1;
@@ -86,7 +90,9 @@ public class Tools {
         do {
             matcher = pattern.matcher(email);
             if (!matcher.find()) {
+
                 email = getFromUser("E-mail wydaje się być nieprawidłowy. Podaj e-mail: ");
+
                 matcher = pattern.matcher(email);
             }
             matcher = pattern.matcher(email);
@@ -94,10 +100,12 @@ public class Tools {
         return email;
     }
 
+
     public static String getPhoneNumberFromUser() {
         String phonNumber = getFromUser("Podaj nr telefonu: ");
         return veryfityPhoneNumber(phonNumber);
     }
+
 
     public static String veryfityPhoneNumber(String phoneNumber) {
         //make regular expression (wyrazenie regularne) for validate phone number
@@ -106,7 +114,9 @@ public class Tools {
         do {
             matcher = pattern.matcher(phoneNumber);
             if (!matcher.find()) {
+
                 phoneNumber = getFromUser("Numer telefonu wydaje się być nieprawidłowy. Podaj numer telefonu: ");
+
                 matcher = pattern.matcher(phoneNumber);
             }
             matcher = pattern.matcher(phoneNumber);
@@ -132,6 +142,7 @@ public class Tools {
         return road + number;
     }
 
+
     public static Address getAddressFromUser() {
         String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N ").toUpperCase();
         Address address = new Address(null, null);
@@ -144,6 +155,7 @@ public class Tools {
         return address;
     }
 
+
     public static ActivityLevel getActivityLevelFromUser(String message) {
         ActivityLevel.printValues();
         String level = getFromUser(message);
@@ -155,6 +167,7 @@ public class Tools {
         String discipline = getFromUser(message);
         return SportDisciplines.valueOfLabel(discipline);
     }
+
 
     public static User getActivityFromUser(User user) {
         String choice;
@@ -170,6 +183,7 @@ public class Tools {
         } while ("Y".equals(choice));
         return user;
     }
+
 
 }
 

@@ -8,7 +8,9 @@ public enum Sex {
 
     public static void printValues() {
         for (Sex x : values()) {
+
             System.out.println(x);
+
         }
     }
 
