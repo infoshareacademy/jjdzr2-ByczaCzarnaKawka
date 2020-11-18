@@ -1,55 +1,68 @@
 [
   {
-    "nickname": "jola",
-    "mailAddress": "jo@la.pl",
-    "password": "qwe",
-    "age": 24,
-    "phoneNumber": "987987654",
+    "nickname": "marta",
+    "mailAddress": "ma@rt.ap",
+    "password": "qws",
+    "age": 23,
+    "phoneNumber": "987987987",
     "sex": "KOBIETA",
     "address": {
-      "townName": "WROCŁAW",
-      "roadName": "rzeczna22"
+      "townName": "GDYNIA",
+      "roadName": "Marzanny23"
     },
     "activityList": [
       {
-        "sportDisciplines": "DARTS",
-        "activityLevel": "EXPERT"
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "ADVANCED"
       }
     ]
   },
   {
-    "nickname": "mary",
-    "mailAddress": "ma@ry.pl",
-    "password": "qwe",
-    "age": 22,
-    "phoneNumber": "123456789",
-    "sex": "KOBIETA",
+    "nickname": "Michal",
+    "mailAddress": "random@gmail.com",
+    "password": "qwerrt12345",
+    "age": 0,
+    "phoneNumber": "",
     "address": {
-      "townName": "ŁÓDŹ",
-      "roadName": "Klonowa13"
+      "roadName": " "
     },
     "activityList": [
       {
-        "sportDisciplines": "DARTS",
-        "activityLevel": "EXPERT"
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      },
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "INTERMEDIATE"
+      },
+      {
+        "sportDisciplines": "BASKETBALL",
+
+        "activityLevel": "NEWBIE"
       }
     ]
   },
   {
-    "nickname": "Ola",
-    "mailAddress": "ola@wp.pl",
-    "password": "qwe",
-    "age": 22,
-    "phoneNumber": "987654321",
-    "sex": "KOBIETA",
+    "nickname": "Dorota",
+    "mailAddress": "random2@gmail.com",
+    "password": "qwerrt12345",
+    "age": 0,
+    "phoneNumber": "",
     "address": {
-      "townName": "POZNAŃ",
-      "roadName": "Krótka12"
+      "roadName": " "
     },
     "activityList": [
       {
-        "sportDisciplines": "CHESS",
-        "activityLevel": "EXPERT"
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      },
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "INTERMEDIATE"
+      },
+      {
+        "sportDisciplines": "BASKETBALL",
+        "activityLevel": "NEWBIE"
       }
     ]
   }

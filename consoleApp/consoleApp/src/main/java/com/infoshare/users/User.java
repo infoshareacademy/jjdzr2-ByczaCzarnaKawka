@@ -4,6 +4,7 @@ import com.infoshare.activities.Activity;
 import com.infoshare.location.Address;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -120,4 +121,6 @@ public class User {
     public int hashCode() {
         return Objects.hash(nickname, mailAddress);
     }
+
+
 }
