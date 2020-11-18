@@ -8,6 +8,8 @@ import com.infoshare.users.Sex;
 import com.infoshare.users.User;
 import com.infoshare.utils.FileUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class UserService {
@@ -39,7 +41,9 @@ public class UserService {
         user = Tools.getActivityFromUser(user);
         Address address = Tools.getAddressFromUser();
         user.setAddress(address);
-        FileUtils.saveUsersToJsonFile(user);
+        List<User> users=new ArrayList<>();
+        users.add(user);
+        FileUtils.saveUsersToJsonFile(users);
         return user;
     }
 

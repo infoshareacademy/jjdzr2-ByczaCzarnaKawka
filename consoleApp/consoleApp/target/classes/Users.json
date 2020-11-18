@@ -1,23 +1,20 @@
-{
-  "nickname": "mary",
-  "mailAddress": "ma@ry.pl",
-  "password": "qwe",
-  "age": 33,
-  "phoneNumber": "123123123",
-  "sex": "KOBIETA",
-  "address": {},
-  "activityList": [
-    {
-      "sportDisciplines": "DARTS",
-      "activityLevel": "EXPERT"
+[
+  {
+    "nickname": "Leon",
+    "mailAddress": "le@on.pl",
+    "password": "qwe",
+    "age": 27,
+    "phoneNumber": "987987987",
+    "sex": "MĘŻCZYZNA",
+    "address": {
+      "townName": "KRAKÓW",
+      "roadName": "Wawelska12"
     },
-    {
-      "sportDisciplines": "CHESS",
-      "activityLevel": "EXPERT"
-    },
-    {
-      "sportDisciplines": "SQUASH",
-      "activityLevel": "EXPERT"
-    }
-  ]
-}
+    "activityList": [
+      {
+        "sportDisciplines": "DARTS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  }
+]

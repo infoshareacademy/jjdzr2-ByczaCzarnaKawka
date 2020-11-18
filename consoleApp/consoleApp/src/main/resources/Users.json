@@ -1,15 +1,20 @@
-{
-  "nickname": "qwe",
-  "mailAddress": "qwe@qw.pl",
-  "password": "qwe",
-  "age": 22,
-  "phoneNumber": "123123123",
-  "sex": "KOBIETA",
-  "address": {},
-  "activityList": [
-    {
-      "sportDisciplines": "DARTS",
-      "activityLevel": "EXPERT"
-    }
-  ]
-}
+[
+  {
+    "nickname": "jola",
+    "mailAddress": "jo@la.pl",
+    "password": "qwe",
+    "age": 24,
+    "phoneNumber": "987987654",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "WROCŁAW",
+      "roadName": "rzeczna22"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "DARTS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  }
+]
