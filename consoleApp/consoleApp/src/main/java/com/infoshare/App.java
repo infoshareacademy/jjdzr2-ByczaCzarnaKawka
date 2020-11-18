@@ -1,10 +1,9 @@
 package com.infoshare;
 
+import com.infoshare.menu.Menu;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello Bycza Czarna Kawka" );
+public class App {
+    public static void main(String[] args) {
+        new Menu().start();
     }
 }
