@@ -1,19 +1,67 @@
 [
   {
-    "nickname": "jola",
-    "mailAddress": "jo@la.pl",
-    "password": "qwe",
-    "age": 24,
-    "phoneNumber": "987987654",
+    "nickname": "marta",
+    "mailAddress": "ma@rt.ap",
+    "password": "qws",
+    "age": 23,
+    "phoneNumber": "987987987",
     "sex": "KOBIETA",
     "address": {
-      "townName": "WROCŁAW",
-      "roadName": "rzeczna22"
+      "townName": "GDYNIA",
+      "roadName": "Marzanny23"
     },
     "activityList": [
       {
-        "sportDisciplines": "DARTS",
-        "activityLevel": "EXPERT"
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "Michal",
+    "mailAddress": "random@gmail.com",
+    "password": "qwerrt12345",
+    "age": 0,
+    "phoneNumber": "",
+    "address": {
+      "roadName": " "
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      },
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "INTERMEDIATE"
+      },
+      {
+        "sportDisciplines": "BASKETBALL",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "Dorota",
+    "mailAddress": "random2@gmail.com",
+    "password": "qwerrt12345",
+    "age": 0,
+    "phoneNumber": "",
+    "address": {
+      "roadName": " "
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      },
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "INTERMEDIATE"
+      },
+      {
+        "sportDisciplines": "BASKETBALL",
+        "activityLevel": "NEWBIE"
       }
     ]
   }

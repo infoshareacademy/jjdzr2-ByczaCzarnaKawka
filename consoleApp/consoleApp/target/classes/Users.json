@@ -1,18 +1,54 @@
 [
   {
-    "nickname": "Leon",
-    "mailAddress": "le@on.pl",
+    "nickname": "jola",
+    "mailAddress": "jo@la.pl",
     "password": "qwe",
-    "age": 27,
-    "phoneNumber": "987987987",
-    "sex": "MĘŻCZYZNA",
+    "age": 24,
+    "phoneNumber": "987987654",
+    "sex": "KOBIETA",
     "address": {
-      "townName": "KRAKÓW",
-      "roadName": "Wawelska12"
+      "townName": "WROCŁAW",
+      "roadName": "rzeczna22"
     },
     "activityList": [
       {
         "sportDisciplines": "DARTS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "mary",
+    "mailAddress": "ma@ry.pl",
+    "password": "qwe",
+    "age": 22,
+    "phoneNumber": "123456789",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "ŁÓDŹ",
+      "roadName": "Klonowa13"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "DARTS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "Ola",
+    "mailAddress": "ola@wp.pl",
+    "password": "qwe",
+    "age": 22,
+    "phoneNumber": "987654321",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "POZNAŃ",
+      "roadName": "Krótka12"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
         "activityLevel": "EXPERT"
       }
     ]

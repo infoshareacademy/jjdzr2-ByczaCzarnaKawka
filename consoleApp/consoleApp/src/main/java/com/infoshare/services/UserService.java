@@ -41,22 +41,24 @@ public class UserService {
         user = Tools.getActivityFromUser(user);
         Address address = Tools.getAddressFromUser();
         user.setAddress(address);
-        List<User> users=new ArrayList<>();
-        users.add(user);
-        FileUtils.saveUsersToJsonFile(users);
         return user;
     }
 
     public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
+        System.out.println("userMap: " + usersMap);
 
         if (usersMap.containsKey(user.getMailAddress())) {
             System.out.println("Unfortunately the mail address is already exist!");
         } else {
             usersMap.put(user.getMailAddress(), user);
+            System.out.println("userMap: " + usersMap);
+            FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
             System.out.println("User successfully added to list!");
         }
     }
+
+
 
     public void printUserList() {
         Map<String, User> usersMap = userRepository.getUsersMap();
