@@ -2,8 +2,15 @@ package com.infoshare.services;
 
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
+
+import com.infoshare.location.Town;
 import com.infoshare.tools.Tools;
+import com.infoshare.users.Sex;
 import com.infoshare.users.User;
+import com.infoshare.utils.FileUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Map;
 
@@ -22,34 +29,21 @@ public class UserService {
         saveUser(user);
     }
 
-    //TODO separate method logic into single responsibility methods
+
     private User getUserFromConsole() {
-        String nickname = Tools.getFromUser("Podaj imię/nick:");
-        String login = Tools.getFromUser("Podaj adres e-mail:");
-        login = Tools.veryfityEmail(login);
-        // TODO passwords are written by open text - fix it
-        String password1 = Tools.getFromUser("Podaj hasło:");
-        String password2 = Tools.getFromUser("Powtórz hasło:");
-        String password = Tools.veryfityPassword(password1, password2);
+        String nickname = Tools.getFromUser("Podaj imię/nick: ");
+        String login = Tools.getLoginFromUser();
+        String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
-
-        user.setAge(Tools.getIntFromUser("Ile masz lat:"));
-
-        String phoneNumber = Tools.getFromUser("Podaj nr telefonu:");
-        user.setPhoneNumber(Tools.veryfityPhoneNumber(phoneNumber));
-
-        user.setSex(Tools.getSexFromUser("Podaj płeć: "));
-
-        String next;
-        do {
-            user.addActivity(Tools.getActivityFromUser());
-            next = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
-        } while ("Y".equals(next));
-
-        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y?N").toUpperCase();
-        if ("Y".equals(choice)) {
-            user.setAddress(new Address(Tools.getTownFromUser("Podaj miasto"), Tools.getRoadFromUser()));
-        }
+        int age = Tools.getIntFromUser("Ile masz lat: ");
+        user.setAge(age);
+        String phoneNumber = Tools.getPhoneNumberFromUser();
+        user.setPhoneNumber(phoneNumber);
+        Sex sex = Tools.getSexFromUser("Podaj płeć: ");
+        user.setSex(sex);
+        user = Tools.getActivityFromUser(user);
+        Address address = Tools.getAddressFromUser();
+        user.setAddress(address);
 
         return user;
     }
@@ -57,13 +51,12 @@ public class UserService {
     public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
 
-        if (usersMap.containsKey(user.getMailAddress())) {
-            System.out.println("Unfortunately the mail address is already exist!");
-        } else {
-            usersMap.put(user.getMailAddress(), user);
+
+            FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
+
             System.out.println("User successfully added to list!");
         }
-    }
+
 
     public void printUserList() {
         Map<String, User> usersMap = userRepository.getUsersMap();

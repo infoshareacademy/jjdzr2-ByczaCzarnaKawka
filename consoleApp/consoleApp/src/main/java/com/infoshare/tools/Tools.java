@@ -3,9 +3,15 @@ package com.infoshare.tools;
 import com.infoshare.activities.Activity;
 import com.infoshare.activities.ActivityLevel;
 import com.infoshare.activities.SportDisciplines;
+
+import com.infoshare.location.Address;
+
 import com.infoshare.location.Town;
 import com.infoshare.users.Sex;
+import com.infoshare.users.User;
+import com.infoshare.utils.FileUtils;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,36 +29,83 @@ public class Tools {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         return temp = scanner.nextInt();
+
     }
 
-    public static String veryfityPassword(String password1, String password2) {
+    public static String getPasswordFromUser() {
+        String password1 = Tools.getFromUser("Podaj hasło: ");
+        String password2 = Tools.getFromUser("Powtórz hasło: ");
+        return verificatePasswprd(password1, password2);
+    }
+
+    public static String verificatePasswprd(String password1, String password2) {
+
         do {
             if (password1.equals(password2))
                 return password1;
             else {
-                System.out.println("Hasła nie są identyczne.");
-                password1 = getFromUser("Podaj hasło:");
-                password2 = getFromUser("Powtórz hasło:");
+                System.out.println("Hasła nie są identyczne. ");
+                password1 = getFromUser("Podaj hasło: ");
+                password2 = getFromUser("Powtórz hasło: ");
             }
         } while (!password1.equals(password2));
         return password1;
     }
 
-    public static String veryfityEmail(String email) {
+    public static String getLoginFromUser() {
+        String login = Tools.getFromUser("Podaj adres e-mail: ");
+        return veryfityEmail(login);
+    }
 
-        //make regular expression (wyrazenie regularne) for validate e-mail
+    public static boolean isMailUniq(String email) {
+        List<User> allUsers = FileUtils.readUsersJsonFile();
+        boolean isUniq = true;
+        for (int i = 0; i < allUsers.size(); i++){
+           boolean isUniqTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
+
+           if (!isUniqTemp) {
+               System.out.println("Email jest nie unikalny!");
+               isUniq = false;
+           }
+        }
+
+        return isUniq;
+    }
+
+    public static String veryfityEmail(String email) {
+        //System.out.println(isMailUniq(email));
+        boolean isUniq = isMailUniq(email);
+        //String newEmail = email;
+
+        while (!isUniq) {
+            email = getFromUser("odaj nowego emaila bo ten jest zajety!");
+            isUniq = isMailUniq(email);
+        }
+
+        //System.out.println("mam unikalnego maila " + newEmail);
+
         Pattern pattern = Pattern.compile(".+@.+\\..+");
+
         Matcher matcher;
         do {
             matcher = pattern.matcher(email);
             if (!matcher.find()) {
-                email = getFromUser("E-mail wydaje się być nieprawidłowy. Podaj e-mail");
+
+                email = getFromUser("E-mail wydaje się być nieprawidłowy. Podaj e-mail: ");
+
                 matcher = pattern.matcher(email);
             }
             matcher = pattern.matcher(email);
         } while (!matcher.find());
         return email;
     }
+
+
+    public static String getPhoneNumberFromUser() {
+        String phonNumber = getFromUser("Podaj nr telefonu: ");
+        return veryfityPhoneNumber(phonNumber);
+    }
+
 
     public static String veryfityPhoneNumber(String phoneNumber) {
         //make regular expression (wyrazenie regularne) for validate phone number
@@ -61,7 +114,9 @@ public class Tools {
         do {
             matcher = pattern.matcher(phoneNumber);
             if (!matcher.find()) {
-                phoneNumber = getFromUser("Numer telefonu wydaje się być nieprawidłowy. Podaj numer telefonu");
+
+                phoneNumber = getFromUser("Numer telefonu wydaje się być nieprawidłowy. Podaj numer telefonu: ");
+
                 matcher = pattern.matcher(phoneNumber);
             }
             matcher = pattern.matcher(phoneNumber);
@@ -87,6 +142,20 @@ public class Tools {
         return road + number;
     }
 
+
+    public static Address getAddressFromUser() {
+        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N ").toUpperCase();
+        Address address = new Address(null, null);
+        if ("Y".equals(choice)) {
+            Town town = Tools.getTownFromUser("Podaj miasto: ");
+            String road = Tools.getRoadFromUser();
+            address = new Address(town, road);
+            return address;
+        }
+        return address;
+    }
+
+
     public static ActivityLevel getActivityLevelFromUser(String message) {
         ActivityLevel.printValues();
         String level = getFromUser(message);
@@ -99,13 +168,22 @@ public class Tools {
         return SportDisciplines.valueOfLabel(discipline);
     }
 
-    public static Activity getActivityFromUser() {
+
+    public static User getActivityFromUser(User user) {
+        String choice;
+        Activity activity;
         SportDisciplines discipline;
         ActivityLevel level;
-        discipline = getSportDisciplinesFromUser("Wybierz dyscypline: ");
-        level = getActivityLevelFromUser("Wybierz poziom zaawansowania: ");
-        Activity activity = new Activity(discipline, level);
-        return activity;
+        do {
+            discipline = getSportDisciplinesFromUser("Wybierz dyscypline: ");
+            level = getActivityLevelFromUser("Wybierz poziom zaawansowania: ");
+            activity = new Activity(discipline, level);
+            user.addActivity(activity);
+            choice = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
+        } while ("Y".equals(choice));
+        return user;
     }
+
+
 }
 

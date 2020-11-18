@@ -1,28 +1,76 @@
-{
-  "nickname": "MichalM",
-  "mailAddress": "random@gmail.com",
-  "password": "qwerrt12345",
-  "age": 28,
-  "sex": "MALE",
-  "address": {
-    "townName": "Gdańsk",
-    "localRoad": {
-      "roadName": "random road",
-      "buildingNo": "8"
-    }
+[
+  {
+    "nickname": "dfwf2",
+    "mailAddress": "eee@ee.pl",
+    "password": "1234",
+    "age": 200000000,
+    "phoneNumber": "123456789",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "GDAŃSK",
+      "roadName": "312312312remontowa"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TENNIS",
+        "activityLevel": "ROOKIE"
+      },
+      {
+        "sportDisciplines": "GOLF",
+        "activityLevel": "NEWBIE"
+      },
+      {
+        "sportDisciplines": "CHESS",
+        "activityLevel": "NEWBIE"
+      }
+    ]
   },
-  "activityList": [
-    {
-      "sportDisciplines": "Football",
-      "activityLevel": "Newbie"
+  {
+    "nickname": "adam",
+    "mailAddress": "aa@aa.pl",
+    "password": "1234",
+    "age": 12,
+    "phoneNumber": "123456789",
+    "sex": "KOBIETA",
+    "address": {},
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "Roman",
+    "mailAddress": "22@@vv.pl",
+    "password": "1234",
+    "age": 12,
+    "phoneNumber": "123123123",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "GDYNIA",
+      "roadName": "polna12"
     },
-    {
-      "sportDisciplines": "Boxing",
-      "activityLevel": "Intermediate"
-    },
-    {
-      "sportDisciplines": "Basketball",
-      "activityLevel": "Newbie"
-    }
-  ]
-}
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "rrr",
+    "mailAddress": "aaarrtt@wp.pl",
+    "password": "1234",
+    "age": 12,
+    "phoneNumber": "123456789",
+    "sex": "KOBIETA",
+    "address": {},
+    "activityList": [
+      {
+        "sportDisciplines": "CYCLING",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  }
+]

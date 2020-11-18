@@ -3,14 +3,14 @@ package com.infoshare.users;
 import com.infoshare.tools.Tools;
 
 public enum Sex {
-    MALE,
-    FEMALE,
     KOBIETA,
     MĘŻCZYZNA;
 
     public static void printValues() {
         for (Sex x : values()) {
-            System.out.println(x.ordinal() + " " + x);
+
+            System.out.println(x);
+
         }
     }
 
