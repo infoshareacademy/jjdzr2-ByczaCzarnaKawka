@@ -1,5 +1,41 @@
 [
   {
+    "nickname": "Olgiert",
+    "mailAddress": "ol@gi.pl",
+    "password": "qwe",
+    "age": 33,
+    "phoneNumber": "987654321",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "KRAKÓW",
+      "roadName": "Smocza2/5"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "Kapusta",
+    "mailAddress": "ka@pu.sta",
+    "password": "qwe",
+    "age": 24,
+    "phoneNumber": "987898765",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "ŁÓDŹ",
+      "roadName": "kowalska22"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TABLE_TENNIS",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
     "nickname": "marta",
     "mailAddress": "ma@rt.ap",
     "password": "qws",
@@ -14,6 +50,42 @@
       {
         "sportDisciplines": "SWIMMING",
         "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "Anna",
+    "mailAddress": "anna@wp.pl",
+    "password": "qwe",
+    "age": 18,
+    "phoneNumber": "123123123",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "GDYNIA",
+      "roadName": "Stoczniowa3/4"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "HANDBALL",
+        "activityLevel": "INTERMEDIATE"
+      }
+    ]
+  },
+  {
+    "nickname": "Tomasz",
+    "mailAddress": "to@ma.sz",
+    "password": "qwe",
+    "age": 22,
+    "phoneNumber": "123123123",
+    "sex": "MĘŻCZYZNA",
+    "address": {
+      "townName": "KATOWICE",
+      "roadName": "1-go12"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "ROOKIE"
       }
     ]
   },
@@ -37,7 +109,61 @@
       },
       {
         "sportDisciplines": "BASKETBALL",
-
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "kokos",
+    "mailAddress": "ko@ko.pl",
+    "password": "poi",
+    "age": 34,
+    "phoneNumber": "125478963",
+    "sex": "MĘŻCZYZNA",
+    "address": {
+      "townName": "WARSZAWA",
+      "roadName": "warszawska23"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "ROOKIE"
+      },
+      {
+        "sportDisciplines": "MOTOCROSS",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "q",
+    "mailAddress": "qq@q.pl",
+    "password": "qwe",
+    "age": 22,
+    "phoneNumber": "111111111",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "ŁÓDŹ",
+      "roadName": "WIN2a"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "Moris",
+    "mailAddress": "mo@ri.pl",
+    "password": "qwe",
+    "age": 321,
+    "phoneNumber": "1213123132",
+    "sex": "MĘŻCZYZNA",
+    "address": {},
+    "activityList": [
+      {
+        "sportDisciplines": "GOLF",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -63,6 +189,46 @@
       {
         "sportDisciplines": "BASKETBALL",
         "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "ananas",
+    "mailAddress": "na@an.pl",
+    "password": "lki",
+    "age": 22,
+    "phoneNumber": "159159159",
+    "sex": "MĘŻCZYZNA",
+    "address": {
+      "townName": "WARSZAWA",
+      "roadName": "Liliowa12"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "VOLLEYBALL",
+        "activityLevel": "ADVANCED"
+      },
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "Jola",
+    "mailAddress": "jo@la.pl",
+    "password": "qwe",
+    "age": 11,
+    "phoneNumber": "123123123",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "WARSZAWA",
+      "roadName": "Marszałkowskaqw"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "SNOOKER",
+        "activityLevel": "ADVANCED"
       }
     ]
   }

@@ -10,6 +10,7 @@ import com.infoshare.users.Sex;
 import com.infoshare.users.User;
 import com.infoshare.utils.FileUtils;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -27,8 +28,12 @@ public class Tools {
         int temp;
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
-        return temp = scanner.nextInt();
-
+        try {
+            temp = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            return getIntFromUser("Nie podałeś liczby. Wprowadz wartość jeszcze raz: ");
+        }
+        return temp;
     }
 
     public static String getPasswordFromUser() {
@@ -59,39 +64,28 @@ public class Tools {
     public static boolean isMailUniq(String email) {
         List<User> allUsers = FileUtils.readUsersJsonFile();
         boolean isUniq = true;
-        for (int i = 0; i < allUsers.size(); i++){
-           boolean isUniqTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
-
-           if (!isUniqTemp) {
-               System.out.println("Email jest nie unikalny!");
-               isUniq = false;
-           }
+        for (int i = 0; i < allUsers.size(); i++) {
+            boolean isUniqTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
+            if (!isUniqTemp) {
+                System.out.println("Email jest nie unikalny!");
+                isUniq = false;
+            }
         }
-
         return isUniq;
     }
 
     public static String veryfityEmail(String email) {
-        //System.out.println(isMailUniq(email));
         boolean isUniq = isMailUniq(email);
-        //String newEmail = email;
-
         while (!isUniq) {
-            email = getFromUser("odaj nowego emaila bo ten jest zajety!");
+            email = getFromUser("Podaj nowego emaila bo ten jest zajety!");
             isUniq = isMailUniq(email);
         }
-
-        //System.out.println("mam unikalnego maila " + newEmail);
-
-        Pattern pattern = Pattern.compile(".+@.+\\..+");
-
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}");
         Matcher matcher;
         do {
             matcher = pattern.matcher(email);
             if (!matcher.find()) {
-
                 email = getFromUser("E-mail wydaje się być nieprawidłowy. Podaj e-mail: ");
-
                 matcher = pattern.matcher(email);
             }
             matcher = pattern.matcher(email);
@@ -99,12 +93,19 @@ public class Tools {
         return email;
     }
 
+    public static int getAgeFromUser(){
+        int age=getIntFromUser("Ile masz lat: ");
+        if(age>130){
+            System.out.println("Ludzie nie żyją tek długo, podaj swój prawdziwy wiek: ");
+            return getAgeFromUser();
+        }
+        return age;
+    }
 
     public static String getPhoneNumberFromUser() {
         String phonNumber = getFromUser("Podaj nr telefonu: ");
         return veryfityPhoneNumber(phonNumber);
     }
-
 
     public static String veryfityPhoneNumber(String phoneNumber) {
         //make regular expression (wyrazenie regularne) for validate phone number
@@ -113,9 +114,7 @@ public class Tools {
         do {
             matcher = pattern.matcher(phoneNumber);
             if (!matcher.find()) {
-
                 phoneNumber = getFromUser("Numer telefonu wydaje się być nieprawidłowy. Podaj numer telefonu: ");
-
                 matcher = pattern.matcher(phoneNumber);
             }
             matcher = pattern.matcher(phoneNumber);
@@ -137,10 +136,19 @@ public class Tools {
 
     public static String getRoadFromUser() {
         String road = getFromUser("Podaj nazwę ulicy: ");
-        String number = getFromUser("Podaj numer ulicy: ");
+        String number = getFromUser("Podaj numer domu: ");
+        Pattern numberPattern = Pattern.compile("\\d+");
+        Matcher matcher;
+        do {
+            matcher = numberPattern.matcher(number);
+            if (!matcher.find()) {
+                number = getFromUser("Numer wydaje się być nieprawidłowy. Podaj numer: ");
+                matcher = numberPattern.matcher(number);
+            }
+            matcher = numberPattern.matcher(number);
+        } while (!matcher.find());
         return road + number;
     }
-
 
     public static Address getAddressFromUser() {
         String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N ").toUpperCase();
