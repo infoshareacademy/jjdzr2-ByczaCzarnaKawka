@@ -1,0 +1,71 @@
+[
+  {
+    "ordinalNumber": 1,
+    "name": "COS Gdańsk",
+    "discipline": "BASKETBALL",
+    "phoneNumber": "123456789",
+    "address": {
+      "townName": "GDAŃSK",
+      "roadName": "ul. Sportowa 1"
+    },
+    "openHour": {
+      "hour": 15,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "closeHour": {
+      "hour": 16,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "price": 200
+  },
+  {
+    "ordinalNumber": 2,
+    "name": "COS Łódź",
+    "discipline": "BOXING",
+    "phoneNumber": "147258369",
+    "address": {
+      "townName": "ŁÓDŹ",
+      "roadName": "ul. Bokserska 1"
+    },
+    "openHour": {
+      "hour": 15,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "closeHour": {
+      "hour": 16,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "price": 50
+  },
+  {
+    "ordinalNumber": 3,
+    "name": "COS Białystok",
+    "discipline": "BOXING",
+    "phoneNumber": "147258369",
+    "address": {
+      "townName": "BIAŁYSTOK",
+      "roadName": "ul. Bokserska 1"
+    },
+    "openHour": {
+      "hour": 15,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "closeHour": {
+      "hour": 16,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "price": 50
+  }
+]
