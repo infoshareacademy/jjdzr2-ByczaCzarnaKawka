@@ -15,6 +15,7 @@ public enum ActivityLevel {
         }
     }
 
+    //FIXME: czy porównanie robić na pewno tutaj?
     public static ActivityLevel valueOfLabel(String label) {
         for (int i = 0; i < ActivityLevel.values().length; i++) {
             if (values()[i].name().equals(label.toUpperCase())) {

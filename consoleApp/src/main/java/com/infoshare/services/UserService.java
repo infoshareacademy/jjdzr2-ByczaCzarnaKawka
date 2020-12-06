@@ -28,6 +28,7 @@ public class UserService {
     }
 
     private User getUserFromConsole() {
+        //FIXME: do przegadania rozbicie na metody
         String nickname = Tools.getFromUser("Your name: ");
         String login = Tools.getLoginFromUser();
         String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it

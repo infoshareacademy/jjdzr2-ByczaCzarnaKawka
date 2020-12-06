@@ -18,10 +18,9 @@ import java.util.regex.Pattern;
 
 public class Tools {
     public static String getFromUser(String message) {
-        String temp;
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
-        return temp = scanner.next();
+        return scanner.next();
     }
 
     public static int getIntFromUser(String message) {
@@ -39,10 +38,10 @@ public class Tools {
     public static String getPasswordFromUser() {
         String password1 = Tools.getFromUser("Podaj hasło: ");
         String password2 = Tools.getFromUser("Powtórz hasło: ");
-        return verificatePasswprd(password1, password2);
+        return verificationPassword(password1, password2);
     }
 
-    public static String verificatePasswprd(String password1, String password2) {
+    public static String verificationPassword(String password1, String password2) {
 
         do {
             if (password1.equals(password2))
@@ -150,6 +149,7 @@ public class Tools {
         return road + number;
     }
 
+    //FIXME: omówić przekazywanie nulli - czy nie dawać defaultowej wartości?
     public static Address getAddressFromUser() {
         String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N ").toUpperCase();
         Address address = new Address(null, null);

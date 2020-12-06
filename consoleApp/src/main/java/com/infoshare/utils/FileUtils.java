@@ -8,7 +8,6 @@ import com.infoshare.workoutPlaces.SportFacility;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -30,24 +29,13 @@ public class FileUtils {
 
     public static List<User> readUsersJsonFile() {
         try (Reader reader = new FileReader(USERS_JSON_FILE)) {
-            // System.out.println("Reading Users from json file: " + USERS_JSON_FILE);
             Type listType = new TypeToken<ArrayList<User>>() {
             }.getType();
             List<User> users = GSON.fromJson(reader, listType);
-            // System.out.println("Users successfully uploaded. Number of users: " + users.size());
             return users;
         } catch (IOException e) {
             System.out.println("Users json file not found or broken: " + e.getMessage());
             return Collections.emptyList();
-        }
-    }
-
-    public static void saveObjectSport(List<SportFacility> sportFacilities) {
-        try (Writer writer = new FileWriter(SPORTS_JSON_FILE)) {
-            GSON.toJson(sportFacilities, writer);
-            System.out.println("SportFacilities saved to json file:  " + SPORTS_JSON_FILE);
-        } catch (IOException e) {
-            System.out.println("Exception during saving json file: " + e.getMessage());
         }
     }
 
