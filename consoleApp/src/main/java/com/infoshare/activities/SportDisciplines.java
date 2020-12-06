@@ -37,6 +37,6 @@ public enum SportDisciplines {
                 return values()[i];
             }
         }
-        return Tools.getSportDisciplinesFromUser("Nie ma takiej dyscypliny, wybież z listy: ");
+        return Tools.getSportDisciplinesFromUser("There's no such an activity. Choose one from the following: ");
     }
 }

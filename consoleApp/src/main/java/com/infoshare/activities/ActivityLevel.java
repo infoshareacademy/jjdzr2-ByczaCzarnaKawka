@@ -1,7 +1,6 @@
 package com.infoshare.activities;
 
 import com.infoshare.tools.Tools;
-import com.infoshare.users.Sex;
 
 public enum ActivityLevel {
     NEWBIE,
@@ -22,7 +21,7 @@ public enum ActivityLevel {
                 return values()[i];
             }
         }
-        return Tools.getActivityLevelFromUser("Nie przewidujemy takiego poziomu zaawansowania, wybierz z listy: ");
+        return Tools.getActivityLevelFromUser("There's no such a level of activity. Choose one from the following: ");
     }
 }
 

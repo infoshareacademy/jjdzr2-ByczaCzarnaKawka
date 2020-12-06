@@ -32,9 +32,8 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{ \n" +
-                "townName= " + townName +
-                "," + "\n" + "localRoad= " + roadName +
-                '}';
+        return "Address: \n" +
+                "Town: " + townName +
+                "," + "\n" + "Road: " + roadName;
     }
 }

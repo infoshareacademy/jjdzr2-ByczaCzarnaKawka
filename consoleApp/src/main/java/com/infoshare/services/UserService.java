@@ -28,7 +28,7 @@ public class UserService {
     }
 
     private User getUserFromConsole() {
-        String nickname = Tools.getFromUser("Podaj imię/nick: ");
+        String nickname = Tools.getFromUser("Your name: ");
         String login = Tools.getLoginFromUser();
         String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
@@ -36,7 +36,7 @@ public class UserService {
         user.setAge(age);
         String phoneNumber = Tools.getPhoneNumberFromUser();
         user.setPhoneNumber(phoneNumber);
-        Sex sex = Tools.getSexFromUser("Podaj płeć: ");
+        Sex sex = Tools.getSexFromUser("Your gender: ");
         user.setSex(sex);
         user = Tools.getActivityFromUser(user);
         Address address = Tools.getAddressFromUser();

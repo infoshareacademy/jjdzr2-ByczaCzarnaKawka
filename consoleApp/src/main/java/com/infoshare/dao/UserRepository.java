@@ -1,13 +1,9 @@
 package com.infoshare.dao;
 
-import com.infoshare.activities.Activity;
-import com.infoshare.activities.ActivityLevel;
-import com.infoshare.activities.SportDisciplines;
 import com.infoshare.users.User;
 
 import com.infoshare.utils.FileUtils;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 

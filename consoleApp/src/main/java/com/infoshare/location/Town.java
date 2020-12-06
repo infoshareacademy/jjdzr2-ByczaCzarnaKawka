@@ -15,7 +15,7 @@ public enum Town {
     WARSZAWA,
     WROCŁAW;
 
-    public static void printValiu() {
+    public static void printValue() {
         for (Town x : values()) {
             System.out.println(x);
         }
@@ -27,6 +27,6 @@ public enum Town {
                 return values()[i];
             }
         }
-        return Tools.getTownFromUser("Nie nie ma takiego miasta, wybierz z listy: ");
+        return Tools.getTownFromUser("There's no such a Town. Choose one from the following: ");
     }
 }

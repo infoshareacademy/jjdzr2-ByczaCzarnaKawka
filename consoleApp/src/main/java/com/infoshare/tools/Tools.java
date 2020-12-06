@@ -31,7 +31,7 @@ public class Tools {
         try {
             temp = scanner.nextInt();
         } catch (InputMismatchException e) {
-            return getIntFromUser("Nie podałeś liczby. Wprowadz wartość jeszcze raz: ");
+            return getIntFromUser(" Nie podałeś liczby. Wprowadz wartość jeszcze raz: ");
         }
         return temp;
     }
@@ -129,7 +129,7 @@ public class Tools {
     }
 
     public static Town getTownFromUser(String message) {
-        Town.printValiu();
+        Town.printValue();
         String town = getFromUser(message);
         return Town.valueOfLabel(town);
     }
