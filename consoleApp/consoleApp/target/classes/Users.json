@@ -18,6 +18,24 @@
     ]
   },
   {
+    "nickname": "Kapusta",
+    "mailAddress": "ka@pu.sta",
+    "password": "qwe",
+    "age": 24,
+    "phoneNumber": "987898765",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "ŁÓDŹ",
+      "roadName": "kowalska22"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TABLE_TENNIS",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
     "nickname": "marta",
     "mailAddress": "ma@rt.ap",
     "password": "qws",
@@ -32,6 +50,24 @@
       {
         "sportDisciplines": "SWIMMING",
         "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "Anna",
+    "mailAddress": "anna@wp.pl",
+    "password": "qwe",
+    "age": 18,
+    "phoneNumber": "123123123",
+    "sex": "KOBIETA",
+    "address": {
+      "townName": "GDYNIA",
+      "roadName": "Stoczniowa3/4"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "HANDBALL",
+        "activityLevel": "INTERMEDIATE"
       }
     ]
   },
