@@ -1,7 +1,10 @@
 package com.infoshare.services;
 
+import com.infoshare.activities.Activity;
+import com.infoshare.activities.SportDisciplines;
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
+import com.infoshare.location.Town;
 import com.infoshare.tools.Tools;
 import com.infoshare.users.Sex;
 import com.infoshare.users.User;
@@ -9,6 +12,7 @@ import com.infoshare.utils.FileUtils;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -75,5 +79,44 @@ public class UserService {
         }
     }
 
+
+    public void printUserList(Map<String, User> map) {
+        System.out.println("-----------");
+        System.out.println("USERS LIST:");
+        System.out.println("----------- \n");
+
+        for (User user : map.values()) {
+            System.out.println("<<<<<<<<<<<<<<<<");
+            user.printBasicInfo();
+            System.out.println(">>>>>>>>>>>>>>>>\n");
+        }
+    }
+
+    public Map<String, User> foundUser() {
+        Map<String, User> mapRepository = new HashMap<>();
+        Map<String, User> mapFound = new HashMap<>();
+        Town town;
+        SportDisciplines dysciplin;
+        town = Tools.getTownFromUser("Choice town to find your game partner: ");
+        dysciplin = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
+        mapRepository = userRepository.getUsersMap();
+        for (String email : mapRepository.keySet()) {
+            Town checkTown = mapRepository.get(email).getAddress().getTownName();
+            if (town.equals(checkTown)) {
+                List<Activity> listActivity = mapRepository.get(email).getActivityList();
+                for (Activity act : listActivity) {
+                    if (dysciplin.equals(act.getSportDisciplines())) {
+                        mapFound.put(email, mapRepository.get(email));
+                    }
+                }
+            }
+        }
+        if (!mapFound.isEmpty()) {
+            printUserList(mapFound);
+        } else {
+            System.out.println("Unfortunately no one in " + town + " trains " + dysciplin);
+        }
+        return mapFound;
+    }
 }
 

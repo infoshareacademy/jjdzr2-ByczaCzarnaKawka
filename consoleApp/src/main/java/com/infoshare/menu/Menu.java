@@ -51,7 +51,10 @@ public class Menu {
                     userService.handleNewUSer();
                     break;
                 }
-                case 2: {
+                case 2:
+                case 5:
+                case 6:
+                case 8:{
                     System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
                     break;
                 }
@@ -63,20 +66,8 @@ public class Menu {
                     facilityService.printFacilityList();
                     break;
                 }
-                case 5: {
-                    System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
-                    break;
-                }
-                case 6: {
-                    System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
-                    break;
-                }
                 case 7: {
-                    System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
-                    break;
-                }
-                case 8: {
-                    System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
+                    userService.foundUser();
                     break;
                 }
                 case 0: {
@@ -86,7 +77,6 @@ public class Menu {
                 default: {
                     System.out.println("Niepoprawny wybór. Wybierz ponownie! \n");
                 }
-
             }
         } while (userChoice != 0);
     }
