@@ -22,6 +22,11 @@ public class UserService {
 
     private UserRepository userRepository;
 
+    private final String userListHeader=
+            "----------- \n"
+            +"USERS LIST: \n"
+            +"----------- ";
+
     public UserService() {
         this.userRepository = new UserRepository();
     }
@@ -61,17 +66,12 @@ public class UserService {
 
             System.out.println("User successfully added to list!");
         }
-
-
     }
 
     public void printUserList() {
         Map<String, User> usersMap = userRepository.getUsersMap();
 
-        System.out.println("-----------");
-        System.out.println("USERS LIST:");
-        System.out.println("----------- \n");
-
+        System.out.println(userListHeader);
         for (User user : usersMap.values()) {
             System.out.println("<<<<<<<<<<<<<<<<");
             user.printBasicInfo();
@@ -79,12 +79,8 @@ public class UserService {
         }
     }
 
-
     public void printUserList(Map<String, User> map) {
-        System.out.println("-----------");
-        System.out.println("USERS LIST:");
-        System.out.println("----------- \n");
-
+        System.out.println(userListHeader);
         for (User user : map.values()) {
             System.out.println("<<<<<<<<<<<<<<<<");
             user.printBasicInfo();
@@ -93,19 +89,19 @@ public class UserService {
     }
 
     public Map<String, User> foundUser() {
-        Map<String, User> mapRepository = new HashMap<>();
+        Map<String, User> mapRepository;
         Map<String, User> mapFound = new HashMap<>();
         Town town;
-        SportDisciplines dysciplin;
+        SportDisciplines discipline;
         town = Tools.getTownFromUser("Choice town to find your game partner: ");
-        dysciplin = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
+        discipline = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
         mapRepository = userRepository.getUsersMap();
         for (String email : mapRepository.keySet()) {
             Town checkTown = mapRepository.get(email).getAddress().getTownName();
             if (town.equals(checkTown)) {
                 List<Activity> listActivity = mapRepository.get(email).getActivityList();
                 for (Activity act : listActivity) {
-                    if (dysciplin.equals(act.getSportDisciplines())) {
+                    if (discipline.equals(act.getSportDisciplines())) {
                         mapFound.put(email, mapRepository.get(email));
                     }
                 }
@@ -114,7 +110,7 @@ public class UserService {
         if (!mapFound.isEmpty()) {
             printUserList(mapFound);
         } else {
-            System.out.println("Unfortunately no one in " + town + " trains " + dysciplin);
+            System.out.println("Unfortunately no one in " + town + " trains " + discipline);
         }
         return mapFound;
     }

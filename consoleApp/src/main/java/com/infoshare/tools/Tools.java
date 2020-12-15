@@ -18,10 +18,9 @@ import java.util.regex.Pattern;
 
 public class Tools {
     public static String getFromUser(String message) {
-        String temp;
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
-        return temp = scanner.next();
+        return scanner.next();
     }
 
     public static int getIntFromUser(String message) {
@@ -58,7 +57,7 @@ public class Tools {
 
     public static String getLoginFromUser() {
         String login = Tools.getFromUser("Podaj adres e-mail: ");
-        return veryfityEmail(login);
+        return verifyEmail(login);
     }
 
     public static boolean isMailUniq(String email) {
@@ -74,7 +73,7 @@ public class Tools {
         return isUniq;
     }
 
-    public static String veryfityEmail(String email) {
+    public static String verifyEmail(String email) {
         boolean isUniq = isMailUniq(email);
         while (!isUniq) {
             email = getFromUser("Podaj nowego emaila bo ten jest zajety!");
