@@ -38,6 +38,7 @@ public class Menu {
         int userChoice = 1;
         do {
             showMenu();
+            //FIXME: METODA PRIVATE
             System.out.println("Your choice:");
             try {
                 userChoice = new Scanner(System.in).nextInt();
@@ -47,7 +48,6 @@ public class Menu {
 
             switch (userChoice) {
                 case 1: {
-                    System.out.println("Create a new user.\n");
                     userService.handleNewUSer();
                     break;
                 }
@@ -74,7 +74,6 @@ public class Menu {
                 default: {
                     System.out.println("Wrong choice. Try again! \n");
                 }
-
             }
         } while (userChoice != 0);
     }

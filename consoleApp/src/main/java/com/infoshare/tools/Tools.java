@@ -6,7 +6,8 @@ import com.infoshare.activities.SportDisciplines;
 import com.infoshare.location.Address;
 
 import com.infoshare.location.Town;
-import com.infoshare.users.Sex;
+import com.infoshare.services.UserService;
+import com.infoshare.users.Gender;
 import com.infoshare.users.User;
 import com.infoshare.utils.FileUtils;
 
@@ -30,14 +31,14 @@ public class Tools {
         try {
             temp = scanner.nextInt();
         } catch (InputMismatchException e) {
-            return getIntFromUser(" Nie podałeś liczby. Wprowadz wartość jeszcze raz: ");
+            return getIntFromUser(" You didn't provide a number. Please provide the value again: ");
         }
         return temp;
     }
 
     public static String getPasswordFromUser() {
-        String password1 = Tools.getFromUser("Podaj hasło: ");
-        String password2 = Tools.getFromUser("Powtórz hasło: ");
+        String password1 = Tools.getFromUser("Enter password: ");
+        String password2 = Tools.getFromUser("Confirm password: ");
         return verificationPassword(password1, password2);
     }
 
@@ -47,44 +48,44 @@ public class Tools {
             if (password1.equals(password2))
                 return password1;
             else {
-                System.out.println("Hasła nie są identyczne. ");
-                password1 = getFromUser("Podaj hasło: ");
-                password2 = getFromUser("Powtórz hasło: ");
+                System.out.println("Passwords do not match. ");
+                password1 = getFromUser("Enter password: ");
+                password2 = getFromUser("Confirm password: ");
             }
         } while (!password1.equals(password2));
         return password1;
     }
 
     public static String getLoginFromUser() {
-        String login = Tools.getFromUser("Podaj adres e-mail: ");
-        return veryfityEmail(login);
+        String login = Tools.getFromUser("Enter e-mail address: ");
+        return verifyEmail(login);
     }
 
-    public static boolean isMailUniq(String email) {
+    public static boolean isMailUnique(String email) {
         List<User> allUsers = FileUtils.readUsersJsonFile();
-        boolean isUniq = true;
+        boolean isUnique = true;
         for (int i = 0; i < allUsers.size(); i++) {
-            boolean isUniqTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
-            if (!isUniqTemp) {
-                System.out.println("Email jest nie unikalny!");
-                isUniq = false;
+            boolean isUniqueTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
+            if (!isUniqueTemp) {
+                System.out.println("This e-mail address already exists!");
+                isUnique = false;
             }
         }
-        return isUniq;
+        return isUnique;
     }
 
-    public static String veryfityEmail(String email) {
-        boolean isUniq = isMailUniq(email);
+    public static String verifyEmail(String email) {
+        boolean isUniq = isMailUnique(email);
         while (!isUniq) {
-            email = getFromUser("Podaj nowego emaila bo ten jest zajety!");
-            isUniq = isMailUniq(email);
+            email = getFromUser("Enter new e-mail, this e-mail address is already taken!");
+            isUniq = isMailUnique(email);
         }
         Pattern pattern = Pattern.compile("[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}");
         Matcher matcher;
         do {
             matcher = pattern.matcher(email);
             if (!matcher.find()) {
-                email = getFromUser("E-mail wydaje się być nieprawidłowy. Podaj e-mail: ");
+                email = getFromUser("E-mail address seems to be incorrect. Enter correct e-mail: ");
                 matcher = pattern.matcher(email);
             }
             matcher = pattern.matcher(email);
@@ -93,27 +94,27 @@ public class Tools {
     }
 
     public static int getAgeFromUser(){
-        int age=getIntFromUser("Ile masz lat: ");
+        int age=getIntFromUser("Enter your age: ");
         if(age>130){
-            System.out.println("Ludzie nie żyją tek długo, podaj swój prawdziwy wiek: ");
+            System.out.println("You should be already dead :] enter your real age: ");
             return getAgeFromUser();
         }
         return age;
     }
 
     public static String getPhoneNumberFromUser() {
-        String phonNumber = getFromUser("Podaj nr telefonu: ");
-        return veryfityPhoneNumber(phonNumber);
+        String phoneNumber = getFromUser("Enter your phone number: ");
+        return verifyPhoneNumber(phoneNumber);
     }
 
-    public static String veryfityPhoneNumber(String phoneNumber) {
+    public static String verifyPhoneNumber(String phoneNumber) {
         //make regular expression (wyrazenie regularne) for validate phone number
         Pattern pattern = Pattern.compile("\\d\\d\\d\\d\\d\\d\\d\\d\\d");
         Matcher matcher;
         do {
             matcher = pattern.matcher(phoneNumber);
             if (!matcher.find()) {
-                phoneNumber = getFromUser("Numer telefonu wydaje się być nieprawidłowy. Podaj numer telefonu: ");
+                phoneNumber = getFromUser("Phone number seems to be incorrect. Enter phone number: ");
                 matcher = pattern.matcher(phoneNumber);
             }
             matcher = pattern.matcher(phoneNumber);
@@ -121,27 +122,27 @@ public class Tools {
         return phoneNumber;
     }
 
-    public static Sex getSexFromUser(String message) {
-        Sex.printValues();
-        String sex = getFromUser(message);
-        return Sex.valueOfLabel(sex);
+    public static Gender getGenderFromUser(String message) {
+        Gender.printValues();
+        String gender = getFromUser(message);
+        return UserService.valueOfGenderLabel(gender);
     }
 
     public static Town getTownFromUser(String message) {
         Town.printValue();
         String town = getFromUser(message);
-        return Town.valueOfLabel(town);
+        return UserService.valueOfTownLabel(town);
     }
 
-    public static String getRoadFromUser() {
-        String road = getFromUser("Podaj nazwę ulicy: ");
-        String number = getFromUser("Podaj numer domu: ");
+    public static String getStreetFromUser() {
+        String road = getFromUser("Enter street name: ");
+        String number = getFromUser("Enter house number: ");
         Pattern numberPattern = Pattern.compile("\\d+");
         Matcher matcher;
         do {
             matcher = numberPattern.matcher(number);
             if (!matcher.find()) {
-                number = getFromUser("Numer wydaje się być nieprawidłowy. Podaj numer: ");
+                number = getFromUser("Number seems to be incorrect. Please enter correct number: ");
                 matcher = numberPattern.matcher(number);
             }
             matcher = numberPattern.matcher(number);
@@ -149,15 +150,14 @@ public class Tools {
         return road + number;
     }
 
-    //FIXME: omówić przekazywanie nulli - czy nie dawać defaultowej wartości?
     public static Address getAddressFromUser() {
-        String choice = Tools.getFromUser("Chcesz podać adres zamieszkoania? Y/N ").toUpperCase();
-        Address address = new Address(null, null);
+        String choice = Tools.getFromUser("Would you like to provide your address? Y/N ").toUpperCase();
+        Address address = new Address();
         if ("Y".equals(choice)) {
-            Town town = Tools.getTownFromUser("Podaj miasto: ");
-            String road = Tools.getRoadFromUser();
-            address = new Address(town, road);
-            return address;
+            Town town = Tools.getTownFromUser("Enter town name: ");
+            String street = Tools.getStreetFromUser();
+            address = new Address(town, street);
+
         }
         return address;
     }
@@ -165,7 +165,7 @@ public class Tools {
     public static ActivityLevel getActivityLevelFromUser(String message) {
         ActivityLevel.printValues();
         String level = getFromUser(message);
-        return ActivityLevel.valueOfLabel(level);
+        return UserService.valueOfActivityLabel(level);
     }
 
     public static SportDisciplines getSportDisciplinesFromUser(String message) {

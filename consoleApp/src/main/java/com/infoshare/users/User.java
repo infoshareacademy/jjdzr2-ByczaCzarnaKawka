@@ -4,7 +4,6 @@ import com.infoshare.activities.Activity;
 import com.infoshare.location.Address;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +14,7 @@ public class User {
     private String password;
     private int age;
     private String phoneNumber;
-    private Sex sex;
+    private Gender gender;
     private Address address;
     private List<Activity> activityList;
 
@@ -25,7 +24,7 @@ public class User {
         this.password = password;
         this.age = 0;
         this.phoneNumber = "";
-        this.sex = null;
+        this.gender = null;
         this.address = new Address(null, " ");
         this.activityList = new ArrayList<>();
     }
@@ -33,7 +32,7 @@ public class User {
     public void printBasicInfo() {
         System.out.println("Nickname: " + getNickname());
         System.out.println("E-mail: " + getMailAddress());
-        System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getRoadName());
+        System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getStreetName());
 
         System.out.println("Activities:");
         for (Activity element : activityList) {
@@ -72,13 +71,13 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public Sex getSex() {
-        return sex;
+    public Gender getSex() {
+        return gender;
     }
 
-    public void setSex(Sex sex) {
+    public void setSex(Gender gender) {
 
-        this.sex = sex;
+        this.gender = gender;
     }
 
     public Address getAddress() {
@@ -102,7 +101,7 @@ public class User {
                 "," + "\n" + "password='" + password + '\'' +
                 "," + "\n" + "age=" + age +
                 "," + "\n" + "phoneNumber='" + phoneNumber + '\'' +
-                "," + "\n" + "sex=" + sex +
+                "," + "\n" + "sex=" + gender +
                 "," + "\n \n" + "address=" + address +
                 "," + "\n \n" + "activityList=" + activityList +
                 '}';

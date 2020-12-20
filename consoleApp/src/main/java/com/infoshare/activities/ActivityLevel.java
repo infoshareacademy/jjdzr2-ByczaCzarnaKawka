@@ -1,6 +1,5 @@
 package com.infoshare.activities;
 
-import com.infoshare.tools.Tools;
 
 public enum ActivityLevel {
     NEWBIE,
@@ -14,15 +13,5 @@ public enum ActivityLevel {
             System.out.println(x);
         }
     }
-
-    //FIXME: czy porównanie robić na pewno tutaj?
-    public static ActivityLevel valueOfLabel(String label) {
-        for (int i = 0; i < ActivityLevel.values().length; i++) {
-            if (values()[i].name().equals(label.toUpperCase())) {
-                return values()[i];
-            }
-        }
-        return Tools.getActivityLevelFromUser("There's no such a level of activity. Choose one from the following: ");
-    }
-}
+  }
 

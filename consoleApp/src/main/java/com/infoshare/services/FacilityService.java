@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class FacilityService {
 
-    //TODO add facility filter method, remove method
+    //TODO add facility filter method
 
     private FacilityRepository facilityRepository;
 

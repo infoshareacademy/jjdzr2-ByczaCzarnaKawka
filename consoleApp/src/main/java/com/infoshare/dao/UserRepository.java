@@ -1,7 +1,6 @@
 package com.infoshare.dao;
 
 import com.infoshare.users.User;
-
 import com.infoshare.utils.FileUtils;
 
 import java.util.Map;
