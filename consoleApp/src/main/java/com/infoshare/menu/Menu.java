@@ -16,7 +16,7 @@ public class Menu {
             "4. Wyświetl obiekty do rezerwacji.",
             "5. Usuń użytkownika - Funkcja tymczasowo niedostępna.",
             "6. Usuń obiekt sportowy - Funkcja tymczasowo niedostępna.",
-            "7. Wyszukaj użytkownika - Funkcja tymczasowo niedostępna.",
+            "7. Wyszukaj użytkownika.",
             "8. Wyszukaj obiekt sporotwy - Funkcja tymczasowo niedostępna.",
             "0. Wyjdź z programu."
     };

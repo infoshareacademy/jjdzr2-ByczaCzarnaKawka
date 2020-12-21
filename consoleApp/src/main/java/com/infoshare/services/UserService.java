@@ -10,7 +10,6 @@ import com.infoshare.users.Sex;
 import com.infoshare.users.User;
 import com.infoshare.utils.FileUtils;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,10 +21,27 @@ public class UserService {
 
     private UserRepository userRepository;
 
-    private final String userListHeader=
-            "----------- \n"
-            +"USERS LIST: \n"
-            +"----------- ";
+    private final String userListHeader =
+            "----------- \n USERS LIST: \n----------- ";
+
+    public void printUserList() {
+        Map<String, User> usersMap = userRepository.getUsersMap();
+        System.out.println(userListHeader);
+        printMap(usersMap);
+    }
+
+    public void printUserList(Map<String, User> map) {
+        System.out.println(userListHeader);
+        printMap(map);
+    }
+
+    private void printMap(Map<String, User> map) {
+        for (User user : map.values()) {
+            System.out.println("<<<<<<<<<<<<<<<<");
+            user.printBasicInfo();
+            System.out.println(">>>>>>>>>>>>>>>>\n");
+        }
+    }
 
     public UserService() {
         this.userRepository = new UserRepository();
@@ -37,7 +53,7 @@ public class UserService {
     }
 
     private User getUserFromConsole() {
-        String nickname = Tools.getFromUser("Podaj imię/nick: ");
+        String nickname = Tools.getFromUser("Name/nick: ");
         String login = Tools.getLoginFromUser();
         String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
@@ -45,7 +61,7 @@ public class UserService {
         user.setAge(age);
         String phoneNumber = Tools.getPhoneNumberFromUser();
         user.setPhoneNumber(phoneNumber);
-        Sex sex = Tools.getSexFromUser("Podaj płeć: ");
+        Sex sex = Tools.getSexFromUser("Sex: ");
         user.setSex(sex);
         user = Tools.getActivityFromUser(user);
         Address address = Tools.getAddressFromUser();
@@ -53,66 +69,64 @@ public class UserService {
         return user;
     }
 
-    public void saveUser(User user) {
+    private void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
-        System.out.println("userMap: " + usersMap);
+        String mail = user.getMailAddress();
+        usersMap.put(mail, user);
+        FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
+        System.out.println("User successfully added to list!");
+    }
 
-        if (usersMap.containsKey(user.getMailAddress())) {
-            System.out.println("Unfortunately the mail address is already exist!");
+    public void foundUser() {
+        Town town = Tools.getTownFromUser("Choice town to find your game partner: ");
+        SportDisciplines sportDiscipline = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
+        Map<String, User> foundUser;
+        foundUser = foundUserInRepository(town, sportDiscipline);
+        if (foundUser.isEmpty()) {
+            System.out.println("Sorry, no one in " + town + " trains " + sportDiscipline + "\n");
         } else {
-            usersMap.put(user.getMailAddress(), user);
-            System.out.println("userMap: " + usersMap);
-            FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
-
-            System.out.println("User successfully added to list!");
+            printUserList(foundUser);
         }
     }
 
-    public void printUserList() {
-        Map<String, User> usersMap = userRepository.getUsersMap();
-
-        System.out.println(userListHeader);
-        for (User user : usersMap.values()) {
-            System.out.println("<<<<<<<<<<<<<<<<");
-            user.printBasicInfo();
-            System.out.println(">>>>>>>>>>>>>>>>\n");
-        }
+    private Map<String, User> foundUserInRepository(Town town, SportDisciplines sportDisciplines) {
+        Map<String, User> userFromTown;
+        Map<String, User> userPracticingDiscipline;
+        userFromTown = foundUserFromTown(town);
+        userPracticingDiscipline = foundUsersPracticingDiscipline(userFromTown, sportDisciplines);
+        return userPracticingDiscipline;
     }
 
-    public void printUserList(Map<String, User> map) {
-        System.out.println(userListHeader);
-        for (User user : map.values()) {
-            System.out.println("<<<<<<<<<<<<<<<<");
-            user.printBasicInfo();
-            System.out.println(">>>>>>>>>>>>>>>>\n");
-        }
-    }
-
-    public Map<String, User> foundUser() {
-        Map<String, User> mapRepository;
+    private Map<String, User> foundUserFromTown(Town town) {
         Map<String, User> mapFound = new HashMap<>();
-        Town town;
-        SportDisciplines discipline;
-        town = Tools.getTownFromUser("Choice town to find your game partner: ");
-        discipline = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
-        mapRepository = userRepository.getUsersMap();
-        for (String email : mapRepository.keySet()) {
-            Town checkTown = mapRepository.get(email).getAddress().getTownName();
+        Town checkTown;
+        for (String email : userRepository.getUsersMap().keySet()) {
+            checkTown = userRepository.getUsersMap().get(email).getAddress().getTownName();
             if (town.equals(checkTown)) {
-                List<Activity> listActivity = mapRepository.get(email).getActivityList();
-                for (Activity act : listActivity) {
-                    if (discipline.equals(act.getSportDisciplines())) {
-                        mapFound.put(email, mapRepository.get(email));
-                    }
-                }
+                mapFound.put(email, userRepository.getUsersMap().get(email));
             }
-        }
-        if (!mapFound.isEmpty()) {
-            printUserList(mapFound);
-        } else {
-            System.out.println("Unfortunately no one in " + town + " trains " + discipline);
         }
         return mapFound;
     }
-}
 
+    private Map<String, User> foundUsersPracticingDiscipline(Map<String, User> player, SportDisciplines sportDisciplines) {
+        Map<String, User> mapFound = new HashMap<>();
+        List<Activity> listActivity;
+        for (String email : player.keySet()) {
+            listActivity = player.get(email).getActivityList();
+            if (isActivityInList(listActivity, sportDisciplines)) {
+                mapFound.put(email, player.get(email));
+            }
+        }
+        return mapFound;
+    }
+
+    private boolean isActivityInList(List<Activity> listActivity, SportDisciplines sportDisciplines) {
+        for (Activity act : listActivity) {
+            if (sportDisciplines.equals(act.getSportDisciplines())) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
