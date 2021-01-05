@@ -1,32 +1,24 @@
 package com.infoshare.location;
 
-import com.infoshare.tools.Tools;
 
 public enum Town {
-    BIAŁYSTOK,
+    BIALYSTOK,
     BYDGOSZCZ,
-    CZĘSTOCHOWA,
-    GDAŃSK,
+    CZESTOCHOWA,
+    GDANSK,
     GDYNIA,
     KATOWICE,
-    KRAKÓW,
-    ŁÓDŹ,
-    POZNAŃ,
-    WARSZAWA,
-    WROCŁAW;
+    CRACOW,
+    LODZ,
+    POZNAN,
+    WARSAW,
+    WROCLAW,
+    UNKNOWN;
 
-    public static void printValiu() {
+    public static void printValue() {
+
         for (Town x : values()) {
             System.out.println(x);
         }
-    }
-
-    public static Town valueOfLabel(String label) {
-        for (int i = 0; i < Town.values().length; i++) {
-            if (values()[i].name().equals(label.toUpperCase())) {
-                return values()[i];
-            }
-        }
-        return Tools.getTownFromUser("Nie nie ma takiego miasta, wybierz z listy: ");
     }
 }

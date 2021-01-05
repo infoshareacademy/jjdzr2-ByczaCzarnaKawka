@@ -11,7 +11,6 @@ public class Activity {
     }
 
     public SportDisciplines getSportDisciplines() {
-
         return sportDisciplines;
     }
 
@@ -21,9 +20,11 @@ public class Activity {
 
     @Override
     public String toString() {
-        return "\nActivity{\n" +
-                "sportDisciplines=" + sportDisciplines +
-                "," + "\n" + "activityLevel=" + activityLevel +
-                '}';
+
+        return "\nActivity{\n sportDisciplines="
+                + sportDisciplines
+                + ", \n activityLevel="
+                + activityLevel
+                + '}';
     }
 }
