@@ -1,23 +1,5 @@
 [
   {
-    "nickname": "Olgiert",
-    "mailAddress": "ol@gi.pl",
-    "password": "qwe",
-    "age": 33,
-    "phoneNumber": "987654321",
-    "sex": "KOBIETA",
-    "address": {
-      "townName": "KRAKÓW",
-      "roadName": "Smocza2/5"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "SWIMMING",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
     "nickname": "Kapusta",
     "mailAddress": "ka@pu.sta",
     "password": "qwe",
@@ -72,22 +54,6 @@
     ]
   },
   {
-
-    "nickname": "qwerty",
-    "mailAddress": "qwerty@gmail.com",
-    "password": "qwerty",
-    "age": 26,
-    "phoneNumber": "556765456",
-    "sex": "MĘŻCZYZNA",
-    "address": {},
-    "activityList": [
-      {
-        "sportDisciplines": "SQUASH",
-        "activityLevel": "EXPERT"
-      }
-    ]
-  },
-  {
     "nickname": "Tomasz",
     "mailAddress": "to@ma.sz",
     "password": "qwe",
@@ -101,6 +67,21 @@
     "activityList": [
       {
         "sportDisciplines": "SWIMMING",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "jola",
+    "mailAddress": "qwe@qwe.pl",
+    "password": "qwe",
+    "age": 23,
+    "phoneNumber": "123123123",
+    "sex": "KOBIETA",
+    "address": {},
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -245,52 +226,6 @@
       {
         "sportDisciplines": "GOLF",
         "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
-    "nickname": "Dorota",
-    "mailAddress": "random2@gmail.com",
-    "password": "qwerrt12345",
-    "age": 0,
-    "phoneNumber": "",
-    "address": {
-      "roadName": " "
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "FOOTBALL",
-        "activityLevel": "NEWBIE"
-      },
-      {
-        "sportDisciplines": "BOXING",
-        "activityLevel": "INTERMEDIATE"
-      },
-      {
-        "sportDisciplines": "BASKETBALL",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
-    "nickname": "ananas",
-    "mailAddress": "na@an.pl",
-    "password": "lki",
-    "age": 22,
-    "phoneNumber": "159159159",
-    "sex": "MĘŻCZYZNA",
-    "address": {
-      "townName": "WARSZAWA",
-      "roadName": "Liliowa12"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "VOLLEYBALL",
-        "activityLevel": "ADVANCED"
-      },
-      {
-        "sportDisciplines": "FOOTBALL",
-        "activityLevel": "EXPERT"
       }
     ]
   },
