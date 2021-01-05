@@ -29,6 +29,7 @@ public class FileUtils {
 
     public static List<User> readUsersJsonFile() {
         try (Reader reader = new FileReader(USERS_JSON_FILE)) {
+
             Type listType = new TypeToken<ArrayList<User>>() {
             }.getType();
             List<User> users = GSON.fromJson(reader, listType);

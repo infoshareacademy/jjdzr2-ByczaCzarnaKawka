@@ -1,5 +1,6 @@
 package com.infoshare.services;
 
+
 import com.infoshare.activities.ActivityLevel;
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
@@ -24,12 +25,11 @@ public class UserService {
     }
 
     public void handleNewUSer() {
+
         System.out.println("Create new user:");
         User user = getUserFromConsole();
         saveUser(user);
     }
-
-
 
     public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
@@ -44,8 +44,6 @@ public class UserService {
 
             System.out.println("User successfully added to list!");
         }
-
-
     }
 
     public void printUserList() {
@@ -61,6 +59,7 @@ public class UserService {
             System.out.println(">>>>>>>>>>>>>>>>\n");
         }
     }
+
     //FIXME: czy porównanie robić na pewno tutaj?
     public static ActivityLevel valueOfActivityLabel(String label) {
         for (int i = 0; i < ActivityLevel.values().length; i++) {
@@ -105,4 +104,5 @@ public class UserService {
         return Tools.getGenderFromUser("Something went wrong, enter your gender: ");
     }
     }
+
 

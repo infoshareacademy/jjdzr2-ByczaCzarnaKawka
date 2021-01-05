@@ -31,13 +31,16 @@ public enum SportDisciplines {
         }
     }
 
+
     //FIXME: do omówienia, to samo co w Activity level
+
     public static SportDisciplines valueOfLabel(String label) {
         for (int i = 0; i < SportDisciplines.values().length; i++) {
             if (values()[i].name().equals(label.toUpperCase())) {
                 return values()[i];
             }
         }
+
         return Tools.getSportDisciplinesFromUser("There's no such an activity. Choose one from the following: ");
     }
 }

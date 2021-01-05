@@ -20,6 +20,7 @@ public class Activity {
 
     @Override
     public String toString() {
+
         return "\nActivity{\n sportDisciplines="
                 + sportDisciplines
                 + ", \n activityLevel="

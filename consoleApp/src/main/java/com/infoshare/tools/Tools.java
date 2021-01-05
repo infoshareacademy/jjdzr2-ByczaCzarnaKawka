@@ -6,6 +6,7 @@ import com.infoshare.activities.SportDisciplines;
 import com.infoshare.location.Address;
 
 import com.infoshare.location.Town;
+
 import com.infoshare.services.UserService;
 import com.infoshare.users.Gender;
 import com.infoshare.users.User;
@@ -37,17 +38,18 @@ public class Tools {
     }
 
     public static String getPasswordFromUser() {
+
         String password1 = Tools.getFromUser("Enter password: ");
         String password2 = Tools.getFromUser("Confirm password: ");
         return verificationPassword(password1, password2);
     }
 
     public static String verificationPassword(String password1, String password2) {
-
         do {
             if (password1.equals(password2))
                 return password1;
             else {
+
                 System.out.println("Passwords do not match. ");
                 password1 = getFromUser("Enter password: ");
                 password2 = getFromUser("Confirm password: ");
@@ -93,6 +95,7 @@ public class Tools {
         return email;
     }
 
+
     public static int getAgeFromUser(){
         int age=getIntFromUser("Enter your age: ");
         if(age>130){
@@ -103,6 +106,7 @@ public class Tools {
     }
 
     public static String getPhoneNumberFromUser() {
+
         String phoneNumber = getFromUser("Enter your phone number: ");
         return verifyPhoneNumber(phoneNumber);
     }
@@ -121,6 +125,7 @@ public class Tools {
         } while (!matcher.find());
         return phoneNumber;
     }
+
 
     public static Gender getGenderFromUser(String message) {
         Gender.printValues();
@@ -157,7 +162,6 @@ public class Tools {
             Town town = Tools.getTownFromUser("Enter town name: ");
             String street = Tools.getStreetFromUser();
             address = new Address(town, street);
-
         }
         return address;
     }

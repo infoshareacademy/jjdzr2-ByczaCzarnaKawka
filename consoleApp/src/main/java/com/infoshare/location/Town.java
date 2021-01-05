@@ -1,5 +1,6 @@
 package com.infoshare.location;
 
+
 public enum Town {
     BIALYSTOK,
     BYDGOSZCZ,
@@ -15,9 +16,9 @@ public enum Town {
     UNKNOWN;
 
     public static void printValue() {
+
         for (Town x : values()) {
             System.out.println(x);
         }
     }
-
 }

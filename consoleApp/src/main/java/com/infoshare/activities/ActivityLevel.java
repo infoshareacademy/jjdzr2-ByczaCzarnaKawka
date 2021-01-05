@@ -1,6 +1,5 @@
 package com.infoshare.activities;
 
-
 public enum ActivityLevel {
     NEWBIE,
     ROOKIE,
@@ -14,4 +13,5 @@ public enum ActivityLevel {
         }
     }
   }
+
 

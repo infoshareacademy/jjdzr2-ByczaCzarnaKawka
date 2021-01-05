@@ -1,4 +1,5 @@
 package com.infoshare;
+
 import com.infoshare.menu.Menu;
 
 public class App {

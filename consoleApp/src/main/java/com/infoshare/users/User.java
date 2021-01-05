@@ -33,7 +33,6 @@ public class User {
         System.out.println("Nickname: " + getNickname());
         System.out.println("E-mail: " + getMailAddress());
         System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getStreetName());
-
         System.out.println("Activities:");
         for (Activity element : activityList) {
             System.out.println("Sport: " + element.getSportDisciplines());
@@ -76,7 +75,6 @@ public class User {
     }
 
     public void setSex(Gender gender) {
-
         this.gender = gender;
     }
 

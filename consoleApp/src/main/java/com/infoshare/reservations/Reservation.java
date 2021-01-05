@@ -29,13 +29,15 @@ public class Reservation {
     public User getUser() {
         return user;
     }
-    //FIXME: do poprawy
+
+
     @Override
     public String toString() {
-        return "Reservation{ \n" +
-                "sportFacility=" + sportFacility +
-                "," + "\n" + "user=" + user +
-                '}';
+        return "Reservation{ \n sportFacility=" 
+                + sportFacility +
+                "," + "\n user=" 
+                + user
+                +'}';
     }
 
     @Override

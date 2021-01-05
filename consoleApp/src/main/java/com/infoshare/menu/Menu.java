@@ -38,6 +38,7 @@ public class Menu {
         int userChoice = 1;
         do {
             showMenu();
+
             //FIXME: METODA PRIVATE
             System.out.println("Your choice:");
             try {
@@ -48,6 +49,7 @@ public class Menu {
 
             switch (userChoice) {
                 case 1: {
+
                     userService.handleNewUSer();
                     break;
                 }
@@ -59,6 +61,7 @@ public class Menu {
                     facilityService.printFacilityList();
                     break;
                 }
+
                 case 2:
                 case 5:
                 case 6:

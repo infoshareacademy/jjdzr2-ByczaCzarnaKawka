@@ -17,6 +17,7 @@ public class Address {
     public Town getTownName() {
         return townName;
     }
+
     public String getStreetName() {
         return streetName;
     }
