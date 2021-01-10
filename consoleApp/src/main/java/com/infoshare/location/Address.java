@@ -2,39 +2,30 @@ package com.infoshare.location;
 
 public class Address {
     private Town townName;
-    private String roadName;
+    private String streetName;
 
-    public Address(Town townName) {
-
-        this.townName = townName;
+    public Address() {
+        this.townName = Town.UNKNOWN;
+        this.streetName = "Unknown";
     }
 
-    public Address(Town townName, String roadName) {
+    public Address(Town townName, String streetName) {
         this.townName = townName;
-        this.roadName = roadName;
+        this.streetName = streetName;
     }
 
     public Town getTownName() {
         return townName;
     }
 
-    public void setTownName(Town townName) {
-        this.townName = townName;
+    public String getStreetName() {
+        return streetName;
     }
-
-    public String getRoadName() {
-        return roadName;
-    }
-
-    public void setRoadName(String roadName) {
-        this.roadName = roadName;
-    }
-
     @Override
     public String toString() {
-        return "Address{ \n" +
-                "townName= " + townName +
-                "," + "\n" + "localRoad= " + roadName +
-                '}';
+        return "Address: \n Town: "
+                + townName
+                + ",\n  Road: "
+                + streetName;
     }
 }

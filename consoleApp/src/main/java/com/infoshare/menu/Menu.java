@@ -10,15 +10,15 @@ public class Menu {
 
     private static final String MENU_HEADER = "*** GymBuddy Finder ***";
     private static final String[] MENU_OPTIONS = {
-            "1. Stwórz nowego użytkownika.",
-            "2. Zaloguj się - Funkcja tymczasowo niedostępna.",
-            "3. Wyświetl użytkowników.",
-            "4. Wyświetl obiekty do rezerwacji.",
-            "5. Usuń użytkownika - Funkcja tymczasowo niedostępna.",
-            "6. Usuń obiekt sportowy - Funkcja tymczasowo niedostępna.",
-            "7. Wyszukaj użytkownika.",
-            "8. Wyszukaj obiekt sporotwy - Funkcja tymczasowo niedostępna.",
-            "0. Wyjdź z programu."
+            "1. Create new user.",
+            "2. Log in - Function is temporary unavailable.",
+            "3. Show users list.",
+            "4. Show facilities to book.",
+            "5. Delete user - Function is temporary unavailable.",
+            "6. Delete sport facility - Function is temporary unavailable.",
+            "7. Find user - Function is temporary unavailable.",
+            "8. Find sport facility - Function is temporary unavailable.",
+            "0. Exit."
     };
 
     private UserService userService;
@@ -38,24 +38,19 @@ public class Menu {
         int userChoice = 1;
         do {
             showMenu();
-            System.out.println("Twój wybór:");
+
+            //FIXME: METODA PRIVATE
+            System.out.println("Your choice:");
             try {
                 userChoice = new Scanner(System.in).nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Podaj prawidłowe dane.");
+                System.out.println("Give correct data.");
             }
 
             switch (userChoice) {
                 case 1: {
-                    System.out.println("Stwórz nowego użytkownika \n");
+
                     userService.handleNewUSer();
-                    break;
-                }
-                case 2:
-                case 5:
-                case 6:
-                case 8:{
-                    System.out.println("Przepraszamy, funkcja tymczasowo niedostępna \n");
                     break;
                 }
                 case 3: {
@@ -66,16 +61,22 @@ public class Menu {
                     facilityService.printFacilityList();
                     break;
                 }
+
+                case 2:
+                case 5:
+                case 6:
+                case 8: {
+                    System.out.println("Sorry, Function is temporary unavailable! \n");
                 case 7: {
                     userService.foundUser();
                     break;
                 }
                 case 0: {
-                    System.out.println("Dzięki!!! Do zobaczenia!!!");
+                    System.out.println("Thanks! See you!!!");
                     break;
                 }
                 default: {
-                    System.out.println("Niepoprawny wybór. Wybierz ponownie! \n");
+                    System.out.println("Wrong choice. Try again! \n");
                 }
             }
         } while (userChoice != 0);

@@ -30,12 +30,14 @@ public class Reservation {
         return user;
     }
 
+
     @Override
     public String toString() {
-        return "Reservation{ \n" +
-                "sportFacility=" + sportFacility +
-                "," + "\n" + "user=" + user +
-                '}';
+        return "Reservation{ \n sportFacility=" 
+                + sportFacility +
+                "," + "\n user=" 
+                + user
+                +'}';
     }
 
     @Override

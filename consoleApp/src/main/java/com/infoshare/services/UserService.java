@@ -1,18 +1,17 @@
 package com.infoshare.services;
 
-import com.infoshare.activities.Activity;
-import com.infoshare.activities.SportDisciplines;
+
+import com.infoshare.activities.ActivityLevel;
 import com.infoshare.dao.UserRepository;
 import com.infoshare.location.Address;
 import com.infoshare.location.Town;
 import com.infoshare.tools.Tools;
-import com.infoshare.users.Sex;
+import com.infoshare.users.Gender;
 import com.infoshare.users.User;
 import com.infoshare.utils.FileUtils;
 
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class UserService {
@@ -48,46 +47,29 @@ public class UserService {
     }
 
     public void handleNewUSer() {
+
+        System.out.println("Create new user:");
         User user = getUserFromConsole();
         saveUser(user);
     }
 
-    private User getUserFromConsole() {
-        String nickname = Tools.getFromUser("Name/nick: ");
-        String login = Tools.getLoginFromUser();
-        String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
-        User user = new User(nickname, login, password);
-        int age = Tools.getAgeFromUser();
-        user.setAge(age);
-        String phoneNumber = Tools.getPhoneNumberFromUser();
-        user.setPhoneNumber(phoneNumber);
-        Sex sex = Tools.getSexFromUser("Sex: ");
-        user.setSex(sex);
-        user = Tools.getActivityFromUser(user);
-        Address address = Tools.getAddressFromUser();
-        user.setAddress(address);
-        return user;
-    }
-
-    private void saveUser(User user) {
+    public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
-        String mail = user.getMailAddress();
-        usersMap.put(mail, user);
-        FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
-        System.out.println("User successfully added to list!");
-    }
+        System.out.println("userMap: " + usersMap);
 
-    public void foundUser() {
-        Town town = Tools.getTownFromUser("Choice town to find your game partner: ");
-        SportDisciplines sportDiscipline = Tools.getSportDisciplinesFromUser("Choice sport discipline: ");
-        Map<String, User> foundUser;
-        foundUser = foundUserInRepository(town, sportDiscipline);
-        if (foundUser.isEmpty()) {
-            System.out.println("Sorry, no one in " + town + " trains " + sportDiscipline + "\n");
+        if (usersMap.containsKey(user.getMailAddress())) {
+            System.out.println("Unfortunately the mail address is already exist!");
         } else {
-            printUserList(foundUser);
+            usersMap.put(user.getMailAddress(), user);
+            System.out.println("userMap: " + usersMap);
+            FileUtils.saveUsersToJsonFile(new ArrayList<>(usersMap.values()));
+
+            System.out.println("User successfully added to list!");
         }
     }
+
+    public void printUserList() {
+        Map<String, User> usersMap = userRepository.getUsersMap();
 
     private Map<String, User> foundUserInRepository(Town town, SportDisciplines sportDisciplines) {
         Map<String, User> userFromTown;
@@ -109,17 +91,52 @@ public class UserService {
         return mapFound;
     }
 
-    private Map<String, User> foundUsersPracticingDiscipline(Map<String, User> player, SportDisciplines sportDisciplines) {
-        Map<String, User> mapFound = new HashMap<>();
-        List<Activity> listActivity;
-        for (String email : player.keySet()) {
-            listActivity = player.get(email).getActivityList();
-            if (isActivityInList(listActivity, sportDisciplines)) {
-                mapFound.put(email, player.get(email));
+    //FIXME: czy porównanie robić na pewno tutaj?
+    public static ActivityLevel valueOfActivityLabel(String label) {
+        for (int i = 0; i < ActivityLevel.values().length; i++) {
+            if (ActivityLevel.values()[i].name().equals(label.toUpperCase())) {
+                return ActivityLevel.values()[i];
             }
         }
-        return mapFound;
+        return Tools.getActivityLevelFromUser("There's no such a level of activity. Choose one from the following: ");
     }
+    private User getUserFromConsole() {
+        //FIXME: do przegadania rozbicie na metody
+        String nickname = Tools.getFromUser("Your name: ");
+        String login = Tools.getLoginFromUser();
+        String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
+        User user = new User(nickname, login, password);
+        int age = Tools.getAgeFromUser();
+        user.setAge(age);
+        String phoneNumber = Tools.getPhoneNumberFromUser();
+        user.setPhoneNumber(phoneNumber);
+        Gender gender = Tools.getGenderFromUser("Your gender: ");
+        user.setSex(gender);
+        user = Tools.getActivityFromUser(user);
+        Address address = Tools.getAddressFromUser();
+        user.setAddress(address);
+        return user;
+    }
+
+    public static Town valueOfTownLabel(String label) {
+        for (int i = 0; i < Town.values().length; i++) {
+            if (Town.values()[i].name().equals(label.toUpperCase())) {
+                return Town.values()[i];
+            }
+        }
+        return Tools.getTownFromUser("There's no such a Town. Choose one from the following: ");
+    }
+    public static Gender valueOfGenderLabel(String label) {
+        for (int i = 0; i < Gender.values().length; i++) {
+            if (Gender.values()[i].name().equals(label.toUpperCase())) {
+                return Gender.values()[i];
+            }
+        }
+        return Tools.getGenderFromUser("Something went wrong, enter your gender: ");
+    }
+    }
+
+
 
     private boolean isActivityInList(List<Activity> listActivity, SportDisciplines sportDisciplines) {
         for (Activity act : listActivity) {
