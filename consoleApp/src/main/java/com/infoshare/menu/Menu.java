@@ -16,7 +16,7 @@ public class Menu {
             "4. Show facilities to book.",
             "5. Delete user - Function is temporary unavailable.",
             "6. Delete sport facility - Function is temporary unavailable.",
-            "7. Find user - Function is temporary unavailable.",
+            "7. Find user.",
             "8. Find sport facility - Function is temporary unavailable.",
             "0. Exit."
     };
@@ -67,6 +67,8 @@ public class Menu {
                 case 6:
                 case 8: {
                     System.out.println("Sorry, Function is temporary unavailable! \n");
+                    break;
+                }
                 case 7: {
                     userService.foundUser();
                     break;
