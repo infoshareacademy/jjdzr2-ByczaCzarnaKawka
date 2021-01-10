@@ -21,3 +21,4 @@ public class MenuController {
         return menuService.getMenuHeader();
     }
 }
+
