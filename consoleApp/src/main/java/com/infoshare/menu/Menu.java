@@ -65,9 +65,10 @@ public class Menu {
                 case 2:
                 case 5:
                 case 6:
-                case 7:
                 case 8: {
                     System.out.println("Sorry, Function is temporary unavailable! \n");
+                case 7: {
+                    userService.foundUser();
                     break;
                 }
                 case 0: {

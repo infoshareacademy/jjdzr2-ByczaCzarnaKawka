@@ -20,6 +20,28 @@ public class UserService {
 
     private UserRepository userRepository;
 
+    private final String userListHeader =
+            "----------- \n USERS LIST: \n----------- ";
+
+    public void printUserList() {
+        Map<String, User> usersMap = userRepository.getUsersMap();
+        System.out.println(userListHeader);
+        printMap(usersMap);
+    }
+
+    public void printUserList(Map<String, User> map) {
+        System.out.println(userListHeader);
+        printMap(map);
+    }
+
+    private void printMap(Map<String, User> map) {
+        for (User user : map.values()) {
+            System.out.println("<<<<<<<<<<<<<<<<");
+            user.printBasicInfo();
+            System.out.println(">>>>>>>>>>>>>>>>\n");
+        }
+    }
+
     public UserService() {
         this.userRepository = new UserRepository();
     }
@@ -49,15 +71,24 @@ public class UserService {
     public void printUserList() {
         Map<String, User> usersMap = userRepository.getUsersMap();
 
-        System.out.println("-----------");
-        System.out.println("USERS LIST:");
-        System.out.println("----------- \n");
+    private Map<String, User> foundUserInRepository(Town town, SportDisciplines sportDisciplines) {
+        Map<String, User> userFromTown;
+        Map<String, User> userPracticingDiscipline;
+        userFromTown = foundUserFromTown(town);
+        userPracticingDiscipline = foundUsersPracticingDiscipline(userFromTown, sportDisciplines);
+        return userPracticingDiscipline;
+    }
 
-        for (User user : usersMap.values()) {
-            System.out.println("<<<<<<<<<<<<<<<<");
-            user.printBasicInfo();
-            System.out.println(">>>>>>>>>>>>>>>>\n");
+    private Map<String, User> foundUserFromTown(Town town) {
+        Map<String, User> mapFound = new HashMap<>();
+        Town checkTown;
+        for (String email : userRepository.getUsersMap().keySet()) {
+            checkTown = userRepository.getUsersMap().get(email).getAddress().getTownName();
+            if (town.equals(checkTown)) {
+                mapFound.put(email, userRepository.getUsersMap().get(email));
+            }
         }
+        return mapFound;
     }
 
     //FIXME: czy porównanie robić na pewno tutaj?
@@ -106,3 +137,13 @@ public class UserService {
     }
 
 
+
+    private boolean isActivityInList(List<Activity> listActivity, SportDisciplines sportDisciplines) {
+        for (Activity act : listActivity) {
+            if (sportDisciplines.equals(act.getSportDisciplines())) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
