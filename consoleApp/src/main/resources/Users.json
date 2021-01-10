@@ -1,32 +1,13 @@
 [
   {
-    "nickname": "Olgiert",
-    "mailAddress": "ol@gi.pl",
-    "password": "qwe",
-    "age": 33,
-    "phoneNumber": "987654321",
-    "sex": "KOBIETA",
-    "address": {
-      "townName": "KRAKÓW",
-      "roadName": "Smocza2/5"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "SWIMMING",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
     "nickname": "Kapusta",
     "mailAddress": "ka@pu.sta",
     "password": "qwe",
     "age": 24,
     "phoneNumber": "987898765",
-    "sex": "KOBIETA",
     "address": {
-      "townName": "ŁÓDŹ",
-      "roadName": "kowalska22"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -41,10 +22,9 @@
     "password": "qws",
     "age": 23,
     "phoneNumber": "987987987",
-    "sex": "KOBIETA",
     "address": {
       "townName": "GDYNIA",
-      "roadName": "Marzanny23"
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -59,31 +39,14 @@
     "password": "qwe",
     "age": 18,
     "phoneNumber": "123123123",
-    "sex": "KOBIETA",
     "address": {
       "townName": "GDYNIA",
-      "roadName": "Stoczniowa3/4"
+      "streetName": "Unknown"
     },
     "activityList": [
       {
-        "sportDisciplines": "HANDBALL",
+        "sportDisciplines": "SWIMMING",
         "activityLevel": "INTERMEDIATE"
-      }
-    ]
-  },
-  {
-
-    "nickname": "qwerty",
-    "mailAddress": "qwerty@gmail.com",
-    "password": "qwerty",
-    "age": 26,
-    "phoneNumber": "556765456",
-    "sex": "MĘŻCZYZNA",
-    "address": {},
-    "activityList": [
-      {
-        "sportDisciplines": "SQUASH",
-        "activityLevel": "EXPERT"
       }
     ]
   },
@@ -93,14 +56,30 @@
     "password": "qwe",
     "age": 22,
     "phoneNumber": "123123123",
-    "sex": "MĘŻCZYZNA",
     "address": {
       "townName": "KATOWICE",
-      "roadName": "1-go12"
+      "streetName": "Unknown"
     },
     "activityList": [
       {
         "sportDisciplines": "SWIMMING",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "jola",
+    "mailAddress": "qwe@qwe.pl",
+    "password": "qwe",
+    "age": 23,
+    "phoneNumber": "123123123",
+    "address": {
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "CHESS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -112,7 +91,8 @@
     "age": 0,
     "phoneNumber": "",
     "address": {
-      "roadName": " "
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -130,13 +110,32 @@
     ]
   },
   {
+    "nickname": "Jan",
+    "mailAddress": "kowalski@gmail.com",
+    "password": "qwerty",
+    "age": 130,
+    "phoneNumber": "147258369",
+    "gender": "MALE",
+    "address": {
+      "townName": "GDANSK",
+      "streetName": "ulica1"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "MOTOCROSS",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
     "nickname": "Dorota",
     "mailAddress": "random2@gmail.com",
     "password": "qwerrt12345",
     "age": 0,
     "phoneNumber": "",
     "address": {
-      "roadName": " "
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -159,10 +158,9 @@
     "password": "lki",
     "age": 22,
     "phoneNumber": "159159159",
-    "sex": "MĘŻCZYZNA",
     "address": {
-      "townName": "WARSZAWA",
-      "roadName": "Liliowa12"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -181,10 +179,9 @@
     "password": "qwe",
     "age": 33,
     "phoneNumber": "987654321",
-    "sex": "KOBIETA",
     "address": {
-      "townName": "KRAKÓW",
-      "roadName": "Smocza2/5"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -199,10 +196,9 @@
     "password": "poi",
     "age": 34,
     "phoneNumber": "125478963",
-    "sex": "MĘŻCZYZNA",
     "address": {
-      "townName": "WARSZAWA",
-      "roadName": "warszawska23"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -221,10 +217,9 @@
     "password": "qwe",
     "age": 22,
     "phoneNumber": "111111111",
-    "sex": "KOBIETA",
     "address": {
-      "townName": "ŁÓDŹ",
-      "roadName": "WIN2a"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
@@ -239,8 +234,10 @@
     "password": "qwe",
     "age": 321,
     "phoneNumber": "1213123132",
-    "sex": "MĘŻCZYZNA",
-    "address": {},
+    "address": {
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
+    },
     "activityList": [
       {
         "sportDisciplines": "GOLF",
@@ -249,47 +246,19 @@
     ]
   },
   {
-    "nickname": "Dorota",
-    "mailAddress": "random2@gmail.com",
-    "password": "qwerrt12345",
-    "age": 0,
-    "phoneNumber": "",
+    "nickname": "maria",
+    "mailAddress": "maria@wp.pl",
+    "password": "qwer",
+    "age": 34,
+    "phoneNumber": "489159158",
+    "gender": "FEMALE",
     "address": {
-      "roadName": " "
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
-        "activityLevel": "NEWBIE"
-      },
-      {
-        "sportDisciplines": "BOXING",
-        "activityLevel": "INTERMEDIATE"
-      },
-      {
-        "sportDisciplines": "BASKETBALL",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
-    "nickname": "ananas",
-    "mailAddress": "na@an.pl",
-    "password": "lki",
-    "age": 22,
-    "phoneNumber": "159159159",
-    "sex": "MĘŻCZYZNA",
-    "address": {
-      "townName": "WARSZAWA",
-      "roadName": "Liliowa12"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "VOLLEYBALL",
-        "activityLevel": "ADVANCED"
-      },
-      {
-        "sportDisciplines": "FOOTBALL",
+        "sportDisciplines": "CYCLING",
         "activityLevel": "EXPERT"
       }
     ]
@@ -300,10 +269,9 @@
     "password": "qwe",
     "age": 11,
     "phoneNumber": "123123123",
-    "sex": "KOBIETA",
     "address": {
-      "townName": "WARSZAWA",
-      "roadName": "Marszałkowskaqw"
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
     },
     "activityList": [
       {
