@@ -1,4 +1,4 @@
-package pl.infoshare;
+package com.infoshare;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
