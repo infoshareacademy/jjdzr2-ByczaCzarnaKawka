@@ -1,7 +1,7 @@
-package com.infoshare.workoutPlaces;
+package domain.workoutPlaces;
 
-import com.infoshare.activities.SportDisciplines;
-import com.infoshare.location.Address;
+import domain.activities.SportDisciplines;
+import domain.location.Address;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;

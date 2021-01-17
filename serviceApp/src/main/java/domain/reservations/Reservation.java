@@ -1,7 +1,7 @@
-package com.infoshare.reservations;
+package domain.reservations;
 
-import com.infoshare.users.User;
-import com.infoshare.workoutPlaces.SportFacility;
+import domain.users.User;
+import domain.workoutPlaces.SportFacility;
 
 import java.util.Objects;
 

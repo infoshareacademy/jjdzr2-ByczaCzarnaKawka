@@ -1,20 +1,22 @@
 package com.infoshare.services;
 
-import com.infoshare.activities.Activity;
-import com.infoshare.activities.ActivityLevel;
-import com.infoshare.activities.SportDisciplines;
-import com.infoshare.dao.UserRepository;
-import com.infoshare.location.Address;
-import com.infoshare.location.Town;
+import domain.activities.Activity;
+import domain.activities.ActivityLevel;
+import domain.activities.SportDisciplines;
+import database.UserRepository;
+import domain.location.Address;
+import domain.location.Town;
 import com.infoshare.tools.Tools;
-import com.infoshare.users.Gender;
-import com.infoshare.users.User;
-import com.infoshare.utils.FileUtils;
+import domain.users.Gender;
+import domain.users.User;
+import utils.FileUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.apache.logging.log4j.Level.values;
 
 public class UserService {
 
@@ -95,6 +97,15 @@ public class UserService {
         Address address = Tools.getAddressFromUser();
         user.setAddress(address);
         return user;
+    }
+
+    public static SportDisciplines valueOfSportDisciplinesLabel(String label) {
+        for (int i = 0; i < SportDisciplines.values().length; i++) {
+            if (SportDisciplines.values()[i].name().equals(label.toUpperCase())) {
+                return SportDisciplines.values()[i];
+            }
+        }
+        return Tools.getSportDisciplinesFromUser("There's no such an activity. Choose one from the following: ");
     }
 
     public static Town valueOfTownLabel(String label) {

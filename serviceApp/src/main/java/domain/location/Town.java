@@ -1,4 +1,4 @@
-package com.infoshare.location;
+package domain.location;
 
 
 public enum Town {
