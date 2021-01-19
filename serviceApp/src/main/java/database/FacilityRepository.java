@@ -1,12 +1,12 @@
-package com.infoshare.dao;
+package database;
 
-import com.infoshare.workoutPlaces.SportFacility;
+import domain.workoutPlaces.SportFacility;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.infoshare.utils.FileUtils.readSportsFacilities;
+import static utils.FileUtils.readSportsFacilities;
 
 public class FacilityRepository {
 

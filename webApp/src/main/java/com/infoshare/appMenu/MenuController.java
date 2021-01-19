@@ -1,4 +1,4 @@
-package pl.infoshare.appMenu;
+package com.infoshare.appMenu;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,16 +1,16 @@
 package com.infoshare.tools;
 
-import com.infoshare.activities.Activity;
-import com.infoshare.activities.ActivityLevel;
-import com.infoshare.activities.SportDisciplines;
-import com.infoshare.location.Address;
+import domain.activities.Activity;
+import domain.activities.ActivityLevel;
+import domain.activities.SportDisciplines;
+import domain.location.Address;
 
-import com.infoshare.location.Town;
+import domain.location.Town;
 
 import com.infoshare.services.UserService;
-import com.infoshare.users.Gender;
-import com.infoshare.users.User;
-import com.infoshare.utils.FileUtils;
+import domain.users.Gender;
+import domain.users.User;
+import utils.FileUtils;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -175,7 +175,7 @@ public class Tools {
     public static SportDisciplines getSportDisciplinesFromUser(String message) {
         SportDisciplines.printValues();
         String discipline = getFromUser(message);
-        return SportDisciplines.valueOfLabel(discipline);
+        return UserService.valueOfSportDisciplinesLabel(discipline);
     }
 
     public static User getActivityFromUser(User user) {

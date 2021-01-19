@@ -1,10 +1,10 @@
-package com.infoshare.utils;
+package utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.infoshare.users.User;
-import com.infoshare.workoutPlaces.SportFacility;
+import domain.users.User;
+import domain.workoutPlaces.SportFacility;
 
 import java.io.*;
 import java.lang.reflect.Type;

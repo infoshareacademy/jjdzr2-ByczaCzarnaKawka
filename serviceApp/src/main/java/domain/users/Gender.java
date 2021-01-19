@@ -1,4 +1,4 @@
-package com.infoshare.users;
+package domain.users;
 
 
 public enum Gender {

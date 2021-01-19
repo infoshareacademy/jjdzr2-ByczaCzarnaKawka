@@ -1,4 +1,4 @@
-package com.infoshare.activities;
+package domain.activities;
 
 public class Activity {
 

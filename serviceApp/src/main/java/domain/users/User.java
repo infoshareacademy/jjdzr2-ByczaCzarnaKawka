@@ -1,7 +1,7 @@
-package com.infoshare.users;
+package domain.users;
 
-import com.infoshare.activities.Activity;
-import com.infoshare.location.Address;
+import domain.activities.Activity;
+import domain.location.Address;
 
 import java.util.ArrayList;
 import java.util.List;

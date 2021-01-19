@@ -1,8 +1,8 @@
-package com.infoshare.dao;
+package database;
 
 
-import com.infoshare.users.User;
-import com.infoshare.utils.FileUtils;
+import domain.users.User;
+import utils.FileUtils;
 
 import java.util.Map;
 import java.util.stream.Collectors;

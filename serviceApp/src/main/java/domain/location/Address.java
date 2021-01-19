@@ -1,4 +1,4 @@
-package com.infoshare.location;
+package domain.location;
 
 public class Address {
     private Town townName;
