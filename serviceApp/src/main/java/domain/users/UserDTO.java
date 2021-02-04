@@ -5,26 +5,35 @@ import domain.activities.ActivityLevel;
 import domain.activities.SportDisciplines;
 import domain.location.Address;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.*;
 import java.util.List;
 
 
 public class UserDTO {
-    @NotEmpty(message = "nickname can't be empty")
+    @NotBlank(message = "nickname can't be empty")
+    @Size(min =1, max=16, message="nickname should have 1 tp 16 characters long")
     private String nickname;
+
     @NotEmpty(message = "e-mail can't be empty")
+    @Pattern(regexp="[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}", message = "e-mail address seems to be incorrect")
     private String mailAddress;
-    @NotEmpty(message = "password can't be empty")
+
+    @NotBlank(message = "password can't be empty")
+    @Size(min=8, message="password should have min 8 characters long")
     private String password;
-    @NotEmpty(message = "password can't be empty")
+
+    @NotBlank(message = "password can't be empty")
+    @Size(min=8, message="password should have min 8 characters long")
     private String repeatPassword;
-    @Min(1)
+
+    @Min(16)
     @Max(130)
     private int age;
+
     @NotEmpty(message = "phone number can't be empty")
+    @Pattern(regexp = "\\d\\d\\d\\d\\d\\d\\d\\d\\d", message = "phone number seems to be incorrect")
     private String phoneNumber;
+
     private Gender gender;
     private Address address;
     //@NotEmpty(message = "activity can't be empty")

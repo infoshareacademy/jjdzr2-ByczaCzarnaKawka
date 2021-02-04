@@ -25,10 +25,14 @@
     </p>
 
     <p>repeat password: <input type="password" th:field="*{repeatPassword}">
-        <span class="errorClass" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{password}"></span>
+        <span class="errorClass" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></span>
     </p>
 
-    <p>Age:<input type="number" min="1" max="130" th:field="*{age}"></p>
+    <p>Age:<input type="number" th:field="*{age}">
+        <span class="errorClass" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    </p>
+
+
     <p>phoneNumber: <input type="text" th:field="*{phoneNumber}">
         <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
     </p>
