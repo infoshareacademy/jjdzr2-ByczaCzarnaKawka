@@ -37,7 +37,7 @@ public class UserService {
 
     public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
-        System.out.println("userMap: " + usersMap);
+       // System.out.println("userMap: " + usersMap);
 
         if (usersMap.containsKey(user.getMailAddress())) {
             System.out.println("Unfortunately the mail address is already exist!");

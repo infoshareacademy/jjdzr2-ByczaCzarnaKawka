@@ -230,23 +230,6 @@
     ]
   },
   {
-    "nickname": "q",
-    "mailAddress": "qq@q.pl",
-    "password": "qwe",
-    "age": 22,
-    "phoneNumber": "111111111",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "CHESS",
-        "activityLevel": "EXPERT"
-      }
-    ]
-  },
-  {
     "nickname": "Moris",
     "mailAddress": "mo@ri.pl",
     "password": "qwe",

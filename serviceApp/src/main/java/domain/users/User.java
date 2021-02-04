@@ -3,12 +3,15 @@ package domain.users;
 import domain.activities.Activity;
 import domain.location.Address;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class User {
-
     private String nickname;
     private String mailAddress;
     private String password;
@@ -17,6 +20,17 @@ public class User {
     private Gender gender;
     private Address address;
     private List<Activity> activityList;
+
+    public User(String nickname, String mailAddress, String password, int age, String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
+        this.nickname = nickname;
+        this.mailAddress = mailAddress;
+        this.password = password;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.address = address;
+        this.activityList = activityList;
+    }
 
     public User(String nickname, String mailAddress, String password) {
         this.nickname = nickname;
@@ -50,8 +64,32 @@ public class User {
         return nickname;
     }
 
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public String getMailAddress() {
         return mailAddress;
+    }
+
+    public void setMailAddress(String mailAddress) {
+        this.mailAddress = mailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public int getAge() {
@@ -90,6 +128,9 @@ public class User {
         return activityList;
     }
 
+    public void setActivityList(List<Activity> activityList) {
+        this.activityList = activityList;
+    }
 
     @Override
     public String toString() {
