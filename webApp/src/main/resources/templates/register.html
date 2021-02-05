@@ -6,34 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Register</title>
 
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>Register</title>
 
 </head>
 <body>
-<div> REGISTER</div>
 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">The Gym Buddy Finder App!</div>
+        <div class="masthead-heading text-uppercase">Look around and choose your workout place!
+            <br><br>
+            REGISTER
+            <br><br>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
 <form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}" >
     <p>nickname: <input type="text" th:field="*{nickname}">
         <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
     </p>
-    <p>mailAddress: <input type="email" th:field="*{mailAddress}">
+    <p>e-mail address: <input type="email" th:field="*{mailAddress}">
         <span class="errorClass" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}"></span>
     </p>
-    <p>password: <input type="password" th:field="*{password}">
+    <p>password (min 8 char): <input type="password" th:field="*{password}">
         <span class="errorClass" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
     </p>
 
-    <p>repeat password: <input type="password" th:field="*{repeatPassword}">
+    <p>repeat password (min 8 char): <input type="password" th:field="*{repeatPassword}">
         <span class="errorClass" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></span>
     </p>
 
-    <p>Age:<input type="number" th:field="*{age}">
+    <p>age (min 16):<input type="number" th:field="*{age}">
         <span class="errorClass" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
     </p>
 
 
-    <p>phoneNumber: <input type="text" th:field="*{phoneNumber}">
+    <p>phone number: <input type="text" th:field="*{phoneNumber}">
         <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
     </p>
     <p>gender:
@@ -42,22 +64,22 @@
         </select>
         <span class="errorClass" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
     </p>
-    <p>town Name:
+    <p>town:
         <select class="paddingClass" th:field="*{address.townName}">
             <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
         </select>
         <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}" th:errors="*{address.townName}"></span>
     </p>
-    <p>streetName: <input type="text" th:field="*{address.streetName}"></p>
+    <p>street: <input type="text" th:field="*{address.streetName}"></p>
 
-    <p>activity:
+    <p>disciplines:
         <select class="paddingClass" th:field="*{sportDisciplines}">
             <option th:each="element: ${userSportDisciplines}" th:value="${element}" th:text="${element.name}"/>
         </select>
         <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}" th:errors="*{sportDisciplines}"></span>
     </p>
 
-    <p>activity level:
+    <p>level of advancement:
         <select class="paddingClass" th:field="*{activityLevel}">
             <option th:each="element: ${userActivityLevels}" th:value="${element}" th:text="${element.name}"/>
         </select>
@@ -66,6 +88,6 @@
 
     <button type="submit" >Save</button>
 </form>
-
+</div>
 </body>
 </html>

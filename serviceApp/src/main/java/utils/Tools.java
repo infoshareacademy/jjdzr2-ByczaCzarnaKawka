@@ -1,8 +1,20 @@
 package utils;
 
-public class Tools {
+import domain.users.User;
 
-    public static boolean  verificationPassword(String password1, String password2) {
-      return password1.equals(password2);
+import java.util.List;
+
+public class Tools {
+    public static boolean isMailUnique(String email) {
+        List<User> allUsers = FileUtils.readUsersJsonFile();
+        boolean isUnique = true;
+        for (int i = 0; i < allUsers.size(); i++) {
+            boolean isUniqueTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
+            if (!isUniqueTemp) {
+                System.out.println("This e-mail address already exists!");
+                isUnique = false;
+            }
+        }
+        return isUnique;
     }
 }
