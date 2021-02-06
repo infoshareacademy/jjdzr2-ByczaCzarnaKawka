@@ -17,4 +17,13 @@ public class Tools {
         }
         return isUnique;
     }
+
+    public static boolean isPasswordsMatch(String password, String repeatPassword){
+        if(!password.equals(repeatPassword)){
+            System.out.println("The passwords do not match");
+            return false;
+        }
+        return true;
+    }
+
 }

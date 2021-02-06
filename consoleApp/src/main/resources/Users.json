@@ -128,6 +128,24 @@
     ]
   },
   {
+    "nickname": "Alicja",
+    "mailAddress": "ala@wp.pl",
+    "password": "AlicjaAlicja",
+    "age": 22,
+    "phoneNumber": "789654123",
+    "gender": "FEMALE",
+    "address": {
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TENNIS",
+        "activityLevel": "INTERMEDIATE"
+      }
+    ]
+  },
+  {
     "nickname": "qwe",
     "mailAddress": "qqq@ww.pl",
     "password": "www",

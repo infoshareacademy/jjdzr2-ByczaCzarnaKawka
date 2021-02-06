@@ -5,12 +5,12 @@ import domain.users.UserDTO;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class PasswordValidator implements ConstraintValidator<Password, String> {
+import static utils.Tools.isPasswordsMatch;
+
+public class PasswordValidator implements ConstraintValidator<Password, UserDTO> {
     public void initialize(Password constraint) {
     }
-
-    public boolean isValid(String password, ConstraintValidatorContext context) {
-
-        return false;
+    public boolean isValid(UserDTO userDTO, ConstraintValidatorContext context) {
+        return isPasswordsMatch(userDTO.getPassword(), userDTO.getRepeatPassword());
     }
 }

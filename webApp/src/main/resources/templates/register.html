@@ -36,6 +36,7 @@
 
 <div class="container">
 <form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}" >
+
     <p>nickname: <input type="text" th:field="*{nickname}">
         <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
     </p>

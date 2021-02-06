@@ -12,6 +12,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 
 
+@Password
 public class UserDTO {
     @NotBlank(message = "nickname can't be empty")
     @Size(min = 1, max = 16, message = "nickname should have 1 tp 16 characters long")
@@ -19,7 +20,7 @@ public class UserDTO {
 
     @NotEmpty(message = "e-mail can't be empty")
     @Pattern(regexp = "[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}", message = "e-mail address seems to be incorrect")
-//    @EmailExist
+    @EmailExist
     private String mailAddress;
 
     @NotBlank(message = "password can't be empty")
@@ -40,8 +41,6 @@ public class UserDTO {
 
     private Gender gender;
     private Address address;
-    //@NotEmpty(message = "activity can't be empty")
-    //private List<Activity> activityList;
     private SportDisciplines sportDisciplines;
     private ActivityLevel activityLevel;
 
@@ -109,14 +108,6 @@ public class UserDTO {
     public void setAddress(Address address) {
         this.address = address;
     }
-
-    //    public List<Activity> getActivityList() {
-//        return activityList;
-//    }
-//
-//    public void setActivityList(List<Activity> activityList) {
-//        this.activityList = activityList;
-//    }
 
     public SportDisciplines getSportDisciplines() {
         return sportDisciplines;
