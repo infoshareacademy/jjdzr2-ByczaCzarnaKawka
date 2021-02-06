@@ -17,6 +17,24 @@
     ]
   },
   {
+    "nickname": "qwe",
+    "mailAddress": "q2we@wp.pl",
+    "password": "123123123",
+    "age": 18,
+    "phoneNumber": "123654789",
+    "gender": "FEMALE",
+    "address": {
+      "townName": "UNKNOWN",
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
     "nickname": "marta",
     "mailAddress": "ma@rt.ap",
     "password": "qws",

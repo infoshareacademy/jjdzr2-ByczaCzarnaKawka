@@ -11,7 +11,7 @@ public class Tools {
         for (int i = 0; i < allUsers.size(); i++) {
             boolean isUniqueTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
             if (!isUniqueTemp) {
-                System.out.println("This e-mail address already exists!");
+//                System.out.println("This e-mail address already exists!");
                 isUnique = false;
             }
         }

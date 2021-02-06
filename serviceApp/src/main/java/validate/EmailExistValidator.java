@@ -12,8 +12,6 @@ import static utils.Tools.isMailUnique;
 public class EmailExistValidator implements ConstraintValidator<EmailExist, String> {
 @Override
     public boolean isValid(String email, ConstraintValidatorContext context) {
-
-        System.out.println("valid email " + email);
         return isMailUnique(email);
     }
 }
