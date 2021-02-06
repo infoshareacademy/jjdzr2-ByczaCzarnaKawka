@@ -1,6 +1,5 @@
 [
   {
-    "ordinalNumber": 1,
     "name": "COS Gdańsk",
     "discipline": "BASKETBALL",
     "phoneNumber": "123456789",
@@ -23,7 +22,6 @@
     "price": 200
   },
   {
-    "ordinalNumber": 2,
     "name": "COS Łódź",
     "discipline": "BOXING",
     "phoneNumber": "147258369",
@@ -46,7 +44,6 @@
     "price": 50
   },
   {
-    "ordinalNumber": 3,
     "name": "COS Białystok",
     "discipline": "BOXING",
     "phoneNumber": "147258369",
