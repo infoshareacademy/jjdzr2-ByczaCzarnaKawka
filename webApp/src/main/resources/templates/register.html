@@ -33,62 +33,64 @@
     </div>
 </header>
 
-
 <div class="container">
-<form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}" >
 
-    <p>nickname: <input type="text" th:field="*{nickname}">
-        <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
-    </p>
-    <p>e-mail address: <input type="email" th:field="*{mailAddress}">
-        <span class="errorClass" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}"></span>
-    </p>
-    <p>password (min 8 char): <input type="password" th:field="*{password}">
-        <span class="errorClass" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-    </p>
+    <form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}">
+        <!--    <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>-->
+        <p>nickname: <input type="text" th:field="*{nickname}">
+            <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+        </p>
+        <p>e-mail address: <input type="email" th:field="*{mailAddress}">
+            <span class="errorClass" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}"></span>
+        </p>
+        <p>password (min 8 char): <input type="password" th:field="*{password}">
+            <span class="errorClass" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        </p>
 
-    <p>repeat password (min 8 char): <input type="password" th:field="*{repeatPassword}">
-        <span class="errorClass" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></span>
-    </p>
+        <p>repeat password (min 8 char): <input type="password" th:field="*{repeatPassword}">
+            <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>
+        </p>
 
-    <p>age (min 16):<input type="number" th:field="*{age}">
-        <span class="errorClass" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
-    </p>
+        <p>age (min 16):<input type="number" th:field="*{age}">
+            <span class="errorClass" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+        </p>
 
 
-    <p>phone number: <input type="text" th:field="*{phoneNumber}">
-        <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
-    </p>
-    <p>gender:
-        <select class="paddingClass" th:field="*{gender}">
-            <option th:each="element: ${userGender}" th:value="${element}" th:text="${element.name}"/>
-        </select>
-        <span class="errorClass" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
-    </p>
-    <p>town:
-        <select class="paddingClass" th:field="*{address.townName}">
-            <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
-        </select>
-        <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}" th:errors="*{address.townName}"></span>
-    </p>
-    <p>street: <input type="text" th:field="*{address.streetName}"></p>
+        <p>phone number: <input type="text" th:field="*{phoneNumber}">
+            <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+        </p>
+        <p>gender:
+            <select class="paddingClass" th:field="*{gender}">
+                <option th:each="element: ${userGender}" th:value="${element}" th:text="${element.name}"/>
+            </select>
+            <span class="errorClass" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+        </p>
+        <p>town:
+            <select class="paddingClass" th:field="*{address.townName}">
+                <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
+            </select>
+            <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}"
+                  th:errors="*{address.townName}"></span>
+        </p>
+        <p>street: <input type="text" th:field="*{address.streetName}"></p>
 
-    <p>disciplines:
-        <select class="paddingClass" th:field="*{sportDisciplines}">
-            <option th:each="element: ${userSportDisciplines}" th:value="${element}" th:text="${element.name}"/>
-        </select>
-        <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}" th:errors="*{sportDisciplines}"></span>
-    </p>
+        <p>disciplines:
+            <select class="paddingClass" th:field="*{sportDisciplines}">
+                <option th:each="element: ${userSportDisciplines}" th:value="${element}" th:text="${element.name}"/>
+            </select>
+            <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"
+                  th:errors="*{sportDisciplines}"></span>
+        </p>
 
-    <p>level of advancement:
-        <select class="paddingClass" th:field="*{activityLevel}">
-            <option th:each="element: ${userActivityLevels}" th:value="${element}" th:text="${element.name}"/>
-        </select>
-        <span class="errorClass" th:if="${#fields.hasErrors('activityLevel')}" th:errors="*{activityLevel}"></span>
-    </p>
+        <p>level of advancement:
+            <select class="paddingClass" th:field="*{activityLevel}">
+                <option th:each="element: ${userActivityLevels}" th:value="${element}" th:text="${element.name}"/>
+            </select>
+            <span class="errorClass" th:if="${#fields.hasErrors('activityLevel')}" th:errors="*{activityLevel}"></span>
+        </p>
 
-    <button type="submit" >Save</button>
-</form>
+        <button type="submit">Save</button>
+    </form>
 </div>
 </body>
 </html>
