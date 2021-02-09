@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{allFacilitiesList.tab}"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">The Gym Buddy Finder App!</div>
+            <div class="masthead-heading text-uppercase">Look around and choose your workout place!</div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col" th:text="#{facility.no}"></th>
+                    <th scope="col" th:text="#{facility.name}"></th>
+                    <th scope="col" th:text="#{facility.discipline}"></th>
+                    <th scope="col" th:text="#{facility.phoneNumber}"></th>
+                    <th scope="col" th:text="#{facility.address}"></th>
+                    <th scope="col" th:text="#{facility.openHour}"></th>
+                    <th scope="col" th:text="#{facility.closeHour}"></th>
+                    <th scope="col" th:text="#{facility.price}"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody th:each="facility,iterSttat :${facilities}" th:class="${iterSttat.even}">
+                <tr>
+                    <th scope="row" th:text="${facilities.indexOf(facility) + 1}"></th>
+                    <td th:text="${facility.name}"></td>
+                    <td th:text="${facility.discipline}"></td>
+                    <td th:text="${facility.phoneNumber}"></td>
+                    <td th:text="${facility.address}"></td>
+                    <td th:text="${facility.openHour}"></td>
+                    <td th:text="${facility.closeHour}"></td>
+                    <td th:text="${facility.price}"></td>
+                    <td>
+                        <button type="button" class="btn btn-outline-info">Book now!</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!--  Footer  -->
+    <div class="align-content-center" th:insert="~{fragments/facilityListFooter :: footer}" ></div>
+
+    <!-- Bootstrap core JS-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
