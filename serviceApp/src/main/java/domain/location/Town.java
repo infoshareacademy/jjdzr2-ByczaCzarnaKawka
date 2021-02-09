@@ -12,8 +12,7 @@ public enum Town {
     LODZ,
     POZNAN,
     WARSAW,
-    WROCLAW,
-    UNKNOWN;
+    WROCLAW;
 
     public static void printValue() {
 

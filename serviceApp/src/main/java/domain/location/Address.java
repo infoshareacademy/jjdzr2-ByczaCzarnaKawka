@@ -8,7 +8,7 @@ public class Address {
     private String streetName;
 
     public Address() {
-        this.townName = Town.UNKNOWN;
+       // this.townName = Town.UNKNOWN;
         this.streetName = "Unknown";
     }
 

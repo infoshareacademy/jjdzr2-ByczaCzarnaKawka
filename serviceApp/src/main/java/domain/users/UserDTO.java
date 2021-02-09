@@ -27,9 +27,7 @@ public class UserDTO {
 
     private String repeatPassword;
 
-    @Min(16)
-    @Max(130)
-    private int age;
+    private int bornYear;
 
     @NotEmpty(message = "phone number can't be empty")
     @Pattern(regexp = "\\d\\d\\d\\d\\d\\d\\d\\d\\d", message = "phone number seems to be incorrect")
@@ -73,12 +71,12 @@ public class UserDTO {
         this.repeatPassword = repeatPassword;
     }
 
-    public int getAge() {
-        return age;
+    public int getBornYear() {
+        return bornYear;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBornYear(int bornYear) {
+        this.bornYear = bornYear;
     }
 
     public String getPhoneNumber() {

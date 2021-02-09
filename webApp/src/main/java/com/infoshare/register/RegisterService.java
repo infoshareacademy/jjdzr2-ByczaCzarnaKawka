@@ -52,7 +52,7 @@ public class RegisterService {
     public User createUser(UserDTO user) {
         Address address = createAddress(user);
         List<Activity> activities = createActivityList(user);
-        return new User(user.getNickname(), user.getMailAddress(), user.getPassword(), user.getAge(), user.getPhoneNumber(), user.getGender(), address, activities);
+        return new User(user.getNickname(), user.getMailAddress(), user.getPassword(), user.getBornYear(), user.getPhoneNumber(), user.getGender(), address, activities);
     }
 
     public Address createAddress(UserDTO user) {
@@ -63,7 +63,5 @@ public class RegisterService {
         Activity activity = new Activity(user.getSportDisciplines(), user.getActivityLevel());
         return new ArrayList<>(Arrays.asList(activity));
     }
-
-
 }
 
