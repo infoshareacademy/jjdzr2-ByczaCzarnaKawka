@@ -11,7 +11,6 @@ public class Tools {
         for (int i = 0; i < allUsers.size(); i++) {
             boolean isUniqueTemp = !email.equalsIgnoreCase(allUsers.get(i).getMailAddress());
             if (!isUniqueTemp) {
-//                System.out.println("This e-mail address already exists!");
                 isUnique = false;
             }
         }
@@ -19,11 +18,7 @@ public class Tools {
     }
 
     public static boolean isPasswordsMatch(String password, String repeatPassword){
-        if(!password.equals(repeatPassword)){
-            System.out.println("The passwords do not match");
-            return false;
-        }
-        return true;
+        return password.equals(repeatPassword);
     }
 
 }

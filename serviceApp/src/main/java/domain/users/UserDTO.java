@@ -1,15 +1,13 @@
 package domain.users;
 
-import domain.activities.Activity;
 import domain.activities.ActivityLevel;
 import domain.activities.SportDisciplines;
 import domain.location.Address;
 import validate.EmailExist;
 import validate.Password;
 
-
 import javax.validation.constraints.*;
-import java.util.List;
+
 
 
 @Password
@@ -27,8 +25,6 @@ public class UserDTO {
     @Size(min = 8, message = "password should have min 8 characters long")
     private String password;
 
-    @NotBlank(message = "password can't be empty")
-    @Size(min = 8, message = "password should have min 8 characters long")
     private String repeatPassword;
 
     @Min(16)
