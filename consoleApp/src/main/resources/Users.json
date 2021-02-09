@@ -3,10 +3,9 @@
     "nickname": "Kapusta",
     "mailAddress": "ka@pu.sta",
     "password": "qwe",
-    "age": 24,
+    "bornYear": 0,
     "phoneNumber": "987898765",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -17,62 +16,10 @@
     ]
   },
   {
-    "nickname": "qwe",
-    "mailAddress": "q2we@wp.pl",
-    "password": "123123123",
-    "age": 18,
-    "phoneNumber": "123654789",
-    "gender": "FEMALE",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "FOOTBALL",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
-    "nickname": "marta",
-    "mailAddress": "ma@rt.ap",
-    "password": "qws",
-    "age": 23,
-    "phoneNumber": "987987987",
-    "address": {
-      "townName": "GDYNIA",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "SWIMMING",
-        "activityLevel": "ADVANCED"
-      }
-    ]
-  },
-  {
-    "nickname": "Anna",
-    "mailAddress": "anna@wp.pl",
-    "password": "qwe",
-    "age": 18,
-    "phoneNumber": "123123123",
-    "address": {
-      "townName": "GDYNIA",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "SWIMMING",
-        "activityLevel": "INTERMEDIATE"
-      }
-    ]
-  },
-  {
     "nickname": "Tomasz",
     "mailAddress": "to@ma.sz",
     "password": "qwe",
-    "age": 22,
+    "bornYear": 0,
     "phoneNumber": "123123123",
     "address": {
       "townName": "KATOWICE",
@@ -89,10 +36,9 @@
     "nickname": "jola",
     "mailAddress": "qwe@qwe.pl",
     "password": "qwe",
-    "age": 23,
+    "bornYear": 0,
     "phoneNumber": "123123123",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -106,10 +52,9 @@
     "nickname": "Michal",
     "mailAddress": "random@gmail.com",
     "password": "qwerrt12345",
-    "age": 0,
+    "bornYear": 0,
     "phoneNumber": "",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -131,7 +76,7 @@
     "nickname": "Jan",
     "mailAddress": "kowalski@gmail.com",
     "password": "qwerty",
-    "age": 130,
+    "bornYear": 0,
     "phoneNumber": "147258369",
     "gender": "MALE",
     "address": {
@@ -146,14 +91,185 @@
     ]
   },
   {
+    "nickname": "jan",
+    "mailAddress": "qwer@wp.pl",
+    "password": "789654123",
+    "bornYear": 0,
+    "phoneNumber": "123654789",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "CYCLING",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "Janusz",
+    "mailAddress": "kowalski123@gmail.com",
+    "password": "Swat2021",
+    "bornYear": 0,
+    "phoneNumber": "1346852147",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "RUNNING",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "Łucja",
+    "mailAddress": "locja@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 1989,
+    "phoneNumber": "123123123",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "RUNNING",
+        "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "kokos",
+    "mailAddress": "ko@ko.pl",
+    "password": "poi",
+    "bornYear": 0,
+    "phoneNumber": "125478963",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "BOXING",
+        "activityLevel": "ROOKIE"
+      },
+      {
+        "sportDisciplines": "MOTOCROSS",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
+    "nickname": "Moris",
+    "mailAddress": "mo@ri.pl",
+    "password": "qwe",
+    "bornYear": 0,
+    "phoneNumber": "1213123132",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "GOLF",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "maria",
+    "mailAddress": "maria@wp.pl",
+    "password": "qwer",
+    "bornYear": 0,
+    "phoneNumber": "489159158",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "CYCLING",
+        "activityLevel": "EXPERT"
+      }
+    ]
+  },
+  {
+    "nickname": "qwe",
+    "mailAddress": "qwe@wp.pl",
+    "password": "qqq",
+    "bornYear": 0,
+    "phoneNumber": "123456789",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "qwe",
+    "mailAddress": "q2we@wp.pl",
+    "password": "123123123",
+    "bornYear": 0,
+    "phoneNumber": "123654789",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "NEWBIE"
+      }
+    ]
+  },
+  {
+    "nickname": "marta",
+    "mailAddress": "ma@rt.ap",
+    "password": "qws",
+    "bornYear": 0,
+    "phoneNumber": "987987987",
+    "address": {
+      "townName": "GDYNIA",
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "Anna",
+    "mailAddress": "anna@wp.pl",
+    "password": "qwe",
+    "bornYear": 0,
+    "phoneNumber": "123123123",
+    "address": {
+      "townName": "GDYNIA",
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "SWIMMING",
+        "activityLevel": "INTERMEDIATE"
+      }
+    ]
+  },
+  {
     "nickname": "Alicja",
     "mailAddress": "ala@wp.pl",
     "password": "AlicjaAlicja",
-    "age": 22,
+    "bornYear": 0,
     "phoneNumber": "789654123",
     "gender": "FEMALE",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -167,11 +283,10 @@
     "nickname": "qwe",
     "mailAddress": "qqq@ww.pl",
     "password": "www",
-    "age": 11,
+    "bornYear": 0,
     "phoneNumber": "123",
     "gender": "FEMALE",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -182,13 +297,29 @@
     ]
   },
   {
+    "nickname": "Krzysztof",
+    "mailAddress": "kris@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 2001,
+    "phoneNumber": "123123123",
+    "gender": "MALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "FOOTBALL",
+        "activityLevel": "INTERMEDIATE"
+      }
+    ]
+  },
+  {
     "nickname": "Dorota",
     "mailAddress": "random2@gmail.com",
     "password": "qwerrt12345",
-    "age": 0,
+    "bornYear": 0,
     "phoneNumber": "",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -207,31 +338,12 @@
     ]
   },
   {
-    "nickname": "jan",
-    "mailAddress": "qwer@wp.pl",
-    "password": "789654123",
-    "age": 19,
-    "phoneNumber": "123654789",
-    "gender": "FEMALE",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "CYCLING",
-        "activityLevel": "ROOKIE"
-      }
-    ]
-  },
-  {
     "nickname": "ananas",
     "mailAddress": "na@an.pl",
     "password": "lki",
-    "age": 22,
+    "bornYear": 0,
     "phoneNumber": "159159159",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -246,31 +358,12 @@
     ]
   },
   {
-    "nickname": "Janusz",
-    "mailAddress": "kowalski123@gmail.com",
-    "password": "Swat2021",
-    "age": -5,
-    "phoneNumber": "1346852147",
-    "gender": "FEMALE",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "RUNNING",
-        "activityLevel": "ROOKIE"
-      }
-    ]
-  },
-  {
     "nickname": "Olgiert",
     "mailAddress": "ol@gi.pl",
     "password": "qwe",
-    "age": 33,
+    "bornYear": 0,
     "phoneNumber": "987654321",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -281,35 +374,13 @@
     ]
   },
   {
-    "nickname": "kokos",
-    "mailAddress": "ko@ko.pl",
-    "password": "poi",
-    "age": 34,
-    "phoneNumber": "125478963",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "BOXING",
-        "activityLevel": "ROOKIE"
-      },
-      {
-        "sportDisciplines": "MOTOCROSS",
-        "activityLevel": "ROOKIE"
-      }
-    ]
-  },
-  {
     "nickname": "qwe",
     "mailAddress": "eeee@wp",
     "password": "eee",
-    "age": 2,
+    "bornYear": 0,
     "phoneNumber": "123",
     "gender": "FEMALE",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
@@ -320,55 +391,53 @@
     ]
   },
   {
-    "nickname": "Moris",
-    "mailAddress": "mo@ri.pl",
-    "password": "qwe",
-    "age": 321,
-    "phoneNumber": "1213123132",
+    "nickname": "January",
+    "mailAddress": "january@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 1997,
+    "phoneNumber": "123654789",
+    "gender": "MALE",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
       {
         "sportDisciplines": "GOLF",
-        "activityLevel": "NEWBIE"
-      }
-    ]
-  },
-  {
-    "nickname": "maria",
-    "mailAddress": "maria@wp.pl",
-    "password": "qwer",
-    "age": 34,
-    "phoneNumber": "489159158",
-    "gender": "FEMALE",
-    "address": {
-      "townName": "UNKNOWN",
-      "streetName": "Unknown"
-    },
-    "activityList": [
-      {
-        "sportDisciplines": "CYCLING",
         "activityLevel": "EXPERT"
       }
     ]
   },
   {
-    "nickname": "qwe",
-    "mailAddress": "qwe@wp.pl",
-    "password": "qqq",
-    "age": 5,
-    "phoneNumber": "123456789",
+    "nickname": "Łucja",
+    "mailAddress": "locja1@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 1989,
+    "phoneNumber": "123123123",
     "gender": "FEMALE",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
-        "activityLevel": "NEWBIE"
+        "sportDisciplines": "RUNNING",
+        "activityLevel": "ADVANCED"
+      }
+    ]
+  },
+  {
+    "nickname": "Alicja",
+    "mailAddress": "alicja@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 2000,
+    "phoneNumber": "123123123",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TENNIS",
+        "activityLevel": "ROOKIE"
       }
     ]
   },
@@ -376,10 +445,9 @@
     "nickname": "Jola",
     "mailAddress": "jo@la.pl",
     "password": "qwe",
-    "age": 11,
+    "bornYear": 0,
     "phoneNumber": "123123123",
     "address": {
-      "townName": "UNKNOWN",
       "streetName": "Unknown"
     },
     "activityList": [

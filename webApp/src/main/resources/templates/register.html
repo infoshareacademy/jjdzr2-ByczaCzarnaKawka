@@ -30,10 +30,11 @@
 
 <section class="page-section">
     <div class="container">
+        <h3> register form - enter your data </h3>
         <form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}">
 
             <div>
-                nickname: <input class="form-control" type="text" th:field="*{nickname}" >
+                nickname: <input class="form-control" type="text" th:field="*{nickname}">
                 <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
             </div>
 
@@ -50,11 +51,12 @@
                 <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>
             </div>
 
-            <div>born year:<input class="form-control" min="16" type="number" th:field="*{bornYear}">
+            <div>born year:<input class="form-control"  type="number" min="1900" th:field="*{bornYear}">
                 <span class="errorClass" th:if="${#fields.hasErrors('bornYear')}" th:errors="*{bornYear}"></span>
             </div>
 
-            <div>phone number: <input class="form-control" type="text" th:field="*{phoneNumber}" placeholder="xxxxxxxxx">
+            <div>phone number: <input class="form-control" type="text" th:field="*{phoneNumber}"
+                                      placeholder="xxxxxxxxx">
                 <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}"
                       th:errors="*{phoneNumber}"></span>
             </div>
@@ -67,7 +69,7 @@
             </div>
 
             <div>town:
-                <select class="form-control" th:field="*{address.townName}" >
+                <select class="form-control" th:field="*{address.townName}">
                     <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
                 </select>
                 <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}"
@@ -94,10 +96,15 @@
                 <span class="errorClass" th:if="${#fields.hasErrors('activityLevel')}"
                       th:errors="*{activityLevel}"></span>
             </div>
-
-            <button type="submit">Save</button>
+            <div>
+                <br>
+                <button type="submit" class="btn float-left btn-outline-info"> Save</button>
+                <br>
+            </div>
         </form>
     </div>
 </section>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
