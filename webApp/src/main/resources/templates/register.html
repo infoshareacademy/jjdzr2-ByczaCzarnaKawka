@@ -50,8 +50,8 @@
                 <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>
             </div>
 
-            <div>age (min 16):<input class="form-control" min="16" type="number" th:field="*{bornYear}">
-                <span class="errorClass" th:if="${#fields.hasErrors('age')}" th:errors="*{bornYear}"></span>
+            <div>born year:<input class="form-control" min="16" type="number" th:field="*{bornYear}">
+                <span class="errorClass" th:if="${#fields.hasErrors('bornYear')}" th:errors="*{bornYear}"></span>
             </div>
 
             <div>phone number: <input class="form-control" type="text" th:field="*{phoneNumber}" placeholder="xxxxxxxxx">

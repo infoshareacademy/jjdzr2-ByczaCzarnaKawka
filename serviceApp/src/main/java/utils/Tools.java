@@ -2,6 +2,7 @@ package utils;
 
 import domain.users.User;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Tools {
@@ -19,6 +20,11 @@ public class Tools {
 
     public static boolean isPasswordsMatch(String password, String repeatPassword){
         return password.equals(repeatPassword);
+    }
+
+    public static boolean isBornYearCorrect(Integer bornYear){
+        Integer presentYear= LocalDate.now().getYear();
+        return presentYear-bornYear>=16?true:false;
     }
 
 }

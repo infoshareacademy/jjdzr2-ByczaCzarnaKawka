@@ -48,7 +48,6 @@ public class RegisterService {
         userService.saveUser(newUser);
     }
 
-
     public User createUser(UserDTO user) {
         Address address = createAddress(user);
         List<Activity> activities = createActivityList(user);

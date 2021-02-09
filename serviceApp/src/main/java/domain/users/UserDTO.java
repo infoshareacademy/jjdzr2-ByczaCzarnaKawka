@@ -3,11 +3,11 @@ package domain.users;
 import domain.activities.ActivityLevel;
 import domain.activities.SportDisciplines;
 import domain.location.Address;
+import validate.BornYear;
 import validate.EmailExist;
 import validate.Password;
 
 import javax.validation.constraints.*;
-
 
 
 @Password
@@ -26,7 +26,7 @@ public class UserDTO {
     private String password;
 
     private String repeatPassword;
-
+    @BornYear
     private int bornYear;
 
     @NotEmpty(message = "phone number can't be empty")
