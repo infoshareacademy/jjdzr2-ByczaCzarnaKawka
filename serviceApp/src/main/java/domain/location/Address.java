@@ -1,11 +1,14 @@
 package domain.location;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Address {
+    @NotEmpty(message = "town can't be empty")
     private Town townName;
     private String streetName;
 
     public Address() {
-        this.townName = Town.UNKNOWN;
+       // this.townName = Town.UNKNOWN;
         this.streetName = "Unknown";
     }
 

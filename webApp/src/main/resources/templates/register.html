@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../style.css}">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title th:text="#{register.tab}"></title>
+</head>
+<body>
+
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">The Gym Buddy Finder App!</div>
+        <div class="masthead-heading text-uppercase">Don't hestitate to join the gym buddies family!
+        </div>
+    </div>
+</header>
+
+<section class="page-section">
+    <div class="container">
+        <h3> register form - enter your data </h3>
+        <form method="post" action="/register_send" th:object="${user}" th:action="@{/register_send}">
+
+            <div>
+                nickname: <input class="form-control" type="text" th:field="*{nickname}">
+                <span class="errorClass" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+            </div>
+
+            <div>e-mail address: <input class="form-control" type="email" th:field="*{mailAddress}">
+                <span class="errorClass" th:if="${#fields.hasErrors('mailAddress')}"
+                      th:errors="*{mailAddress}"></span>
+            </div>
+
+            <div>password (min 8 char): <input class="form-control" type="password" th:field="*{password}">
+                <span class="errorClass" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+            </div>
+
+            <div>repeat password (min 8 char): <input class="form-control" type="password" th:field="*{repeatPassword}">
+                <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>
+            </div>
+
+            <div>born year:<input class="form-control"  type="number" min="1900" th:field="*{bornYear}">
+                <span class="errorClass" th:if="${#fields.hasErrors('bornYear')}" th:errors="*{bornYear}"></span>
+            </div>
+
+            <div>phone number: <input class="form-control" type="text" th:field="*{phoneNumber}"
+                                      placeholder="xxxxxxxxx">
+                <span class="errorClass" th:if="${#fields.hasErrors('phoneNumber')}"
+                      th:errors="*{phoneNumber}"></span>
+            </div>
+
+            <div>gender:
+                <select class="form-control" th:field="*{gender}">
+                    <option th:each="element: ${userGender}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+            </div>
+
+            <div>town:
+                <select class="form-control" th:field="*{address.townName}">
+                    <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}"
+                      th:errors="*{address.townName}"></span>
+            </div>
+
+            <div>street: <input class="form-control" type="text" th:field="*{address.streetName}">
+            </div>
+
+            <div>disciplines:
+                <select class="form-control" th:field="*{sportDisciplines}">
+                    <option th:each="element: ${userSportDisciplines}" th:value="${element}"
+                            th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"
+                      th:errors="*{sportDisciplines}"></span>
+            </div>
+
+            <div>level of advancement:
+                <select class="form-control" th:field="*{activityLevel}">
+                    <option th:each="element: ${userActivityLevels}" th:value="${element}"
+                            th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('activityLevel')}"
+                      th:errors="*{activityLevel}"></span>
+            </div>
+            <div>
+                <br>
+                <button type="submit" class="btn float-left btn-outline-info"> Save</button>
+                <br>
+            </div>
+        </form>
+    </div>
+</section>
+
+<div class="align-content-center" th:insert="~{fragments/facilityListFooter :: footer}" ></div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

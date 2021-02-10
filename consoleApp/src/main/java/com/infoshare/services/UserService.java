@@ -16,8 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.apache.logging.log4j.Level.values;
-
 public class UserService {
 
         //TODO add facility filter method, remove method
@@ -37,7 +35,7 @@ public class UserService {
 
     public void saveUser(User user) {
         Map<String, User> usersMap = userRepository.getUsersMap();
-        System.out.println("userMap: " + usersMap);
+       // System.out.println("userMap: " + usersMap);
 
         if (usersMap.containsKey(user.getMailAddress())) {
             System.out.println("Unfortunately the mail address is already exist!");
@@ -88,7 +86,7 @@ public class UserService {
         String password = Tools.getPasswordFromUser(); // TODO passwords are written by open text - fix it
         User user = new User(nickname, login, password);
         int age = Tools.getAgeFromUser();
-        user.setAge(age);
+        user.setBornYear(age);
         String phoneNumber = Tools.getPhoneNumberFromUser();
         user.setPhoneNumber(phoneNumber);
         Gender gender = Tools.getGenderFromUser("Your gender: ");

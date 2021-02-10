@@ -98,8 +98,8 @@ public class Tools {
 
     public static int getAgeFromUser(){
         int age=getIntFromUser("Enter your age: ");
-        if(age>130){
-            System.out.println("You should be already dead :] enter your real age: ");
+        if(age<=0 || age>130){
+            System.out.println("Enter your real age (1-130): ");
             return getAgeFromUser();
         }
         return age;
