@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 @Password
 public class UserDTO {
     @NotBlank(message = "nickname can't be empty")
-    @Size(min = 1, max = 16, message = "nickname should have 1 tp 16 characters long")
+    @Size(min = 1, max = 16, message = "nickname must be between 1 and 16 characters")
     private String nickname;
 
     @NotEmpty(message = "e-mail can't be empty")

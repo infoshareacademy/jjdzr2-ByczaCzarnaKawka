@@ -73,6 +73,23 @@
     ]
   },
   {
+    "nickname": "Alicja",
+    "mailAddress": "alicja2@wp.pl",
+    "password": "qweqweqwe",
+    "bornYear": 2000,
+    "phoneNumber": "123123123",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDisciplines": "TENNIS",
+        "activityLevel": "ROOKIE"
+      }
+    ]
+  },
+  {
     "nickname": "Jan",
     "mailAddress": "kowalski@gmail.com",
     "password": "qwerty",

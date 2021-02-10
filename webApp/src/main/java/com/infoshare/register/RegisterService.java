@@ -18,13 +18,6 @@ import java.util.List;
 @Component
 public class RegisterService {
 
-    private static final String MENU_HEADER = "Welcome in *** GymBuddy Finder ***";
-
-    public String getMenuHeader() {
-        return MENU_HEADER;
-    }
-
-
     public List<Town> getTownName() {
         return Arrays.asList(Town.values());
     }
@@ -48,17 +41,17 @@ public class RegisterService {
         userService.saveUser(newUser);
     }
 
-    public User createUser(UserDTO user) {
+    private User createUser(UserDTO user) {
         Address address = createAddress(user);
         List<Activity> activities = createActivityList(user);
         return new User(user.getNickname(), user.getMailAddress(), user.getPassword(), user.getBornYear(), user.getPhoneNumber(), user.getGender(), address, activities);
     }
 
-    public Address createAddress(UserDTO user) {
+    private Address createAddress(UserDTO user) {
         return new Address(user.getAddress().getTownName(), user.getAddress().getStreetName());
     }
 
-    public List<Activity> createActivityList(UserDTO user) {
+    private List<Activity> createActivityList(UserDTO user) {
         Activity activity = new Activity(user.getSportDisciplines(), user.getActivityLevel());
         return new ArrayList<>(Arrays.asList(activity));
     }
