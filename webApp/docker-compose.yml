@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+    thegymbuddy_service:
+      build:
+        dockerfile: Dockerfile
+        context: .
+      restart: always
+      ports:
+        - "8080:8080"
+
+    thegymbuddy_db:
+      image: mysql
+      container_name: gymbuddy_db
+      restart: always
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: gymBuddies
