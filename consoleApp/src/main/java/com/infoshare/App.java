@@ -1,9 +1,9 @@
 package com.infoshare;
 
-import com.infoshare.menu.Menu;
+import com.infoshare.menu.ConsoleMenu;
 
 public class App {
     public static void main(String[] args) {
-        new Menu().start();
+        new ConsoleMenu().start();
     }
 }

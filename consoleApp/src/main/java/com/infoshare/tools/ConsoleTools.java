@@ -7,7 +7,7 @@ import domain.location.Address;
 
 import domain.location.Town;
 
-import com.infoshare.services.UserService;
+import com.infoshare.services.UserConsoleService;
 import domain.users.Gender;
 import domain.users.User;
 import utils.FileUtils;
@@ -18,7 +18,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Tools {
+public class ConsoleTools {
     public static String getFromUser(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
@@ -39,8 +39,8 @@ public class Tools {
 
     public static String getPasswordFromUser() {
 
-        String password1 = Tools.getFromUser("Enter password: ");
-        String password2 = Tools.getFromUser("Confirm password: ");
+        String password1 = ConsoleTools.getFromUser("Enter password: ");
+        String password2 = ConsoleTools.getFromUser("Confirm password: ");
         return verificationPassword(password1, password2);
     }
 
@@ -59,7 +59,7 @@ public class Tools {
     }
 
     public static String getLoginFromUser() {
-        String login = Tools.getFromUser("Enter e-mail address: ");
+        String login = ConsoleTools.getFromUser("Enter e-mail address: ");
         return verifyEmail(login);
     }
 
@@ -130,13 +130,13 @@ public class Tools {
     public static Gender getGenderFromUser(String message) {
         Gender.printValues();
         String gender = getFromUser(message);
-        return UserService.valueOfGenderLabel(gender);
+        return UserConsoleService.valueOfGenderLabel(gender);
     }
 
     public static Town getTownFromUser(String message) {
         Town.printValue();
         String town = getFromUser(message);
-        return UserService.valueOfTownLabel(town);
+        return UserConsoleService.valueOfTownLabel(town);
     }
 
     public static String getStreetFromUser() {
@@ -156,11 +156,11 @@ public class Tools {
     }
 
     public static Address getAddressFromUser() {
-        String choice = Tools.getFromUser("Would you like to provide your address? Y/N ").toUpperCase();
+        String choice = ConsoleTools.getFromUser("Would you like to provide your address? Y/N ").toUpperCase();
         Address address = new Address();
         if ("Y".equals(choice)) {
-            Town town = Tools.getTownFromUser("Enter town name: ");
-            String street = Tools.getStreetFromUser();
+            Town town = ConsoleTools.getTownFromUser("Enter town name: ");
+            String street = ConsoleTools.getStreetFromUser();
             address = new Address(town, street);
         }
         return address;
@@ -169,13 +169,13 @@ public class Tools {
     public static ActivityLevel getActivityLevelFromUser(String message) {
         ActivityLevel.printValues();
         String level = getFromUser(message);
-        return UserService.valueOfActivityLabel(level);
+        return UserConsoleService.valueOfActivityLabel(level);
     }
 
     public static SportDisciplines getSportDisciplinesFromUser(String message) {
         SportDisciplines.printValues();
         String discipline = getFromUser(message);
-        return UserService.valueOfSportDisciplinesLabel(discipline);
+        return UserConsoleService.valueOfSportDisciplinesLabel(discipline);
     }
 
     public static User getActivityFromUser(User user) {
@@ -188,7 +188,7 @@ public class Tools {
             level = getActivityLevelFromUser("Wybierz poziom zaawansowania: ");
             activity = new Activity(discipline, level);
             user.addActivity(activity);
-            choice = Tools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
+            choice = ConsoleTools.getFromUser("Chcesz dodoać kolejną dyscyplinę? Y/N ").toUpperCase();
         } while ("Y".equals(choice));
         return user;
     }

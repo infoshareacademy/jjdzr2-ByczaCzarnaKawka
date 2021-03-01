@@ -1,6 +1,6 @@
 package com.infoshare.register;
 
-import com.infoshare.services.UserService;
+import com.infoshare.services.UserConsoleService;
 import domain.activities.Activity;
 import domain.activities.ActivityLevel;
 import domain.activities.SportDisciplines;
@@ -37,8 +37,8 @@ public class RegisterService {
 
     public void saveNewUser(UserDTO user) {
         User newUser = createUser(user);
-        UserService userService = new UserService();
-        userService.saveUser(newUser);
+        UserConsoleService userConsoleService = new UserConsoleService();
+        userConsoleService.saveUser(newUser);
     }
 
     private User createUser(UserDTO user) {

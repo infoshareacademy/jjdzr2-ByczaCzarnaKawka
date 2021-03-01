@@ -1,6 +1,6 @@
 package com.infoshare.controller;
 
-import com.infoshare.services.FacilityService;
+import com.infoshare.services.FacilityConsoleService;
 import domain.workoutPlaces.SportFacility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,16 +14,16 @@ import java.util.List;
 @RequestMapping("/facilities")
 public class FacilityController {
 
-    private final FacilityService facilityService;
+    private final FacilityConsoleService facilityConsoleService;
 
     @Autowired
-    public FacilityController(FacilityService facilityService) {
-        this.facilityService = facilityService;
+    public FacilityController(FacilityConsoleService facilityConsoleService) {
+        this.facilityConsoleService = facilityConsoleService;
     }
 
     @GetMapping("/list")
     public String getAllFacilityList(Model model){
-        List<SportFacility> currentFacilitiesList = facilityService.getSportFacilityList();
+        List<SportFacility> currentFacilitiesList = facilityConsoleService.getSportFacilityList();
 
         if(currentFacilitiesList.isEmpty()){
             String info = "Unfortunately there's no facilities to book, on the list...";
