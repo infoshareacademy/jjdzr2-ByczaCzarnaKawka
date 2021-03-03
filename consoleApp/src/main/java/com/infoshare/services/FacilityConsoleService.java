@@ -1,6 +1,6 @@
 package com.infoshare.services;
 
-import database.FacilityRepository;
+import fileDatabase.FacilityRepository;
 import domain.workoutPlaces.SportFacility;
 
 import java.util.Map;

@@ -1,7 +1,7 @@
 package domain.users;
 
 import domain.activities.ActivityLevel;
-import domain.activities.SportDisciplines;
+import domain.activities.SportDiscipline;
 import domain.location.Address;
 import validate.BornYear;
 import validate.EmailExist;
@@ -35,7 +35,7 @@ public class UserDTO {
 
     private Gender gender;
     private Address address;
-    private SportDisciplines sportDisciplines;
+    private SportDiscipline sportDiscipline;
     private ActivityLevel activityLevel;
 
 
@@ -103,12 +103,12 @@ public class UserDTO {
         this.address = address;
     }
 
-    public SportDisciplines getSportDisciplines() {
-        return sportDisciplines;
+    public SportDiscipline getSportDisciplines() {
+        return sportDiscipline;
     }
 
-    public void setSportDisciplines(SportDisciplines sportDisciplines) {
-        this.sportDisciplines = sportDisciplines;
+    public void setSportDisciplines(SportDiscipline sportDiscipline) {
+        this.sportDiscipline = sportDiscipline;
     }
 
     public ActivityLevel getActivityLevel() {

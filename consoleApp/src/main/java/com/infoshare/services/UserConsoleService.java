@@ -2,8 +2,8 @@ package com.infoshare.services;
 
 import domain.activities.Activity;
 import domain.activities.ActivityLevel;
-import domain.activities.SportDisciplines;
-import database.UserRepository;
+import domain.activities.SportDiscipline;
+import fileDatabase.UserRepository;
 import domain.location.Address;
 import domain.location.Town;
 import com.infoshare.tools.ConsoleTools;
@@ -97,10 +97,10 @@ public class UserConsoleService {
         return user;
     }
 
-    public static SportDisciplines valueOfSportDisciplinesLabel(String label) {
-        for (int i = 0; i < SportDisciplines.values().length; i++) {
-            if (SportDisciplines.values()[i].name().equals(label.toUpperCase())) {
-                return SportDisciplines.values()[i];
+    public static SportDiscipline valueOfSportDisciplinesLabel(String label) {
+        for (int i = 0; i < SportDiscipline.values().length; i++) {
+            if (SportDiscipline.values()[i].name().equals(label.toUpperCase())) {
+                return SportDiscipline.values()[i];
             }
         }
         return ConsoleTools.getSportDisciplinesFromUser("There's no such an activity. Choose one from the following: ");
@@ -125,7 +125,7 @@ public class UserConsoleService {
 
     public void foundUser() {
         Town town = ConsoleTools.getTownFromUser("Choice town to find your game partner: ");
-        SportDisciplines sportDiscipline = ConsoleTools.getSportDisciplinesFromUser("Choice sport discipline: ");
+        SportDiscipline sportDiscipline = ConsoleTools.getSportDisciplinesFromUser("Choice sport discipline: ");
         Map<String, User> foundUser;
         foundUser = foundUserInRepository(town, sportDiscipline);
         if (foundUser.isEmpty()) {
@@ -135,11 +135,11 @@ public class UserConsoleService {
         }
     }
 
-    private Map<String, User> foundUserInRepository(Town town, SportDisciplines sportDisciplines) {
+    private Map<String, User> foundUserInRepository(Town town, SportDiscipline sportDiscipline) {
         Map<String, User> userFromTown;
         Map<String, User> userPracticingDiscipline;
         userFromTown = foundUserFromTown(town);
-        userPracticingDiscipline = foundUsersPracticingDiscipline(userFromTown, sportDisciplines);
+        userPracticingDiscipline = foundUsersPracticingDiscipline(userFromTown, sportDiscipline);
         return userPracticingDiscipline;
     }
 
@@ -155,21 +155,21 @@ public class UserConsoleService {
         return mapFound;
     }
 
-    private Map<String, User> foundUsersPracticingDiscipline(Map<String, User> player, SportDisciplines sportDisciplines) {
+    private Map<String, User> foundUsersPracticingDiscipline(Map<String, User> player, SportDiscipline sportDiscipline) {
         Map<String, User> mapFound = new HashMap<>();
         List<Activity> listActivity;
         for (String email : player.keySet()) {
             listActivity = player.get(email).getActivityList();
-            if (isActivityInList(listActivity, sportDisciplines)) {
+            if (isActivityInList(listActivity, sportDiscipline)) {
                 mapFound.put(email, player.get(email));
             }
         }
         return mapFound;
     }
 
-    private boolean isActivityInList(List<Activity> listActivity, SportDisciplines sportDisciplines) {
+    private boolean isActivityInList(List<Activity> listActivity, SportDiscipline sportDiscipline) {
         for (Activity act : listActivity) {
-            if (sportDisciplines.equals(act.getSportDisciplines())) {
+            if (sportDiscipline.equals(act.getSportDisciplines())) {
                 return true;
             }
         }

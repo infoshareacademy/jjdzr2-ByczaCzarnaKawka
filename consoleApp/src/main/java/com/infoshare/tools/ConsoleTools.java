@@ -2,7 +2,7 @@ package com.infoshare.tools;
 
 import domain.activities.Activity;
 import domain.activities.ActivityLevel;
-import domain.activities.SportDisciplines;
+import domain.activities.SportDiscipline;
 import domain.location.Address;
 
 import domain.location.Town;
@@ -172,8 +172,8 @@ public class ConsoleTools {
         return UserConsoleService.valueOfActivityLabel(level);
     }
 
-    public static SportDisciplines getSportDisciplinesFromUser(String message) {
-        SportDisciplines.printValues();
+    public static SportDiscipline getSportDisciplinesFromUser(String message) {
+        SportDiscipline.printValues();
         String discipline = getFromUser(message);
         return UserConsoleService.valueOfSportDisciplinesLabel(discipline);
     }
@@ -181,7 +181,7 @@ public class ConsoleTools {
     public static User getActivityFromUser(User user) {
         String choice;
         Activity activity;
-        SportDisciplines discipline;
+        SportDiscipline discipline;
         ActivityLevel level;
         do {
             discipline = getSportDisciplinesFromUser("Wybierz dyscypline: ");

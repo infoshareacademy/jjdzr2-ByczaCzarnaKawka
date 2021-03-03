@@ -3,7 +3,7 @@ package com.infoshare.register;
 import com.infoshare.services.UserConsoleService;
 import domain.activities.Activity;
 import domain.activities.ActivityLevel;
-import domain.activities.SportDisciplines;
+import domain.activities.SportDiscipline;
 import domain.location.Address;
 import domain.location.Town;
 import domain.users.Gender;
@@ -26,8 +26,8 @@ public class RegisterService {
         return Arrays.asList(Gender.values());
     }
 
-    public List<SportDisciplines> getUserSportDiscipline() {
-        return Arrays.asList(SportDisciplines.values());
+    public List<SportDiscipline> getUserSportDiscipline() {
+        return Arrays.asList(SportDiscipline.values());
     }
 
     public List<ActivityLevel> getUserActivityLevels() {
