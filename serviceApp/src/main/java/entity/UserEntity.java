@@ -4,7 +4,7 @@ import domain.users.Gender;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -39,8 +39,9 @@ public class UserEntity {
     @JoinColumn(referencedColumnName = "id")
     private AddressEntity addressEntity;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private Set<DisciplineWithLevelEntity> disciplinesWithLevels;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //@JoinColumn(referencedColumnName = "sportDiscipline")
+    private List<DisciplinesEntity> disciplines;
 
     public Long getId() {
         return id;
@@ -106,13 +107,11 @@ public class UserEntity {
         this.addressEntity = addressEntity;
     }
 
-    public Set<DisciplineWithLevelEntity> getDisciplinesWithLevels() {
-        return disciplinesWithLevels;
+    public List<DisciplinesEntity> getDisciplines() {
+        return disciplines;
     }
 
-    public void setDisciplinesWithLevels(final Set<DisciplineWithLevelEntity> disciplinesWithLevels) {
-        this.disciplinesWithLevels = disciplinesWithLevels;
+    public void setDisciplines(final List<DisciplinesEntity> disciplines) {
+        this.disciplines = disciplines;
     }
-
-
 }

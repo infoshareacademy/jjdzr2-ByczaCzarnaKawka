@@ -4,33 +4,28 @@ import domain.activities.ActivityLevel;
 import domain.activities.SportDiscipline;
 import domain.location.Town;
 import domain.users.Gender;
-import entity.AddressEntity;
-import entity.DisciplineWithLevelEntity;
-import entity.UserEntity;
+import entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.AddressRepository;
-import repository.DisciplinesWIthLevelsRepository;
 import repository.UserRepository;
 
 import javax.annotation.PostConstruct;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
     private final AddressRepository addressRepository;
-    private final DisciplinesWIthLevelsRepository disciplinesWIthLevelsRepository;
+
 
     @Autowired
     UserService(final UserRepository userRepository,
-                final AddressRepository addressRepository,
-                final DisciplinesWIthLevelsRepository disciplinesWIthLevelsRepository) {
+                final AddressRepository addressRepository){
         this.userRepository = userRepository;
         this.addressRepository = addressRepository;
-        this.disciplinesWIthLevelsRepository = disciplinesWIthLevelsRepository;
     }
 
     //TODO: temporary solution. Delete after creating  the mapping method (DTO <-> Entity)
@@ -42,8 +37,10 @@ public class UserService {
     private void  createUsers(){
         final UserEntity userOne = new UserEntity();
         final AddressEntity userOneAddress= new AddressEntity();
-        final Set<DisciplineWithLevelEntity> userOneHobbies = new HashSet<>();
-        final DisciplineWithLevelEntity discWithLevelOne;
+        final List<DisciplinesEntity> disciplinesList = new ArrayList<>();
+        final DisciplinesEntity disciplinesEntity = new DisciplinesEntity();
+        final ActivityLevelEntity activityLevelEntity = new ActivityLevelEntity();
+        final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
         userOne.setNickname("Jan");
         userOne.setMailAddress("kowalski@gmail.com");
@@ -58,12 +55,18 @@ public class UserService {
 
         userOne.setAddressEntity(userOneAddress);
 
-        discWithLevelOne = disciplinesWIthLevelsRepository.
-                getByActivityLevelAndSportDiscipline(ActivityLevel.INTERMEDIATE,SportDiscipline.BOXING);
+        activityLevelEntity.setActivityLevel(ActivityLevel.INTERMEDIATE);
+        disciplinesEntity.setActivityLevel(activityLevelEntity);
 
-        userOneHobbies.add(discWithLevelOne);
+        sportDisciplineEntity.setSportDiscipline(SportDiscipline.BOXING);
+        disciplinesEntity.setSportDiscipline(sportDisciplineEntity);
 
-        userOne.setDisciplinesWithLevels(userOneHobbies);
+        disciplinesList.add(disciplinesEntity);
+
+        userOne.setDisciplines(disciplinesList);
+
+
+
 
         userRepository.save(userOne);
     }
