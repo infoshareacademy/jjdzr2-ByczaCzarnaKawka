@@ -1,5 +1,6 @@
-package com.infoshare.appMenu;
+package com.infoshare.controller;
 
+import com.infoshare.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

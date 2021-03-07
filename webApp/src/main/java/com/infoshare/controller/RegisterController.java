@@ -1,5 +1,6 @@
-package com.infoshare.register;
+package com.infoshare.controller;
 
+import com.infoshare.services.RegisterService;
 import domain.users.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

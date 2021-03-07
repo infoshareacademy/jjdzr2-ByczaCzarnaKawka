@@ -1,4 +1,4 @@
-package com.infoshare.register;
+package com.infoshare.services;
 
 import com.infoshare.services.UserService;
 import domain.activities.Activity;
