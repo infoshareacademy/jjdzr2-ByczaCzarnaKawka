@@ -1,24 +1,21 @@
 package entity;
 
 import domain.users.Gender;
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
 public class UserEntity {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.AUTO,
-            generator = "native")
-    @GenericGenerator(
-            name = "native",
-            strategy = "native"
-    )
-    private Long id;
+    @GeneratedValue
+    @Column(name = "id")
+    @Type(type = "uuid-char")
+    private UUID id;
 
     private String nickname;
 
@@ -40,14 +37,13 @@ public class UserEntity {
     private AddressEntity addressEntity;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    //@JoinColumn(referencedColumnName = "sportDiscipline")
-    private List<DisciplinesEntity> disciplines;
+    private List<SportWithLevelEntity> disciplines;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(final Long id) {
+    public void setId(final UUID id) {
         this.id = id;
     }
 
@@ -107,11 +103,11 @@ public class UserEntity {
         this.addressEntity = addressEntity;
     }
 
-    public List<DisciplinesEntity> getDisciplines() {
+    public List<SportWithLevelEntity> getDisciplines() {
         return disciplines;
     }
 
-    public void setDisciplines(final List<DisciplinesEntity> disciplines) {
+    public void setDisciplines(final List<SportWithLevelEntity> disciplines) {
         this.disciplines = disciplines;
     }
 }

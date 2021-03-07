@@ -37,8 +37,8 @@ public class UserService {
     private void  createUsers(){
         final UserEntity userOne = new UserEntity();
         final AddressEntity userOneAddress= new AddressEntity();
-        final List<DisciplinesEntity> disciplinesList = new ArrayList<>();
-        final DisciplinesEntity disciplinesEntity = new DisciplinesEntity();
+        final List<SportWithLevelEntity> disciplinesList = new ArrayList<>();
+        final SportWithLevelEntity sportWithLevelEntity = new SportWithLevelEntity();
         final ActivityLevelEntity activityLevelEntity = new ActivityLevelEntity();
         final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
@@ -56,12 +56,12 @@ public class UserService {
         userOne.setAddressEntity(userOneAddress);
 
         activityLevelEntity.setActivityLevel(ActivityLevel.INTERMEDIATE);
-        disciplinesEntity.setActivityLevel(activityLevelEntity);
+        sportWithLevelEntity.setActivityLevel(activityLevelEntity);
 
         sportDisciplineEntity.setSportDiscipline(SportDiscipline.BOXING);
-        disciplinesEntity.setSportDiscipline(sportDisciplineEntity);
+        sportWithLevelEntity.setSportDiscipline(sportDisciplineEntity);
 
-        disciplinesList.add(disciplinesEntity);
+        disciplinesList.add(sportWithLevelEntity);
 
         userOne.setDisciplines(disciplinesList);
 

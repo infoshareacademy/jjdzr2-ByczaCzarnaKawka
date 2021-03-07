@@ -1,23 +1,21 @@
-package entity.id;
+package entity;
 
-import entity.ActivityLevelEntity;
-import entity.SportDisciplineEntity;
+import entity.id.SportWithLevelID;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-public class DisciplineId implements Serializable {
+@Entity
+@Table(name = "sport_with_activity_level")
+@IdClass(SportWithLevelID.class)
+public class SportWithLevelEntity {
 
+    @Id
+    @ManyToOne(cascade = CascadeType.ALL)
     private SportDisciplineEntity sportDiscipline;
 
+    @Id
+    @ManyToOne(cascade = CascadeType.ALL)
     private ActivityLevelEntity activityLevel;
-
-    public DisciplineId() {
-    }
-
-    public DisciplineId(final SportDisciplineEntity sportDiscipline, final ActivityLevelEntity activityLevel) {
-        this.sportDiscipline = sportDiscipline;
-        this.activityLevel = activityLevel;
-    }
 
     public SportDisciplineEntity getSportDiscipline() {
         return sportDiscipline;
