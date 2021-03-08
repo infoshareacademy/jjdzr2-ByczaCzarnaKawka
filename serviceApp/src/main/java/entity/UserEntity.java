@@ -33,7 +33,7 @@ public class UserEntity {
     private Gender gender;
 
     @OneToOne
-    @JoinColumn(referencedColumnName = "id")
+    @JoinColumn(referencedColumnName = "id", name = "address_id")
     private AddressEntity addressEntity;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
