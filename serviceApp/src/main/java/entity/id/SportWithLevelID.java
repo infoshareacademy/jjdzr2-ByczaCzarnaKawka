@@ -4,6 +4,7 @@ import entity.ActivityLevelEntity;
 import entity.SportDisciplineEntity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class SportWithLevelID implements Serializable {
 
@@ -19,19 +20,16 @@ public class SportWithLevelID implements Serializable {
         this.activityLevel = activityLevel;
     }
 
-    public SportDisciplineEntity getSportDiscipline() {
-        return sportDiscipline;
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final SportWithLevelID that = (SportWithLevelID) o;
+        return Objects.equals(sportDiscipline, that.sportDiscipline) && Objects.equals(activityLevel, that.activityLevel);
     }
 
-    public void setSportDiscipline(final SportDisciplineEntity sportDiscipline) {
-        this.sportDiscipline = sportDiscipline;
-    }
-
-    public ActivityLevelEntity getActivityLevel() {
-        return activityLevel;
-    }
-
-    public void setActivityLevel(final ActivityLevelEntity activityLevel) {
-        this.activityLevel = activityLevel;
+    @Override
+    public int hashCode() {
+        return Objects.hash(sportDiscipline, activityLevel);
     }
 }

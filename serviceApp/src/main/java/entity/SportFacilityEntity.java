@@ -12,13 +12,11 @@ import java.time.LocalTime;
 public class SportFacilityEntity {
 
     @Id
-    @Column(name = "facility_name")
     private String facilityName;
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sport_discipline")
-    private SportDisciplineEntity sportDiscipline;
+    private SportDisciplineEntity sportDisciplineEntity;
 
     @Column(name = "phone_number", unique = true)
     private String phoneNumber;
@@ -41,12 +39,12 @@ public class SportFacilityEntity {
         this.facilityName = facilityName;
     }
 
-    public SportDisciplineEntity getSportDiscipline() {
-        return sportDiscipline;
+    public SportDisciplineEntity getSportDisciplineEntity() {
+        return sportDisciplineEntity;
     }
 
-    public void setSportDiscipline(final SportDisciplineEntity sportDiscipline) {
-        this.sportDiscipline = sportDiscipline;
+    public void setSportDisciplineEntity(final SportDisciplineEntity sportDisciplineEntity) {
+        this.sportDisciplineEntity = sportDisciplineEntity;
     }
 
     public String getPhoneNumber() {
@@ -57,7 +55,7 @@ public class SportFacilityEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    AddressEntity getAddressEntity() {
+    public AddressEntity getAddressEntity() {
         return addressEntity;
     }
 

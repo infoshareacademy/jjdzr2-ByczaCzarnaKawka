@@ -22,13 +22,13 @@ public class UserService {
 
 
     @Autowired
-    UserService(final UserRepository userRepository,
+    public UserService(final UserRepository userRepository,
                 final AddressRepository addressRepository){
         this.userRepository = userRepository;
         this.addressRepository = addressRepository;
     }
 
-    //TODO: temporary solution. Delete after creating  the mapping method (DTO <-> Entity)
+    //TODO: temporary solution. Delete after creating the mapping method (DTO <-> Entity) and forms
     @PostConstruct
     public void init(){
         createUsers();
@@ -64,9 +64,6 @@ public class UserService {
         disciplinesList.add(sportWithLevelEntity);
 
         userOne.setDisciplines(disciplinesList);
-
-
-
 
         userRepository.save(userOne);
     }
