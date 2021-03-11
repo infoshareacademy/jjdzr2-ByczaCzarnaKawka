@@ -1,4 +1,4 @@
-package com.infoshare.appMenu;
+package com.infoshare.services;
 
 import org.springframework.stereotype.Component;
 
