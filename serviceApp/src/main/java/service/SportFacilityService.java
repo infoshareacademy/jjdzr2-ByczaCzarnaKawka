@@ -34,11 +34,11 @@ public class SportFacilityService {
     private void createSportFacility(){
         final SportFacilityEntity sportFacility1 = new SportFacilityEntity();
         final AddressEntity facilityAddress1 = new AddressEntity();
+        final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
         //facility 1
         sportFacility1.setFacilityName("Miejska Hala Sportowa");
 
-        final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
         sportDisciplineEntity.setSportDiscipline(SportDiscipline.FOOTBALL);
         sportFacility1.setSportDisciplineEntity(sportDisciplineEntity);
 

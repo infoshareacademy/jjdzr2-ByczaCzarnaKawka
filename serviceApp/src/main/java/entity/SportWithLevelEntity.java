@@ -11,25 +11,27 @@ public class SportWithLevelEntity {
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    private SportDisciplineEntity sportDiscipline;
+    @JoinColumn(name = "sport_discipline")
+    private SportDisciplineEntity sportDisciplineEntity;
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    private ActivityLevelEntity activityLevel;
+    @JoinColumn(name = "activity_level")
+    private ActivityLevelEntity activityLevelEntity;
 
-    public SportDisciplineEntity getSportDiscipline() {
-        return sportDiscipline;
+    public SportDisciplineEntity getSportDisciplineEntity() {
+        return sportDisciplineEntity;
     }
 
-    public void setSportDiscipline(final SportDisciplineEntity sportDiscipline) {
-        this.sportDiscipline = sportDiscipline;
+    public void setSportDisciplineEntity(final SportDisciplineEntity sportDiscipline) {
+        this.sportDisciplineEntity = sportDiscipline;
     }
 
-    public ActivityLevelEntity getActivityLevel() {
-        return activityLevel;
+    public ActivityLevelEntity getActivityLevelEntity() {
+        return activityLevelEntity;
     }
 
-    public void setActivityLevel(final ActivityLevelEntity activityLevel) {
-        this.activityLevel = activityLevel;
+    public void setActivityLevelEntity(final ActivityLevelEntity activityLevel) {
+        this.activityLevelEntity = activityLevel;
     }
 }

@@ -16,6 +16,7 @@ public class SportFacilityEntity {
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sport_discipline")
     private SportDisciplineEntity sportDisciplineEntity;
 
     @Column(name = "phone_number", unique = true)

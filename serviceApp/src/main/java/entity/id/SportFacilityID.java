@@ -1,5 +1,6 @@
 package entity.id;
 
+import domain.activities.SportDiscipline;
 import entity.SportDisciplineEntity;
 
 import java.io.Serializable;
@@ -11,12 +12,12 @@ public class SportFacilityID implements Serializable {
 
     private SportDisciplineEntity sportDisciplineEntity;
 
-    public SportFacilityID() {
-    }
-
-    public SportFacilityID(final String facilityName, final SportDisciplineEntity sportDisciplineEntity) {
-        this.facilityName = facilityName;
-        this.sportDisciplineEntity = sportDisciplineEntity;
+    //FIXME: Unacceptable solution. Need to investigate why a SportDiscipline is passed instead of a
+    // SportDisciplineEntity
+    public void setSportDisciplineEntity(final SportDiscipline sportDiscipline) {
+        SportDisciplineEntity sportDisciplineEntity= new SportDisciplineEntity();
+        sportDisciplineEntity.setSportDiscipline(sportDiscipline);
+        this.sportDisciplineEntity = sportDisciplineEntity ;
     }
 
     @Override

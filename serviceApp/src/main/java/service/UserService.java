@@ -56,10 +56,10 @@ public class UserService {
         userOne.setAddressEntity(userOneAddress);
 
         activityLevelEntity.setActivityLevel(ActivityLevel.INTERMEDIATE);
-        sportWithLevelEntity.setActivityLevel(activityLevelEntity);
+        sportWithLevelEntity.setActivityLevelEntity(activityLevelEntity);
 
         sportDisciplineEntity.setSportDiscipline(SportDiscipline.BOXING);
-        sportWithLevelEntity.setSportDiscipline(sportDisciplineEntity);
+        sportWithLevelEntity.setSportDisciplineEntity(sportDisciplineEntity);
 
         disciplinesList.add(sportWithLevelEntity);
 
