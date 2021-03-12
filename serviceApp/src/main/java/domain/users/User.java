@@ -17,6 +17,7 @@ public class User {
     private Gender gender;
     private Address address;
     private List<Activity> activityList;
+    private AccessLevel accessLevel;
 
     public User(String nickname, String mailAddress, String password, int bornYear, String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
         this.nickname = nickname;
@@ -27,6 +28,7 @@ public class User {
         this.gender = gender;
         this.address = address;
         this.activityList = activityList;
+        this.accessLevel=AccessLevel.PLAYER;
     }
 
     public User(String nickname, String mailAddress, String password) {
@@ -38,6 +40,7 @@ public class User {
         this.gender = null;
         this.address = new Address(null, " ");
         this.activityList = new ArrayList<>();
+        this.accessLevel=AccessLevel.PLAYER;
     }
 
     public void printBasicInfo() {
