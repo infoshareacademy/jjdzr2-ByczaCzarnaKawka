@@ -33,3 +33,4 @@ public class SportFacilityID implements Serializable {
         return Objects.hash(facilityName, sportDisciplineEntity);
     }
 }
+
