@@ -19,7 +19,7 @@ public class SportFacilityEntity {
     @JoinColumn(name = "sport_discipline")
     private SportDisciplineEntity sportDisciplineEntity;
 
-    @Column(name = "phone_number", unique = true)
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @ManyToOne

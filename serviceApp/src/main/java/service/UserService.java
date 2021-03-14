@@ -42,20 +42,21 @@ public class UserService {
         final ActivityLevelEntity activityLevelEntity = new ActivityLevelEntity();
         final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
-        userOne.setNickname("Jan");
-        userOne.setMailAddress("kowalski@gmail.com");
+        userOne.setNickname("Anna");
+        userOne.setMailAddress("anna@gmail.com");
         userOne.setPassword("qwerty");
         userOne.setBornYear(0);
-        userOne.setPhoneNumber("147258369");
-        userOne.setGender(Gender.MALE);
+        userOne.setPhoneNumber("159357456");
+        userOne.setGender(Gender.FEMALE);
 
         userOneAddress.setTown(Town.GDANSK);
         userOneAddress.setStreetName("ulica 1");
+
         addressRepository.save(userOneAddress);
 
         userOne.setAddressEntity(userOneAddress);
 
-        activityLevelEntity.setActivityLevel(ActivityLevel.INTERMEDIATE);
+        activityLevelEntity.setActivityLevel(ActivityLevel.EXPERT);
         sportWithLevelEntity.setActivityLevelEntity(activityLevelEntity);
 
         sportDisciplineEntity.setSportDiscipline(SportDiscipline.BOXING);

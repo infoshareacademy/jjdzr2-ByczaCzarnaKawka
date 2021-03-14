@@ -32,7 +32,7 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(referencedColumnName = "id", name = "address_id")
     private AddressEntity addressEntity;
 
