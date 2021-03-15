@@ -12,7 +12,9 @@ import repository.UserRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserService {
@@ -37,34 +39,31 @@ public class UserService {
     private void  createUsers(){
         final UserEntity userOne = new UserEntity();
         final AddressEntity userOneAddress= new AddressEntity();
-        final List<SportWithLevelEntity> disciplinesList = new ArrayList<>();
+        //final List<SportWithLevelEntity> disciplinesList = new ArrayList<>();
         final SportWithLevelEntity sportWithLevelEntity = new SportWithLevelEntity();
-        final ActivityLevelEntity activityLevelEntity = new ActivityLevelEntity();
-        final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
         userOne.setNickname("Anna");
         userOne.setMailAddress("anna@gmail.com");
         userOne.setPassword("qwerty");
         userOne.setBornYear(0);
-        userOne.setPhoneNumber("159357456");
+        userOne.setPhoneNumber("123789456");
         userOne.setGender(Gender.FEMALE);
 
-        userOneAddress.setTown(Town.GDANSK);
-        userOneAddress.setStreetName("ulica 1");
+        userOneAddress.setTown(Town.GDYNIA);
+        userOneAddress.setStreetName("ulica 3");
 
         addressRepository.save(userOneAddress);
 
         userOne.setAddressEntity(userOneAddress);
 
-        activityLevelEntity.setActivityLevel(ActivityLevel.EXPERT);
-        sportWithLevelEntity.setActivityLevelEntity(activityLevelEntity);
+        sportWithLevelEntity.setActivityLevel(ActivityLevel.EXPERT);
+        sportWithLevelEntity.setSportDiscipline(SportDiscipline.BOXING);
 
-        sportDisciplineEntity.setSportDiscipline(SportDiscipline.BOXING);
-        sportWithLevelEntity.setSportDisciplineEntity(sportDisciplineEntity);
+        //disciplinesList.add(sportWithLevelEntity);
 
-        disciplinesList.add(sportWithLevelEntity);
-
-        userOne.setDisciplines(disciplinesList);
+        Map<SportDiscipline,SportWithLevelEntity> sportMap = new HashMap<>();
+        sportMap.put(SportDiscipline.BOXING,sportWithLevelEntity);
+        userOne.setDisciplines(sportMap);
 
         userRepository.save(userOne);
     }

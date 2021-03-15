@@ -3,12 +3,10 @@ package service;
 import domain.activities.SportDiscipline;
 import domain.location.Town;
 import entity.AddressEntity;
-import entity.SportDisciplineEntity;
 import entity.SportFacilityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.AddressRepository;
-import repository.SportDisciplineRepository;
 import repository.SportFacilityRepository;
 
 import javax.annotation.PostConstruct;
@@ -20,13 +18,11 @@ public class SportFacilityService {
 
     private final SportFacilityRepository sportFacilityRepository;
     private final AddressRepository addressRepository;
-    private final SportDisciplineRepository sportDisciplineRepository;
 
     @Autowired
-    public SportFacilityService(final SportFacilityRepository sportFacilityRepository, final AddressRepository addressRepository, final SportDisciplineRepository sportDisciplineRepository) {
+    public SportFacilityService(final SportFacilityRepository sportFacilityRepository, final AddressRepository addressRepository) {
         this.sportFacilityRepository = sportFacilityRepository;
         this.addressRepository = addressRepository;
-        this.sportDisciplineRepository = sportDisciplineRepository;
     }
 
     //TODO: temporary solution. Delete after creating the mapping method (DTO <-> Entity) and forms
@@ -37,13 +33,11 @@ public class SportFacilityService {
     private void createSportFacility(){
         final SportFacilityEntity sportFacility1 = new SportFacilityEntity();
         final AddressEntity facilityAddress1 = new AddressEntity();
-        final SportDisciplineEntity sportDisciplineEntity = new SportDisciplineEntity();
 
         //facility 1
         sportFacility1.setFacilityName("Miejska Hala Sportowa");
 
-        sportDisciplineEntity.setSportDiscipline(SportDiscipline.FOOTBALL);
-        sportFacility1.setSportDisciplineEntity(sportDisciplineEntity);
+        sportFacility1.setSportDiscipline(SportDiscipline.FOOTBALL);
 
         sportFacility1.setPhoneNumber("58 553 27 58");
 

@@ -1,5 +1,7 @@
 package entity;
 
+import domain.activities.ActivityLevel;
+import domain.activities.SportDiscipline;
 import entity.id.SportWithLevelID;
 
 import javax.persistence.*;
@@ -10,28 +12,26 @@ import javax.persistence.*;
 public class SportWithLevelEntity {
 
     @Id
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sport_discipline")
-    private SportDisciplineEntity sportDisciplineEntity;
+    @Enumerated(EnumType.STRING)
+    private SportDiscipline sportDiscipline;
 
     @Id
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "activity_level")
-    private ActivityLevelEntity activityLevelEntity;
+    @Enumerated(EnumType.STRING)
+    private ActivityLevel activityLevel;
 
-    public SportDisciplineEntity getSportDisciplineEntity() {
-        return sportDisciplineEntity;
+    public SportDiscipline getSportDiscipline() {
+        return sportDiscipline;
     }
 
-    public void setSportDisciplineEntity(final SportDisciplineEntity sportDiscipline) {
-        this.sportDisciplineEntity = sportDiscipline;
+    public void setSportDiscipline(final SportDiscipline sportDiscipline) {
+        this.sportDiscipline = sportDiscipline;
     }
 
-    public ActivityLevelEntity getActivityLevelEntity() {
-        return activityLevelEntity;
+    public ActivityLevel getActivityLevel() {
+        return activityLevel;
     }
 
-    public void setActivityLevelEntity(final ActivityLevelEntity activityLevel) {
-        this.activityLevelEntity = activityLevel;
+    public void setActivityLevel(final ActivityLevel activityLevel) {
+        this.activityLevel = activityLevel;
     }
 }

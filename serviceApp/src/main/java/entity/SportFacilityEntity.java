@@ -1,5 +1,6 @@
 package entity;
 
+import domain.activities.SportDiscipline;
 import entity.id.SportFacilityID;
 
 import javax.persistence.*;
@@ -15,9 +16,8 @@ public class SportFacilityEntity {
     private String facilityName;
 
     @Id
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sport_discipline")
-    private SportDisciplineEntity sportDisciplineEntity;
+    @Enumerated(EnumType.STRING)
+    private SportDiscipline sportDiscipline;
 
     @Column(name = "phone_number")
     private String phoneNumber;
@@ -40,12 +40,12 @@ public class SportFacilityEntity {
         this.facilityName = facilityName;
     }
 
-    public SportDisciplineEntity getSportDisciplineEntity() {
-        return sportDisciplineEntity;
+    public SportDiscipline getSportDiscipline() {
+        return sportDiscipline;
     }
 
-    public void setSportDisciplineEntity(final SportDisciplineEntity sportDisciplineEntity) {
-        this.sportDisciplineEntity = sportDisciplineEntity;
+    public void setSportDiscipline(final SportDiscipline sportDiscipline) {
+        this.sportDiscipline = sportDiscipline;
     }
 
     public String getPhoneNumber() {

@@ -1,10 +1,11 @@
 package entity;
 
+import domain.activities.SportDiscipline;
 import domain.users.Gender;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -37,7 +38,7 @@ public class UserEntity {
     private AddressEntity addressEntity;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<SportWithLevelEntity> disciplines;
+    private Map<SportDiscipline, SportWithLevelEntity> disciplines;
 
     public UUID getId() {
         return id;
@@ -103,11 +104,11 @@ public class UserEntity {
         this.addressEntity = addressEntity;
     }
 
-    public List<SportWithLevelEntity> getDisciplines() {
+    public Map<SportDiscipline, SportWithLevelEntity> getDisciplines() {
         return disciplines;
     }
 
-    public void setDisciplines(final List<SportWithLevelEntity> disciplines) {
+    public void setDisciplines(final Map<SportDiscipline, SportWithLevelEntity> disciplines) {
         this.disciplines = disciplines;
     }
 }
