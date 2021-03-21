@@ -37,7 +37,7 @@ public class UserEntity {
     @JoinColumn(referencedColumnName = "id", name = "address_id")
     private AddressEntity addressEntity;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Map<SportDiscipline, SportWithLevelEntity> disciplines;
 
     public UUID getId() {
