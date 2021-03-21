@@ -10,7 +10,8 @@
 	</parent>
 
 	<artifactId>webapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
+
 	<properties>
 		<start-class>com.infoshare.WebApplication</start-class>
 		<java.version>11</java.version>
