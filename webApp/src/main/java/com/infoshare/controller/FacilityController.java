@@ -42,18 +42,19 @@ public class FacilityController {
     }
 
     @GetMapping("/find_facility")
-    public String findFacility() {
-        return "findFacilities";
-    }
-//    public String findFacility(Model model) {
-//        model.addAttribute("town", facilityService.getTownName());
-//        model.addAttribute("sportDisciplines", facilityService.getSportDiscipline());
-//
+//    public String findFacility() {
 //        return "findFacilities";
 //    }
+    public String findFacility(Model model) {
+        model.addAttribute("town", facilityService.getTownName());
+        model.addAttribute("sportDisciplines", facilityService.getSportDiscipline());
 
-    @PostMapping("/found_facility")
-    public String sendFindFacility() {
+        return "findFacilities";
+    }
+
+    @GetMapping("/found_facility")
+    public String foundFacility() {
+        System.out.println("GET /found_facility");
         return "allFacilitiesList";
     }
 //    public String sendFindFacility(@RequestParam Town town, @RequestParam SportDisciplines sportDisciplines,

@@ -29,10 +29,11 @@
 <section class="page-section">
     <div class="container">
         <h3> Find sport club - </h3>
-        <form method="post" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
+        <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
 
             <div>choose town:
                 <input type="text" name="town" />
+
             </div>
 
             <div>disciplines:
