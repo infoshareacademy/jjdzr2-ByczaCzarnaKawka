@@ -53,8 +53,8 @@ public class FacilityController {
     }
 
     @GetMapping("/found_facility")
-    public String foundFacility() {
-        System.out.println("GET /found_facility");
+    public String foundFacility(@RequestParam String town,@RequestParam String sportDisciplines, @RequestParam String club) {
+        System.out.println("town " + town + " sportDisciplines " + sportDisciplines + " club " + club);
         return "allFacilitiesList";
     }
 //    public String sendFindFacility(@RequestParam Town town, @RequestParam SportDisciplines sportDisciplines,
