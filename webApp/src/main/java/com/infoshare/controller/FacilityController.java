@@ -1,13 +1,18 @@
 package com.infoshare.controller;
 
 import com.infoshare.services.FacilityService;
+import domain.activities.SportDisciplines;
+import domain.location.Town;
 import domain.workoutPlaces.SportFacility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -22,17 +27,39 @@ public class FacilityController {
     }
 
     @GetMapping("/list")
-    public String getAllFacilityList(Model model){
+    public String getAllFacilityList(Model model) {
         List<SportFacility> currentFacilitiesList = facilityService.getSportFacilityList();
 
-        if(currentFacilitiesList.isEmpty()){
+        if (currentFacilitiesList.isEmpty()) {
             String info = "Unfortunately there's no facilities to book, on the list...";
             model.addAttribute(info);
             return "emptyFacilitiesList";
-        }else{
+        } else {
             model.addAttribute("facilities", currentFacilitiesList);
             return "allFacilitiesList";
         }
 
     }
+
+    @GetMapping("/find_facility")
+    public String findFacility() {
+        return "findFacilities";
+    }
+//    public String findFacility(Model model) {
+//        model.addAttribute("town", facilityService.getTownName());
+//        model.addAttribute("sportDisciplines", facilityService.getSportDiscipline());
+//
+//        return "findFacilities";
+//    }
+
+    @PostMapping("/found_facility")
+    public String sendFindFacility() {
+        return "allFacilitiesList";
+    }
+//    public String sendFindFacility(@RequestParam Town town, @RequestParam SportDisciplines sportDisciplines,
+//                                   @RequestParam String name, @RequestParam LocalDate date, Model model) {
+//        model.addAttribute("name", name);
+//        model.addAttribute("date", date);
+//        return "allFacilitiesList";
+//    }
 }
