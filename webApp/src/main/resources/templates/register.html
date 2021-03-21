@@ -80,12 +80,12 @@
             </div>
 
             <div>disciplines:
-                <select class="form-control" th:field="*{sportDisciplines}">
+                <select class="form-control" th:field="*{sportDiscipline}">
                     <option th:each="element: ${userSportDisciplines}" th:value="${element}"
                             th:text="${element.name}"/>
                 </select>
-                <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"
-                      th:errors="*{sportDisciplines}"></span>
+                <span class="errorClass" th:if="${#fields.hasErrors('sportDiscipline')}"
+                      th:errors="*{sportDiscipline}"></span>
             </div>
 
             <div>level of advancement:

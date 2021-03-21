@@ -1,6 +1,6 @@
 package domain.workoutPlaces;
 
-import domain.activities.SportDisciplines;
+import domain.activities.SportDiscipline;
 import domain.location.Address;
 
 import java.math.BigDecimal;
@@ -13,7 +13,7 @@ public class SportFacility {
     private Integer ordinalNumber;
 
     private String name;
-    private SportDisciplines discipline;
+    private SportDiscipline discipline;
 
     private String phoneNumber;
     private Address address;
@@ -23,7 +23,7 @@ public class SportFacility {
 
     private BigDecimal price;
 
-    public SportFacility(String facilityName, SportDisciplines sportDiscipline, String phoneNumber, Address address, LocalTime startHour, LocalTime endHour, BigDecimal price) {
+    public SportFacility(String facilityName, SportDiscipline sportDiscipline, String phoneNumber, Address address, LocalTime startHour, LocalTime endHour, BigDecimal price) {
         this.name = facilityName;
         this.discipline = sportDiscipline;
         this.phoneNumber = phoneNumber;
@@ -51,7 +51,7 @@ public class SportFacility {
         return name;
     }
 
-    public SportDisciplines getDiscipline() {
+    public SportDiscipline getDiscipline() {
         return discipline;
     }
 

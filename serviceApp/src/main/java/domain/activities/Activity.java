@@ -2,16 +2,16 @@ package domain.activities;
 
 public class Activity {
 
-    private SportDisciplines sportDisciplines;
+    private SportDiscipline sportDiscipline;
     private ActivityLevel activityLevel;
 
-    public Activity(SportDisciplines sportDisciplines, ActivityLevel activityLevel) {
-        this.sportDisciplines = sportDisciplines;
+    public Activity(SportDiscipline sportDiscipline, ActivityLevel activityLevel) {
+        this.sportDiscipline = sportDiscipline;
         this.activityLevel = activityLevel;
     }
 
-    public SportDisciplines getSportDisciplines() {
-        return sportDisciplines;
+    public SportDiscipline getSportDisciplines() {
+        return sportDiscipline;
     }
 
     public ActivityLevel getActivityLevel() {
@@ -21,8 +21,8 @@ public class Activity {
     @Override
     public String toString() {
 
-        return "\nActivity{\n sportDisciplines="
-                + sportDisciplines
+        return "\nActivity{\n sportDiscipline="
+                + sportDiscipline
                 + ", \n activityLevel="
                 + activityLevel
                 + '}';

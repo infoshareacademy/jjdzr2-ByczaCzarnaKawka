@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  db:
+    image: mysql
+    container_name: gymbuddy_db
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gymBuddies
+      MYSQL_DATABASE: gym_buddy_db
+      MYSQL_USER: userLogin
+      MYSQL_PASSWORD: userPassword
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  thegymbuddy_app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/gym_buddy_db?createDatabaseIfNotExist=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+      SPRING_DATASOURCE_USERNAME: userLogin
+      SPRING_DATASOURCE_PASSWORD: userPassword
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
