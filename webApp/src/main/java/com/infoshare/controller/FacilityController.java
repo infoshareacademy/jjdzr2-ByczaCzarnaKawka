@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -38,29 +39,19 @@ public class FacilityController {
             model.addAttribute("facilities", currentFacilitiesList);
             return "allFacilitiesList";
         }
-
     }
 
     @GetMapping("/find_facility")
-//    public String findFacility() {
-//        return "findFacilities";
-//    }
     public String findFacility(Model model) {
         model.addAttribute("town", facilityService.getTownName());
         model.addAttribute("sportDisciplines", facilityService.getSportDiscipline());
-
         return "findFacilities";
     }
 
     @GetMapping("/found_facility")
-    public String foundFacility(@RequestParam String town,@RequestParam String sportDisciplines, @RequestParam String club) {
-        System.out.println("town " + town + " sportDisciplines " + sportDisciplines + " club " + club);
+    public String foundFacility(@RequestParam String town,@RequestParam String sportDisciplines, @RequestParam String club, @RequestParam String date) {
+        List<SportFacility> facilityList = facilityService.findSportFacility();
+        System.out.println("town " + town + " sportDisciplines " + sportDisciplines + " club " + club + " date " + date);
         return "allFacilitiesList";
     }
-//    public String sendFindFacility(@RequestParam Town town, @RequestParam SportDisciplines sportDisciplines,
-//                                   @RequestParam String name, @RequestParam LocalDate date, Model model) {
-//        model.addAttribute("name", name);
-//        model.addAttribute("date", date);
-//        return "allFacilitiesList";
-//    }
 }

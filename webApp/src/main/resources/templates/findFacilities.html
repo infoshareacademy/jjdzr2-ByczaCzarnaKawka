@@ -32,12 +32,19 @@
         <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
 
             <div>choose town:
-                <input type="text" name="town" />
-
+                <select name="town" class="form-control" th:object="${town}">
+                    <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('town')}"
+                      th:errors="*{town}"></span>
             </div>
 
             <div>disciplines:
-                <input type="text" name="sportDisciplines" />
+                <select name="sportDisciplines" class="form-control" th:object="${sportDisciplines}">
+                    <option th:each="element: ${sportDisciplines}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"
+                      th:errors="*{sportDisciplines}"></span>
             </div>
 
             <div>enter name of Sport club:

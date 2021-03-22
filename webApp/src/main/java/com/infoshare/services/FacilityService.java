@@ -6,6 +6,7 @@ import domain.workoutPlaces.SportFacility;
 import org.springframework.stereotype.Service;
 import utils.FileUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,5 +31,11 @@ public class FacilityService {
     }
     public List<SportDisciplines> getSportDiscipline() {
         return Arrays.asList(SportDisciplines.values());
+    }
+
+
+    public List<SportFacility> findSportFacility(){
+        List<SportFacility> facilityList=new ArrayList<>();
+        return facilityList;
     }
 }

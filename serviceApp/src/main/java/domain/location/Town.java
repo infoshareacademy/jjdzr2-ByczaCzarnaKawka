@@ -15,7 +15,6 @@ public enum Town {
     WROCLAW;
 
     public static void printValue() {
-
         for (Town x : values()) {
             System.out.println(x);
         }
