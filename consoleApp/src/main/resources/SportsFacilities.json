@@ -4,7 +4,7 @@
     "discipline": "BASKETBALL",
     "phoneNumber": "123456789",
     "address": {
-      "townName": "GDAŃSK",
+      "townName": "GDANSK",
       "roadName": "ul. Sportowa 1"
     },
     "openHour": {
@@ -26,7 +26,7 @@
     "discipline": "BOXING",
     "phoneNumber": "147258369",
     "address": {
-      "townName": "ŁÓDŹ",
+      "townName": "LODZ",
       "roadName": "ul. Bokserska 1"
     },
     "openHour": {
@@ -48,7 +48,7 @@
     "discipline": "BOXING",
     "phoneNumber": "147258369",
     "address": {
-      "townName": "BIAŁYSTOK",
+      "townName": "BIALYSTOK",
       "roadName": "ul. Bokserska 1"
     },
     "openHour": {
@@ -64,5 +64,27 @@
       "nano": 0
     },
     "price": 50
+  },
+  {
+    "name": "FIT Gdańsk",
+    "discipline": "BOXING",
+    "phoneNumber": "123456789",
+    "address": {
+      "townName": "GDANSK",
+      "roadName": "ul. Sportowa 13"
+    },
+    "openHour": {
+      "hour": 15,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "closeHour": {
+      "hour": 16,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "price": 200
   }
 ]

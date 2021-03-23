@@ -20,7 +20,8 @@ public enum SportDisciplines {
     DARTS,
     MOTOCROSS,
     SQUASH,
-    CHESS;
+    CHESS,
+    ALL;
 
 
     public static void printValues() {

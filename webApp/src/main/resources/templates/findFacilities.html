@@ -28,7 +28,7 @@
 
 <section class="page-section">
     <div class="container">
-        <h3> Find sport club - </h3>
+        <h3> Find sport club </h3>
         <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
 
             <div>choose town:
@@ -48,11 +48,7 @@
             </div>
 
             <div>enter name of Sport club:
-                <input type="text" name="club" />
-            </div>
-
-            <div>choose date:
-                <input type="date" name="date" />
+                <input type="text" value="ALL" name="club" class="form-control"/>
             </div>
 
             <div>
@@ -62,7 +58,10 @@
             </div>
 
         </form>
+        <br>
+        <a href="/login_send/player"> back </a>
     </div>
+
 </section>
 
 

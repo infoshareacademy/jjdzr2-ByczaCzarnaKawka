@@ -12,7 +12,8 @@ public enum Town {
     LODZ,
     POZNAN,
     WARSAW,
-    WROCLAW;
+    WROCLAW,
+    ALL;
 
     public static void printValue() {
         for (Town x : values()) {

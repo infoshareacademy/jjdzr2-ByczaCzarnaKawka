@@ -49,9 +49,8 @@ public class FacilityController {
     }
 
     @GetMapping("/found_facility")
-    public String foundFacility(@RequestParam String town,@RequestParam String sportDisciplines, @RequestParam String club, @RequestParam String date) {
-        List<SportFacility> facilityList = facilityService.findSportFacility();
-        System.out.println("town " + town + " sportDisciplines " + sportDisciplines + " club " + club + " date " + date);
+    public String foundFacility(@RequestParam (required = false, defaultValue = "ALL") String town , @RequestParam(required = false, defaultValue = "ALL") String sportDisciplines, @RequestParam (required = false, defaultValue = "ALL") String club, Model model) {
+        model.addAttribute("facilities", facilityService.findSportFacility(town, sportDisciplines, club));
         return "allFacilitiesList";
     }
 }
