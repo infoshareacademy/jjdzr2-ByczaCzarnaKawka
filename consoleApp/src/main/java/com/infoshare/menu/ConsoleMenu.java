@@ -1,12 +1,12 @@
 package com.infoshare.menu;
 
-import com.infoshare.services.FacilityService;
-import com.infoshare.services.UserService;
+import com.infoshare.services.FacilityConsoleService;
+import com.infoshare.services.UserConsoleService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Menu {
+public class ConsoleMenu {
 
     private static final String MENU_HEADER = "*** GymBuddy Finder ***";
     private static final String[] MENU_OPTIONS = {
@@ -21,12 +21,12 @@ public class Menu {
             "0. Exit."
     };
 
-    private UserService userService;
-    private FacilityService facilityService;
+    private UserConsoleService userConsoleService;
+    private FacilityConsoleService facilityConsoleService;
 
-    public Menu() {
-        this.userService = new UserService();
-        this.facilityService = new FacilityService();
+    public ConsoleMenu() {
+        this.userConsoleService = new UserConsoleService();
+        this.facilityConsoleService = new FacilityConsoleService();
     }
 
     public void start() {
@@ -50,15 +50,15 @@ public class Menu {
             switch (userChoice) {
                 case 1: {
 
-                    userService.handleNewUSer();
+                    userConsoleService.handleNewUSer();
                     break;
                 }
                 case 3: {
-                    userService.printUserList();
+                    userConsoleService.printUserList();
                     break;
                 }
                 case 4: {
-                    facilityService.printFacilityList();
+                    facilityConsoleService.printFacilityList();
                     break;
                 }
 
@@ -70,7 +70,7 @@ public class Menu {
                     break;
                 }
                 case 7: {
-                    userService.foundUser();
+                    userConsoleService.foundUser();
                     break;
                 }
                 case 0: {

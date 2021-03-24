@@ -81,7 +81,7 @@
 
             <div>disciplines:
                 <select class="form-control" th:field="*{sportDisciplines}">
-                    <option th:each="element: ${userSportDisciplines}" th:value="${element}"
+                    <option th:each="element: ${sportDisciplines}" th:value="${element}"
                             th:text="${element.name}"/>
                 </select>
                 <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"

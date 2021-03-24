@@ -1,6 +1,6 @@
 package domain.activities;
 
-public enum SportDisciplines {
+public enum SportDiscipline {
     FOOTBALL,
     BADMINTON,
     FIELD_HOCKEY,
@@ -25,7 +25,7 @@ public enum SportDisciplines {
 
 
     public static void printValues() {
-        for (SportDisciplines x : values()) {
+        for (SportDiscipline x : values()) {
             System.out.println(x);
         }
     }

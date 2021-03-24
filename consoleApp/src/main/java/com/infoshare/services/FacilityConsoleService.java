@@ -1,17 +1,17 @@
 package com.infoshare.services;
 
-import database.FacilityRepository;
+import fileDatabase.FacilityRepository;
 import domain.workoutPlaces.SportFacility;
 
 import java.util.Map;
 
-public class FacilityService {
+public class FacilityConsoleService {
 
     //TODO add facility filter method
 
     private FacilityRepository facilityRepository;
 
-    public FacilityService() {
+    public FacilityConsoleService() {
         this.facilityRepository = new FacilityRepository();
     }
 
