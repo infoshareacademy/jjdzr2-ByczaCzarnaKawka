@@ -13,7 +13,7 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
-		<start-class>com.infoshare.WebApplication</start-class>
+		<start-class>com.infoshare.web.WebApplication</start-class>
 		<java.version>11</java.version>
 	</properties>
 
@@ -62,7 +62,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>com.infoshare.WebApplication</mainClass>
+					<mainClass>com.infoshare.web.WebApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

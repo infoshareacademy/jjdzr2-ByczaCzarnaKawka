@@ -10,7 +10,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "TABLE_TENNIS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -27,7 +26,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "SWIMMING",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -43,7 +41,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "CHESS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -59,15 +56,12 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       },
       {
-        "sportDisciplines": "BOXING",
         "activityLevel": "INTERMEDIATE"
       },
       {
-        "sportDisciplines": "BASKETBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -84,7 +78,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "TENNIS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -102,10 +95,27 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "MOTOCROSS",
         "activityLevel": "NEWBIE"
       }
     ]
+  },
+  {
+    "nickname": "Marko Polo",
+    "mailAddress": "marko@polo.pl",
+    "password": "rybka1234",
+    "bornYear": 1992,
+    "phoneNumber": "159357456",
+    "gender": "MALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDiscipline": "FOOTBALL",
+        "activityLevel": "EXPERT"
+      }
+    ],
+    "accessLevel": "PLAYER"
   },
   {
     "nickname": "jan",
@@ -119,7 +129,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "CYCLING",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -136,7 +145,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "RUNNING",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -153,7 +161,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "RUNNING",
         "activityLevel": "ADVANCED"
       }
     ]
@@ -169,11 +176,9 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "BOXING",
         "activityLevel": "ROOKIE"
       },
       {
-        "sportDisciplines": "MOTOCROSS",
         "activityLevel": "ROOKIE"
       }
     ]
@@ -189,7 +194,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "GOLF",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -206,7 +210,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "CYCLING",
         "activityLevel": "EXPERT"
       }
     ]
@@ -223,7 +226,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -240,7 +242,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -257,7 +258,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "SWIMMING",
         "activityLevel": "ADVANCED"
       }
     ]
@@ -274,7 +274,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "SWIMMING",
         "activityLevel": "INTERMEDIATE"
       }
     ]
@@ -291,7 +290,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "TENNIS",
         "activityLevel": "INTERMEDIATE"
       }
     ]
@@ -308,7 +306,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -325,7 +322,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "INTERMEDIATE"
       }
     ]
@@ -341,15 +337,12 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       },
       {
-        "sportDisciplines": "BOXING",
         "activityLevel": "INTERMEDIATE"
       },
       {
-        "sportDisciplines": "BASKETBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -365,11 +358,9 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "VOLLEYBALL",
         "activityLevel": "ADVANCED"
       },
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "EXPERT"
       }
     ]
@@ -385,7 +376,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "SWIMMING",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -402,7 +392,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "FOOTBALL",
         "activityLevel": "NEWBIE"
       }
     ]
@@ -419,7 +408,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "GOLF",
         "activityLevel": "EXPERT"
       }
     ]
@@ -436,7 +424,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "RUNNING",
         "activityLevel": "ADVANCED"
       }
     ]
@@ -453,10 +440,27 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "TENNIS",
         "activityLevel": "ROOKIE"
       }
     ]
+  },
+  {
+    "nickname": "Trolo lolo",
+    "mailAddress": "lolo@trolo.eu",
+    "password": "Alfabet2020",
+    "bornYear": 2001,
+    "phoneNumber": "486215945",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDiscipline": "MOTOCROSS",
+        "activityLevel": "INTERMEDIATE"
+      }
+    ],
+    "accessLevel": "PLAYER"
   },
   {
     "nickname": "Jola",
@@ -469,7 +473,6 @@
     },
     "activityList": [
       {
-        "sportDisciplines": "SNOOKER",
         "activityLevel": "ADVANCED"
       }
     ]

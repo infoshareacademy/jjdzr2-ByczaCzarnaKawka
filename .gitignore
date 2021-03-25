@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Resources ###
+/consoleApp/src/main/resources/
+/consoleApp/src/main/resources/SportsFacilities.json
+/consoleApp/src/main/resources/Users.json
