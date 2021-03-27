@@ -4,7 +4,7 @@ import com.infoshare.console.tools.ConsoleTools;
 import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;
-import com.infoshare.service.fileDatabase.UserRepository;
+import com.infoshare.service.repository.json.UserRepository;
 import com.infoshare.service.domain.location.Address;
 import com.infoshare.service.domain.location.Town;
 import com.infoshare.service.domain.users.Gender;

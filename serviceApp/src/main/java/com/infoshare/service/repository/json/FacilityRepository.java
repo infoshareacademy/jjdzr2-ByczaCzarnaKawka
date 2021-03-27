@@ -1,4 +1,4 @@
-package com.infoshare.service.fileDatabase;
+package com.infoshare.service.repository.json;
 
 import com.infoshare.service.domain.workoutPlace.SportFacility;
 

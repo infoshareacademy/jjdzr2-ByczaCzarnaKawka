@@ -199,6 +199,24 @@
     ]
   },
   {
+    "nickname": "mammamia",
+    "mailAddress": "mammamia@musical.com",
+    "password": "mammamia",
+    "bornYear": 2004,
+    "phoneNumber": "164853492",
+    "gender": "FEMALE",
+    "address": {
+      "streetName": "Unknown"
+    },
+    "activityList": [
+      {
+        "sportDiscipline": "DARTS",
+        "activityLevel": "EXPERT"
+      }
+    ],
+    "accessLevel": "PLAYER"
+  },
+  {
     "nickname": "maria",
     "mailAddress": "maria@wp.pl",
     "password": "qwer",
