@@ -1,4 +1,4 @@
-package com.infoshare.console.services;
+package com.infoshare.service.service.console;
 
 import com.infoshare.service.repository.json.FacilityRepository;
 import com.infoshare.service.domain.workoutPlace.SportFacility;

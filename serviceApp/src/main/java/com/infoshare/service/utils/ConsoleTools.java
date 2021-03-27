@@ -1,4 +1,4 @@
-package com.infoshare.console.tools;
+package com.infoshare.service.utils;
 
 import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
@@ -7,10 +7,9 @@ import com.infoshare.service.domain.location.Address;
 
 import com.infoshare.service.domain.location.Town;
 
-import com.infoshare.console.services.UserConsoleService;
+import com.infoshare.service.service.console.UserConsoleService;
 import com.infoshare.service.domain.users.Gender;
 import com.infoshare.service.domain.users.User;
-import com.infoshare.service.utils.FileUtils;
 
 import java.util.InputMismatchException;
 import java.util.List;

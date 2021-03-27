@@ -1,7 +1,7 @@
 package com.infoshare.console.menu;
 
-import com.infoshare.console.services.FacilityConsoleService;
-import com.infoshare.console.services.UserConsoleService;
+import com.infoshare.service.service.console.FacilityConsoleService;
+import com.infoshare.service.service.console.UserConsoleService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

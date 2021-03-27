@@ -1,7 +1,7 @@
 package com.infoshare.service.service.json;
 
 
-import com.infoshare.console.services.UserConsoleService;
+import com.infoshare.service.service.console.UserConsoleService;
 import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;

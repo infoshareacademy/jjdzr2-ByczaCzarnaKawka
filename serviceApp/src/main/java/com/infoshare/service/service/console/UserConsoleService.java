@@ -1,6 +1,5 @@
-package com.infoshare.console.services;
+package com.infoshare.service.service.console;
 
-import com.infoshare.console.tools.ConsoleTools;
 import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;
@@ -9,6 +8,7 @@ import com.infoshare.service.domain.location.Address;
 import com.infoshare.service.domain.location.Town;
 import com.infoshare.service.domain.users.Gender;
 import com.infoshare.service.domain.users.User;
+import com.infoshare.service.utils.ConsoleTools;
 import com.infoshare.service.utils.FileUtils;
 
 import java.util.ArrayList;
