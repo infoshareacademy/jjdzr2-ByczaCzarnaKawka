@@ -10,6 +10,7 @@ import domain.users.Gender;
 import domain.users.User;
 import domain.users.UserDTO;
 import org.springframework.stereotype.Component;
+import repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @Component
 public class RegisterService {
+    UserRepository userRepository;
 
     public List<Town> getTownName() {
         return Arrays.asList(Town.values());
@@ -40,6 +42,14 @@ public class RegisterService {
         UserConsoleService userConsoleService = new UserConsoleService();
         userConsoleService.saveUser(newUser);
     }
+
+    public void saveNewUserToDB(UserDTO user){
+        User newUser = createUser(user);
+        UserConsoleService userConsoleService = new UserConsoleService();
+
+    }
+
+
 
     private User createUser(UserDTO user) {
         Address address = createAddress(user);

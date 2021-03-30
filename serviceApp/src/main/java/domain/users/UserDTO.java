@@ -1,5 +1,6 @@
 package domain.users;
 
+import domain.activities.Activity;
 import domain.activities.ActivityLevel;
 import domain.activities.SportDiscipline;
 import domain.location.Address;
@@ -8,6 +9,7 @@ import validate.EmailExist;
 import validate.Password;
 
 import javax.validation.constraints.*;
+import java.util.List;
 
 
 @Password
@@ -38,6 +40,21 @@ public class UserDTO {
     private SportDiscipline sportDiscipline;
     private ActivityLevel activityLevel;
 
+    private List<Activity> activityList;
+
+    public UserDTO() {
+    }
+
+    public UserDTO(@NotBlank(message = "nickname can't be empty") @Size(min = 1, max = 16, message = "nickname must be between 1 and 16 characters") String nickname, @NotEmpty(message = "e-mail can't be empty") @Pattern(regexp = "[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}", message = "e-mail address seems to be incorrect") String mailAddress, @NotBlank(message = "password can't be empty") @Size(min = 8, message = "password should have min 8 characters long") String password, int bornYear, @NotEmpty(message = "phone number can't be empty") @Pattern(regexp = "\\d\\d\\d\\d\\d\\d\\d\\d\\d", message = "phone number seems to be incorrect") String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
+        this.nickname = nickname;
+        this.mailAddress = mailAddress;
+        this.password = password;
+        this.bornYear = bornYear;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.address = address;
+        this.activityList = activityList;
+    }
 
     public String getNickname() {
         return nickname;
@@ -117,5 +134,14 @@ public class UserDTO {
 
     public void setActivityLevel(ActivityLevel activityLevel) {
         this.activityLevel = activityLevel;
+    }
+
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
+
+    public void setActivityList() {
+        Activity activity = new Activity(sportDiscipline, activityLevel);
+        this.activityList.add(activity);
     }
 }

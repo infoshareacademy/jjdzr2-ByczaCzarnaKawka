@@ -24,6 +24,14 @@ public class AddressEntity {
 
     private String streetName;
 
+    public AddressEntity() {
+    }
+
+    public AddressEntity(Town town, String streetName) {
+        this.town = town;
+        this.streetName = streetName;
+    }
+
     public Long getId() {
         return id;
     }
