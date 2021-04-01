@@ -39,31 +39,21 @@ public class FacilityService {
         prepareData();
         List<SportFacility> tempFacilityList = getSportFacilityList();
 
-        if(!town.equals("ALL")){
-            tempFacilityList=tempFacilityList.stream()
+        if (!town.equals("ALL")) {
+            tempFacilityList = tempFacilityList.stream()
                     .filter(sportFacility -> sportFacility.getAddress().getTownName().toString().equals(town))
                     .collect(Collectors.toList());
         }
-        if(!sportDisciplines.equals("ALL")){
-            tempFacilityList=tempFacilityList.stream()
+        if (!sportDisciplines.equals("ALL")) {
+            tempFacilityList = tempFacilityList.stream()
                     .filter(sportFacility -> sportFacility.getDiscipline().toString().equals(sportDisciplines))
                     .collect(Collectors.toList());
         }
-        if(!club.equals("ALL")){
-            tempFacilityList=tempFacilityList.stream()
+        if (!club.equals("ALL")) {
+            tempFacilityList = tempFacilityList.stream()
                     .filter(sportFacility -> sportFacility.getName().toLowerCase().contains(club.toLowerCase()))
                     .collect(Collectors.toList());
         }
-
-        System.out.println(tempFacilityList);
-
-
-
-//        List<SportFacility> temp = getSportFacilityList().stream()
-//                .filter(sportFacility -> sportFacility.getAddress().getTownName().toString().equals(town))
-//                .filter(sportFacility -> sportFacility.getName().contains(club))
-////    //TODO more filters - sportDiscipline and date
-//                .collect(Collectors.toList());
 
         return tempFacilityList;
     }

@@ -24,10 +24,4 @@ public class UserService {
         this.addressRepository = addressRepository;
     }
 
-//    public void saveUser(UserDTO userDTO) {
-//        UserEntity user = userDTOToUserEntity.apply(userDTO);
-//        userRepository.save(user);
-//
-//    }
-
 }
