@@ -55,4 +55,9 @@ public class AddressEntity {
     public void setStreetName(final String streetName) {
         this.streetName = streetName;
     }
+
+    @Override
+    public String toString() {
+        return town + " " + streetName;
+    }
 }

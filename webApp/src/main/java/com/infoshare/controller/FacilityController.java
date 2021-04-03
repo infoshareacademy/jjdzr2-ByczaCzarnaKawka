@@ -1,6 +1,8 @@
 package com.infoshare.controller;
 
 import com.infoshare.services.FacilityService;
+import domain.activities.SportDiscipline;
+import domain.location.Town;
 import domain.workoutPlaces.SportFacility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import service.SportFacilityService;
 
 import java.util.List;
 
@@ -16,12 +19,14 @@ import java.util.List;
 public class FacilityController {
 
     private final FacilityService facilityService;
+    private final SportFacilityService sportFacilityService;
 
-    @Autowired
-    public FacilityController(FacilityService facilityService) {
+    public FacilityController(FacilityService facilityService, SportFacilityService sportFacilityService) {
         this.facilityService = facilityService;
+        this.sportFacilityService = sportFacilityService;
     }
 
+    // kod Michała
     @GetMapping("/list")
     public String getAllFacilityList(Model model) {
         List<SportFacility> currentFacilitiesList = facilityService.getSportFacilityList();
@@ -36,6 +41,7 @@ public class FacilityController {
         }
     }
 
+    //date of facility getting from JSON file
     @GetMapping("/find_facility")
     public String findFacility(Model model) {
         model.addAttribute("town", facilityService.getTownName());
@@ -44,8 +50,9 @@ public class FacilityController {
     }
 
     @GetMapping("/found_facility")
-    public String foundFacility(@RequestParam (required = false, defaultValue = "ALL") String town , @RequestParam(required = false, defaultValue = "ALL") String sportDisciplines, @RequestParam (required = false, defaultValue = "ALL") String club, Model model) {
-        model.addAttribute("facilities", facilityService.findSportFacility(town, sportDisciplines, club));
-        return "allFacilitiesList";
+    public String foundFacility(@RequestParam (required = false, defaultValue = "ALL") Town town , @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam (required = false, defaultValue = "ALL") String club, Model model) {
+        model.addAttribute("facilities", sportFacilityService.findSportFacility(town, sportDisciplines, club));
+        return "allFacilitiesListDB";
     }
+
 }
