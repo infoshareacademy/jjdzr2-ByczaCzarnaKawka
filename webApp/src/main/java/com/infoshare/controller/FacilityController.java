@@ -64,8 +64,6 @@ public class FacilityController {
         }
     }
 
-
-
     @GetMapping("/found_facility")
     public String foundFacility(@RequestParam(required = false, defaultValue = "ALL") Town town, @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam(required = false, defaultValue = "ALL") String club, Model model) {
         List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.findSportFacility(town, sportDisciplines, club);

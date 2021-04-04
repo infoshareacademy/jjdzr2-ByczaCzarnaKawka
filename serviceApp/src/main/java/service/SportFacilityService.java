@@ -26,7 +26,6 @@ public class SportFacilityService {
         this.addressRepository = addressRepository;
     }
 
-
     public List<Town> getTown() {
         return Arrays.asList(Town.values());
     }
@@ -35,7 +34,7 @@ public class SportFacilityService {
         return Arrays.asList(SportDiscipline.values());
     }
 
-    public List<SportFacilityEntity> getAllSportFacility(){
+    public List<SportFacilityEntity> getAllSportFacility() {
         return sportFacilityRepository.findAll();
     }
 
