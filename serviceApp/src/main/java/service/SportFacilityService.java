@@ -35,6 +35,9 @@ public class SportFacilityService {
         return Arrays.asList(SportDiscipline.values());
     }
 
+    public List<SportFacilityEntity> getAllSportFacility(){
+        return sportFacilityRepository.findAll();
+    }
 
     public List<SportFacilityEntity> findSportFacility(Town town, SportDiscipline sportDiscipline, String club) {
         List<SportFacilityEntity> sportFacilityEntityList = sportFacilityRepository.findAll();

@@ -12,6 +12,4 @@ import java.util.List;
 @Repository
 public interface SportFacilityRepository extends JpaRepository<SportFacilityEntity, SportFacilityID> {
 
-    List<SportFacilityEntity> findAll();
-
 }

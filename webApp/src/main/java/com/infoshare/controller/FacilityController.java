@@ -4,6 +4,7 @@ import com.infoshare.services.FacilityService;
 import domain.activities.SportDiscipline;
 import domain.location.Town;
 import domain.workoutPlaces.SportFacility;
+import entity.SportFacilityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +27,7 @@ public class FacilityController {
         this.sportFacilityService = sportFacilityService;
     }
 
-    // kod Michała
+    // date of facility getting from JSON file
     @GetMapping("/list")
     public String getAllFacilityList(Model model) {
         List<SportFacility> currentFacilitiesList = facilityService.getSportFacilityList();
@@ -49,10 +50,36 @@ public class FacilityController {
         return "findFacilities";
     }
 
+    @GetMapping("/facility_list")
+    public String getAllFacilityListDB(Model model) {
+        List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.getAllSportFacility();
+
+        if (currentFacilitiesList.isEmpty()) {
+            String info = "Unfortunately there's no facilities to book, on the list...";
+            model.addAttribute(info);
+            return "emptyFacilitiesList";
+        } else {
+            model.addAttribute("facilities", currentFacilitiesList);
+            return "allFacilitiesListDB";
+        }
+    }
+
+
+
     @GetMapping("/found_facility")
-    public String foundFacility(@RequestParam (required = false, defaultValue = "ALL") Town town , @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam (required = false, defaultValue = "ALL") String club, Model model) {
+    public String foundFacility(@RequestParam(required = false, defaultValue = "ALL") Town town, @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam(required = false, defaultValue = "ALL") String club, Model model) {
+        List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.findSportFacility(town, sportDisciplines, club);
+
         model.addAttribute("facilities", sportFacilityService.findSportFacility(town, sportDisciplines, club));
-        return "allFacilitiesListDB";
+
+        if (currentFacilitiesList.isEmpty()) {
+            String info = "Unfortunately there's no facilities to book, on the list...";
+            model.addAttribute(info);
+            return "emptyFacilitiesList";
+        } else {
+            model.addAttribute("facilities", currentFacilitiesList);
+            return "allFacilitiesListDB";
+        }
     }
 
 }
