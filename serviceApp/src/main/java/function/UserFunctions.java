@@ -1,8 +1,7 @@
 package function;
 
-import domain.users.User;
-import domain.users.UserDTO;
-import entity.UserEntity;
+import com.infoshare.service.domain.users.UserDTO;
+import com.infoshare.service.entity.UserEntity;
 
 import java.util.function.Function;
 

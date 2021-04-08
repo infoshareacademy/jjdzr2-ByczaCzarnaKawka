@@ -11,7 +11,7 @@ import com.infoshare.service.domain.users.Gender;
 import com.infoshare.service.domain.users.User;
 import com.infoshare.service.domain.users.UserDTO;
 import org.springframework.stereotype.Component;
-import repository.UserRepository;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +19,6 @@ import java.util.List;
 
 @Component
 public class RegisterService {
-    UserRepository userRepository;
 
     public List<Town> getTownName() {
         return Arrays.asList(Town.values());
@@ -37,7 +36,6 @@ public class RegisterService {
         return Arrays.asList(ActivityLevel.values());
     }
 
-
     public void saveNewUser(UserDTO user) {
         User newUser = createUser(user);
         UserConsoleService userConsoleService = new UserConsoleService();
@@ -49,8 +47,6 @@ public class RegisterService {
         UserConsoleService userConsoleService = new UserConsoleService();
 
     }
-
-
 
     private User createUser(UserDTO user) {
         Address address = createAddress(user);

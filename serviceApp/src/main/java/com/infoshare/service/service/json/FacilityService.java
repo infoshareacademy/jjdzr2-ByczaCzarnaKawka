@@ -1,8 +1,7 @@
 package com.infoshare.service.service.json;
 
-import domain.activities.SportDiscipline;
-import domain.location.Town;
-import domain.workoutPlaces.SportFacility;
+import com.infoshare.service.domain.activities.SportDiscipline;
+import com.infoshare.service.domain.location.Town;
 import com.infoshare.service.domain.workoutPlace.SportFacility;
 import org.springframework.stereotype.Service;
 import com.infoshare.service.utils.FileUtils;

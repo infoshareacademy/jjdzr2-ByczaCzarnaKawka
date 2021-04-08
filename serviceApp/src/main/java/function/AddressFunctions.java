@@ -1,8 +1,8 @@
 package function;
 
-import domain.location.Address;
-import entity.AddressEntity;
 
+import com.infoshare.service.domain.location.Address;
+import com.infoshare.service.entity.AddressEntity;
 
 import java.util.function.Function;
 

@@ -1,16 +1,15 @@
 package com.infoshare.service.service.mysql;
 
-import domain.activities.SportDiscipline;
-import domain.location.Town;
-import entity.SportFacilityEntity;
+import com.infoshare.service.domain.activities.SportDiscipline;
+import com.infoshare.service.domain.location.Town;
+import com.infoshare.service.entity.SportFacilityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.infoshare.service.repository.AddressRepository;
 import com.infoshare.service.repository.SportFacilityRepository;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

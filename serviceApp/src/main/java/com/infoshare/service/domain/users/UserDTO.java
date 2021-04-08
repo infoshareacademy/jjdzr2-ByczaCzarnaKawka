@@ -1,12 +1,6 @@
 package com.infoshare.service.domain.users;
 
-import domain.activities.Activity;
-import domain.activities.ActivityLevel;
-import domain.activities.SportDiscipline;
-import domain.location.Address;
-import validate.BornYear;
-import validate.EmailExist;
-import validate.Password;
+import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;
 import com.infoshare.service.domain.location.Address;
@@ -16,7 +10,6 @@ import com.infoshare.service.validate.Password;
 
 import javax.validation.constraints.*;
 import java.util.List;
-
 
 @Password
 public class UserDTO {
@@ -51,7 +44,7 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(@NotBlank(message = "nickname can't be empty") @Size(min = 1, max = 16, message = "nickname must be between 1 and 16 characters") String nickname, @NotEmpty(message = "e-mail can't be empty") @Pattern(regexp = "[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}", message = "e-mail address seems to be incorrect") String mailAddress, @NotBlank(message = "password can't be empty") @Size(min = 8, message = "password should have min 8 characters long") String password, int bornYear, @NotEmpty(message = "phone number can't be empty") @Pattern(regexp = "\\d\\d\\d\\d\\d\\d\\d\\d\\d", message = "phone number seems to be incorrect") String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
+    public UserDTO(String nickname, String mailAddress, String password, int bornYear, String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
         this.nickname = nickname;
         this.mailAddress = mailAddress;
         this.password = password;

@@ -1,9 +1,5 @@
 package com.infoshare.service.service.mysql;
 
-import domain.users.User;
-import domain.users.UserDTO;
-
-import entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.infoshare.service.repository.AddressRepository;

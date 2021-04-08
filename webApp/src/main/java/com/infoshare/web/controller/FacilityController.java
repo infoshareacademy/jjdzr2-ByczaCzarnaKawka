@@ -1,19 +1,18 @@
 package com.infoshare.web.controller;
 
-import com.infoshare.services.FacilityService;
-import domain.activities.SportDiscipline;
-import domain.location.Town;
-import domain.workoutPlaces.SportFacility;
-import entity.SportFacilityEntity;
+import com.infoshare.service.domain.activities.SportDiscipline;
+import com.infoshare.service.domain.location.Town;
+import com.infoshare.service.entity.SportFacilityEntity;
 import com.infoshare.service.service.json.FacilityService;
 import com.infoshare.service.domain.workoutPlace.SportFacility;
+import com.infoshare.service.service.mysql.SportFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.SportFacilityService;
+
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class FacilityController {
     private final SportFacilityService sportFacilityService;
 
     @Autowired
-    public FacilityController(FacilityService facilityService) {
+    public FacilityController(FacilityService facilityService, SportFacilityService sportFacilityService) {
         this.facilityService = facilityService;
         this.sportFacilityService = sportFacilityService;
     }
