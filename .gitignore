@@ -34,3 +34,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### resources ###
+consoleApp/src/main/resources/*
+!consoleApp/src/main/resources/.gitkeep

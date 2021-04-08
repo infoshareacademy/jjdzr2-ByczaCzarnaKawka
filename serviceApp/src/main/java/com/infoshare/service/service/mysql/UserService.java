@@ -1,0 +1,27 @@
+package com.infoshare.service.service.mysql;
+
+import domain.users.User;
+import domain.users.UserDTO;
+
+import entity.UserEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.infoshare.service.repository.AddressRepository;
+import com.infoshare.service.repository.UserRepository;
+
+import static function.UserFunctions.*;
+
+@Service
+public class UserService {
+
+    private final UserRepository userRepository;
+    private final AddressRepository addressRepository;
+
+    @Autowired
+    public UserService(final UserRepository userRepository,
+                       final AddressRepository addressRepository){
+        this.userRepository = userRepository;
+        this.addressRepository = addressRepository;
+    }
+
+}
