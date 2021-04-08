@@ -54,7 +54,7 @@ public class FacilityController {
 
     @GetMapping("/facility_list")
     public String getAllFacilityListDB(Model model) {
-        List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.getAllSportFacility();
+        List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.getAllSportFacilities();
 
         if (currentFacilitiesList.isEmpty()) {
             String info = "Unfortunately there's no facilities to book, on the list...";
@@ -69,8 +69,6 @@ public class FacilityController {
     @GetMapping("/found_facility")
     public String foundFacility(@RequestParam(required = false, defaultValue = "ALL") Town town, @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam(required = false, defaultValue = "ALL") String club, Model model) {
         List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.findSportFacility(town, sportDisciplines, club);
-
-        model.addAttribute("facilities", sportFacilityService.findSportFacility(town, sportDisciplines, club));
 
         if (currentFacilitiesList.isEmpty()) {
             String info = "Unfortunately there's no facilities to book, on the list...";

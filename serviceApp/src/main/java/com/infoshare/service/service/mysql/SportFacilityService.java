@@ -25,7 +25,7 @@ public class SportFacilityService {
         this.addressRepository = addressRepository;
     }
 
-    public List<Town> getTown() {
+    public List<Town> getTowns() {
         return Arrays.asList(Town.values());
     }
 
@@ -33,7 +33,7 @@ public class SportFacilityService {
         return Arrays.asList(SportDiscipline.values());
     }
 
-    public List<SportFacilityEntity> getAllSportFacility() {
+    public List<SportFacilityEntity> getAllSportFacilities() {
         return sportFacilityRepository.findAll();
     }
 
@@ -50,7 +50,7 @@ public class SportFacilityService {
                     .filter(sportFacilityEntity -> sportFacilityEntity.getSportDiscipline().equals(sportDiscipline))
                     .collect(Collectors.toList());
         }
-        if (!club.equals("ALL")) {
+        if (!club.equalsIgnoreCase("ALL")) {
             sportFacilityEntityList = sportFacilityEntityList.stream()
                     .filter(sportFacilityEntity -> sportFacilityEntity.getFacilityName().toLowerCase().contains(club.toLowerCase()))
                     .collect(Collectors.toList());
