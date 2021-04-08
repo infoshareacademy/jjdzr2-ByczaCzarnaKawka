@@ -9,7 +9,7 @@ import com.infoshare.service.domain.location.Address;
 import com.infoshare.service.domain.location.Town;
 import com.infoshare.service.domain.users.Gender;
 import com.infoshare.service.domain.users.User;
-import com.infoshare.service.domain.users.UserDTO;
+import com.infoshare.service.dto.UserDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class RegisterService {
     }
 
     private Address createAddress(UserDTO user) {
-        return new Address(user.getAddress().getTownName(), user.getAddress().getStreetName());
+        return new Address(user.getAddress().getTown(), user.getAddress().getStreet());
     }
 
     private List<Activity> createActivityList(UserDTO user) {

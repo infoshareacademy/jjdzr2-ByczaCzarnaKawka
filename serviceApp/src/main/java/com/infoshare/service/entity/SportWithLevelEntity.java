@@ -3,12 +3,20 @@ package com.infoshare.service.entity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;
 import com.infoshare.service.entity.id.SportWithLevelID;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "sport_with_activity_level")
 @IdClass(SportWithLevelID.class)
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SportWithLevelEntity {
 
     @Id
@@ -19,19 +27,4 @@ public class SportWithLevelEntity {
     @Enumerated(EnumType.STRING)
     private ActivityLevel activityLevel;
 
-    public SportDiscipline getSportDiscipline() {
-        return sportDiscipline;
-    }
-
-    public void setSportDiscipline(final SportDiscipline sportDiscipline) {
-        this.sportDiscipline = sportDiscipline;
-    }
-
-    public ActivityLevel getActivityLevel() {
-        return activityLevel;
-    }
-
-    public void setActivityLevel(final ActivityLevel activityLevel) {
-        this.activityLevel = activityLevel;
-    }
 }

@@ -1,7 +1,7 @@
 package com.infoshare.web.controller;
 
 import com.infoshare.service.service.json.RegisterService;
-import com.infoshare.service.domain.users.UserDTO;
+import com.infoshare.service.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

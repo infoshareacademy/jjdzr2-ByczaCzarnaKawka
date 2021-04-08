@@ -1,12 +1,20 @@
 package com.infoshare.service.entity;
 
 import com.infoshare.service.domain.location.Town;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "address")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AddressEntity {
 
     @Id
@@ -24,27 +32,8 @@ public class AddressEntity {
 
     private String streetName;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(final Long id) {
-        this.id = id;
-    }
-
-    public Town getTown() {
-        return town;
-    }
-
-    public void setTown(final Town town) {
+    public AddressEntity(final Town town, final String streetName) {
         this.town = town;
-    }
-
-    public String getStreetName() {
-        return streetName;
-    }
-
-    public void setStreetName(final String streetName) {
         this.streetName = streetName;
     }
 }

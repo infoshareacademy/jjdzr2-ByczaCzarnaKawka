@@ -1,34 +1,35 @@
 package com.infoshare.service.domain.location;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
 import javax.validation.constraints.NotEmpty;
 
+@Data
+@Builder
+@AllArgsConstructor
 public class Address {
+
+    private Long id;
     @NotEmpty(message = "town can't be empty")
-    private Town townName;
-    private String streetName;
+    private Town town;
+    private String street;
 
     public Address() {
-       // this.townName = Town.UNKNOWN;
-        this.streetName = "Unknown";
+        this.street = "Unknown";
     }
 
-    public Address(Town townName, String streetName) {
-        this.townName = townName;
-        this.streetName = streetName;
+    public Address(final Town town, final String street) {
+        this.town = town;
+        this.street = street;
     }
 
-    public Town getTownName() {
-        return townName;
-    }
-
-    public String getStreetName() {
-        return streetName;
-    }
     @Override
     public String toString() {
         return "Address: \n Town: "
-                + townName
+                + town
                 + ",\n  Road: "
-                + streetName;
+                + street;
     }
 }

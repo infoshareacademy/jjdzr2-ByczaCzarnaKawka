@@ -147,7 +147,7 @@ public class UserConsoleService {
         Map<String, User> mapFound = new HashMap<>();
         Town checkTown;
         for (String email : userRepository.getUsersMap().keySet()) {
-            checkTown = userRepository.getUsersMap().get(email).getAddress().getTownName();
+            checkTown = userRepository.getUsersMap().get(email).getAddress().getTown();
             if (town.equals(checkTown)) {
                 mapFound.put(email, userRepository.getUsersMap().get(email));
             }

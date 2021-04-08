@@ -69,14 +69,14 @@
             </div>
 
             <div>town:
-                <select class="form-control" th:field="*{address.townName}">
+                <select class="form-control" th:field="*{address.getTown}">
                     <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
                 </select>
                 <span class="errorClass" th:if="${#fields.hasErrors('address.townName')}"
-                      th:errors="*{address.townName}"></span>
+                      th:errors="*{address.getTown}"></span>
             </div>
 
-            <div>street: <input class="form-control" type="text" th:field="*{address.streetName}">
+            <div>street: <input class="form-control" type="text" th:field="*{address.getStreet}">
             </div>
 
             <div>disciplines:

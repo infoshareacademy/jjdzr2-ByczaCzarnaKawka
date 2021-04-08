@@ -1,6 +1,6 @@
 package com.infoshare.service.validate;
 
-import com.infoshare.service.domain.users.UserDTO;
+import com.infoshare.service.dto.UserDTO;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

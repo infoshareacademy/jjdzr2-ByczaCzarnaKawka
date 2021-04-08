@@ -45,7 +45,7 @@ public class User {
     public void printBasicInfo() {
         System.out.println("Nickname: " + getNickname());
         System.out.println("E-mail: " + getMailAddress());
-        System.out.println("Address: " + getAddress().getTownName() + ", " + getAddress().getStreetName());
+        System.out.println("Address: " + getAddress().getTown() + ", " + getAddress().getStreet());
         System.out.println("Activities:");
         for (Activity element : activityList) {
             System.out.println("Sport: " + element.getSportDisciplines());
