@@ -1,5 +1,6 @@
 package com.infoshare.service.domain.users;
 
+import com.infoshare.service.domain.activities.Activity;
 import com.infoshare.service.domain.activities.ActivityLevel;
 import com.infoshare.service.domain.activities.SportDiscipline;
 import com.infoshare.service.domain.location.Address;
@@ -8,7 +9,7 @@ import com.infoshare.service.validate.EmailExist;
 import com.infoshare.service.validate.Password;
 
 import javax.validation.constraints.*;
-
+import java.util.List;
 
 @Password
 public class UserDTO {
@@ -38,6 +39,21 @@ public class UserDTO {
     private SportDiscipline sportDiscipline;
     private ActivityLevel activityLevel;
 
+    private List<Activity> activityList;
+
+    public UserDTO() {
+    }
+
+    public UserDTO(String nickname, String mailAddress, String password, int bornYear, String phoneNumber, Gender gender, Address address, List<Activity> activityList) {
+        this.nickname = nickname;
+        this.mailAddress = mailAddress;
+        this.password = password;
+        this.bornYear = bornYear;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.address = address;
+        this.activityList = activityList;
+    }
 
     public String getNickname() {
         return nickname;
@@ -117,5 +133,14 @@ public class UserDTO {
 
     public void setActivityLevel(final ActivityLevel activityLevel) {
         this.activityLevel = activityLevel;
+    }
+
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
+
+    public void setActivityList() {
+        Activity activity = new Activity(sportDiscipline, activityLevel);
+        this.activityList.add(activity);
     }
 }

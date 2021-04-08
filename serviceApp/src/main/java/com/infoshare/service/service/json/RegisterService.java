@@ -12,6 +12,7 @@ import com.infoshare.service.domain.users.User;
 import com.infoshare.service.domain.users.UserDTO;
 import org.springframework.stereotype.Component;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,11 +36,16 @@ public class RegisterService {
         return Arrays.asList(ActivityLevel.values());
     }
 
-
     public void saveNewUser(UserDTO user) {
         User newUser = createUser(user);
         UserConsoleService userConsoleService = new UserConsoleService();
         userConsoleService.saveUser(newUser);
+    }
+
+    public void saveNewUserToDB(UserDTO user){
+        User newUser = createUser(user);
+        UserConsoleService userConsoleService = new UserConsoleService();
+
     }
 
     private User createUser(UserDTO user) {

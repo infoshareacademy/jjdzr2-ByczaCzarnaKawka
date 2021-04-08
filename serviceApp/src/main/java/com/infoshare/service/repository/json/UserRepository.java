@@ -16,4 +16,6 @@ public class UserRepository {
                 .collect(Collectors.toMap(User::getMailAddress, user -> user));
     }
 
+
+
 }

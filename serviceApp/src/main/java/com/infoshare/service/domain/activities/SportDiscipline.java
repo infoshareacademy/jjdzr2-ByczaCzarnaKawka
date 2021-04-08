@@ -20,7 +20,8 @@ public enum SportDiscipline {
     DARTS,
     MOTOCROSS,
     SQUASH,
-    CHESS;
+    CHESS,
+    ALL;
 
 
     public static void printValues() {
@@ -28,5 +29,7 @@ public enum SportDiscipline {
             System.out.println(x);
         }
     }
+
+
 
 }

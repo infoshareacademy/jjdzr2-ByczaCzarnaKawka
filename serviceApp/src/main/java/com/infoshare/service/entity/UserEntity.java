@@ -40,6 +40,20 @@ public class UserEntity {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Map<SportDiscipline, SportWithLevelEntity> disciplines;
 
+    public UserEntity(String nickname, String mailAddress, String password, int bornYear, String phoneNumber, Gender gender, AddressEntity addressEntity, Map<SportDiscipline, SportWithLevelEntity> disciplines) {
+        this.nickname = nickname;
+        this.mailAddress = mailAddress;
+        this.password = password;
+        this.bornYear = bornYear;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.addressEntity = addressEntity;
+        this.disciplines = disciplines;
+    }
+
+    public UserEntity() {
+    }
+
     public UUID getId() {
         return id;
     }

@@ -27,7 +27,7 @@ public class RegisterController {
         model.addAttribute("user", new UserDTO());
         model.addAttribute("town", registerService.getTownName());
         model.addAttribute("userGender", registerService.getUserGender());
-        model.addAttribute("userSportDisciplines", registerService.getUserSportDiscipline());
+        model.addAttribute("userDisciplines", registerService.getUserSportDiscipline());
         model.addAttribute("userActivityLevels", registerService.getUserActivityLevels());
         return "register";
     }
@@ -37,7 +37,7 @@ public class RegisterController {
         if (bindingResult.hasErrors()) {
             model.addAttribute("town", registerService.getTownName());
             model.addAttribute("userGender", registerService.getUserGender());
-            model.addAttribute("userSportDisciplines", registerService.getUserSportDiscipline());
+            model.addAttribute("userDisciplines", registerService.getUserSportDiscipline());
             model.addAttribute("userActivityLevels", registerService.getUserActivityLevels());
             return "register";
         } else {

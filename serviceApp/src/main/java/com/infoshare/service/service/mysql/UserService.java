@@ -5,16 +5,17 @@ import org.springframework.stereotype.Service;
 import com.infoshare.service.repository.AddressRepository;
 import com.infoshare.service.repository.UserRepository;
 
+import static function.UserFunctions.*;
+
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
     private final AddressRepository addressRepository;
 
-
     @Autowired
     public UserService(final UserRepository userRepository,
-                       final AddressRepository addressRepository) {
+                       final AddressRepository addressRepository){
         this.userRepository = userRepository;
         this.addressRepository = addressRepository;
     }

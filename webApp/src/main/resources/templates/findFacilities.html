@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{../style.css}">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title th:text="#{findFacilities.title}"></title>
+</head>
+<body>
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">The Gym Buddy Finder App!</div>
+        <div class="masthead-heading text-uppercase">Find your sport club</div>
+    </div>
+</header>
+
+<section class="page-section">
+    <div class="container">
+        <h3> Find sport club </h3>
+        <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
+
+            <div>choose town:
+                <select name="town" class="form-control" th:object="${town}">
+                    <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('town')}"
+                      th:errors="*{town}"></span>
+            </div>
+
+            <div>disciplines:
+                <select name="sportDisciplines" class="form-control" th:object="${sportDisciplines}">
+                    <option th:each="element: ${sportDisciplines}" th:value="${element}" th:text="${element.name}"/>
+                </select>
+                <span class="errorClass" th:if="${#fields.hasErrors('sportDisciplines')}"
+                      th:errors="*{sportDisciplines}"></span>
+            </div>
+
+            <div>enter name of Sport club:
+                <input type="text" value="ALL" name="club" class="form-control"/>
+            </div>
+
+            <div>
+                <br>
+                <button type="submit" class="btn float-left btn-outline-info"> Find</button>
+                <br>
+            </div>
+
+        </form>
+        <br>
+        <a href="/login_send/player"> back </a>
+    </div>
+
+</section>
+
+
+<div class="align-content-center" th:insert="~{fragments/facilityListFooter :: footer}"></div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</body>
+</html>

@@ -24,6 +24,14 @@ public class AddressEntity {
 
     private String streetName;
 
+    public AddressEntity() {
+    }
+
+    public AddressEntity(Town town, String streetName) {
+        this.town = town;
+        this.streetName = streetName;
+    }
+
     public Long getId() {
         return id;
     }
@@ -46,5 +54,10 @@ public class AddressEntity {
 
     public void setStreetName(final String streetName) {
         this.streetName = streetName;
+    }
+
+    @Override
+    public String toString() {
+        return town + " " + streetName;
     }
 }

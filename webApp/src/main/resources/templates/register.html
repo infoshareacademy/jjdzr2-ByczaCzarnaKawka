@@ -23,7 +23,7 @@
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">The Gym Buddy Finder App!</div>
-        <div class="masthead-heading text-uppercase">Don't hestitate to join the gym buddies family!
+        <div class="masthead-heading text-uppercase">Don't hesitate to join the gym buddies family!
         </div>
     </div>
 </header>
@@ -81,7 +81,7 @@
 
             <div>disciplines:
                 <select class="form-control" th:field="*{sportDiscipline}">
-                    <option th:each="element: ${userSportDisciplines}" th:value="${element}"
+                    <option th:each="element: ${userDisciplines}" th:value="${element}"
                             th:text="${element.name}"/>
                 </select>
                 <span class="errorClass" th:if="${#fields.hasErrors('sportDiscipline')}"
