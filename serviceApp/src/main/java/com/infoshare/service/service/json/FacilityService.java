@@ -49,7 +49,7 @@ public class FacilityService {
                     .filter(sportFacility -> sportFacility.getDiscipline().toString().equals(sportDisciplines))
                     .collect(Collectors.toList());
         }
-        if (!club.equals("ALL")) {
+        if (!club.equalsIgnoreCase("ALL")) {
             tempFacilityList = tempFacilityList.stream()
                     .filter(sportFacility -> sportFacility.getName().toLowerCase().contains(club.toLowerCase()))
                     .collect(Collectors.toList());

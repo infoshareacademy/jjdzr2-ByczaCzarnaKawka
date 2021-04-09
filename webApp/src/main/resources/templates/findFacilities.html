@@ -29,8 +29,9 @@
 <section class="page-section">
     <div class="container">
         <h3> Find sport club </h3>
-        <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">
-
+<!--        for database search, uncomment the next line and comment on the next one-->
+<!--        <form method="get" action="/facilities/found_facility" th:action="@{/facilities/found_facility}">-->
+        <form method="get" action="/facilities/found_facility_list" th:action="@{/facilities/found_facility_list}">
             <div>choose town:
                 <select name="town" class="form-control" th:object="${town}">
                     <option th:each="element: ${town}" th:value="${element}" th:text="${element.name}"/>

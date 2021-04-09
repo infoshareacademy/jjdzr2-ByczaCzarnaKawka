@@ -29,7 +29,7 @@ public class FacilityController {
         this.sportFacilityService = sportFacilityService;
     }
 
-    // date of facility getting from JSON file
+    // lista wszystkich obiektów z json
     @GetMapping("/list")
     public String getAllFacilityList(Model model) {
         List<SportFacility> currentFacilitiesList = facilityService.getSportFacilityList();
@@ -44,7 +44,23 @@ public class FacilityController {
         }
     }
 
-    //date of facility getting from JSON file
+    //lista obiektow spełniających kryteria wyszukanych z jsona
+    @GetMapping("/found_facility_list")
+    public String foundFacilityList(@RequestParam(required = false, defaultValue = "ALL") String town, @RequestParam(required = false, defaultValue = "ALL") String sportDisciplines, @RequestParam(required = false, defaultValue = "ALL") String club, Model model) {
+        List<SportFacility> currentFacilitiesList = facilityService.findSportFacility(town, sportDisciplines, club);
+
+        if (currentFacilitiesList.isEmpty()) {
+            String info = "Unfortunately there's no facilities to book, on the list...";
+            model.addAttribute(info);
+            return "emptyFacilitiesList";
+        } else {
+            model.addAttribute("facilities", currentFacilitiesList);
+            return "allFacilitiesList";
+        }
+    }
+
+
+//formulaż wyszukiwania
     @GetMapping("/find_facility")
     public String findFacility(Model model) {
         model.addAttribute("town", facilityService.getTownName());
@@ -52,6 +68,7 @@ public class FacilityController {
         return "findFacilities";
     }
 
+    //lista wszystkich obiektów z bazy
     @GetMapping("/facility_list")
     public String getAllFacilityListDB(Model model) {
         List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.getAllSportFacilities();
@@ -66,6 +83,7 @@ public class FacilityController {
         }
     }
 
+    //lista obiektow spełniających kryteria wyszukanych z bazy
     @GetMapping("/found_facility")
     public String foundFacility(@RequestParam(required = false, defaultValue = "ALL") Town town, @RequestParam(required = false, defaultValue = "ALL") SportDiscipline sportDisciplines, @RequestParam(required = false, defaultValue = "ALL") String club, Model model) {
         List<SportFacilityEntity> currentFacilitiesList = sportFacilityService.findSportFacility(town, sportDisciplines, club);

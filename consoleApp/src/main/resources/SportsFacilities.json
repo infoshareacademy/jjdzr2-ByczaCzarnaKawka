@@ -86,5 +86,27 @@
       "nano": 0
     },
     "price": 200
+  },
+  {
+    "name": "COS fit Białystok",
+    "discipline": "BASKETBALL",
+    "phoneNumber": "147258369",
+    "address": {
+      "townName": "BIALYSTOK",
+      "roadName": "ul. Bokserska 1"
+    },
+    "openHour": {
+      "hour": 15,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "closeHour": {
+      "hour": 16,
+      "minute": 0,
+      "second": 0,
+      "nano": 0
+    },
+    "price": 50
   }
 ]
