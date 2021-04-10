@@ -48,7 +48,7 @@
             </div>
 
             <div>repeat password (min 8 char): <input class="form-control" type="password" th:field="*{repeatPassword}">
-                <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"></span>
+                <span class="errorClass" th:if="${#fields.hasErrors('global')}" th:errors="*{repeatPassword}"></span>
             </div>
 
             <div>born year:<input class="form-control"  type="number" min="1900" th:field="*{bornYear}">
